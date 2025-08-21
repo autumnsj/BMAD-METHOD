@@ -1,12 +1,12 @@
-# <!-- Powered by BMAD™ Core -->
+# <!-- 由 BMAD™ 核心驱动 -->
 template:
   id: game-brief-template-v2
-  name: Game Brief
+  name: 游戏简介
   version: 2.0
   output:
     format: markdown
     filename: "docs/{{game_name}}-game-brief.md"
-    title: "{{game_title}} Game Brief"
+    title: "{{game_title}} 游戏简介"
 
 workflow:
   mode: interactive
@@ -14,344 +14,344 @@ workflow:
 sections:
   - id: initial-setup
     instruction: |
-      This template creates a comprehensive game brief that serves as the foundation for all subsequent game development work. The brief should capture the essential vision, scope, and requirements needed to create a detailed Game Design Document.
+      此模板创建了一个全面的游戏简介，作为所有后续游戏开发工作的基础。该简介应捕捉到创建详细游戏设计文档所需的基本愿景、范围和要求。
 
-      This brief is typically created early in the ideation process, often after brainstorming sessions, to crystallize the game concept before moving into detailed design.
+      该简介通常在构思过程的早期创建，通常在头脑风暴会议之后，以便在进入详细设计之前具体化游戏概念。
 
   - id: game-vision
-    title: Game Vision
-    instruction: Establish the core vision and identity of the game. Present each subsection and gather user feedback before proceeding.
+    title: 游戏愿景
+    instruction: 建立游戏的核心愿景和身份。在继续之前，呈现每个小节并收集用户反馈。
     sections:
       - id: core-concept
-        title: Core Concept
-        instruction: 2-3 sentences that clearly capture what the game is and why it will be compelling to players
+        title: 核心概念
+        instruction: 用2-3句话清晰地捕捉到游戏是什么以及为什么它会对玩家有吸引力
       - id: elevator-pitch
-        title: Elevator Pitch
-        instruction: Single sentence that captures the essence of the game in a memorable way
+        title: 电梯演讲
+        instruction: 用一句话以令人难忘的方式捕捉游戏的精髓
         template: |
           **"{{game_description_in_one_sentence}}"**
       - id: vision-statement
-        title: Vision Statement
-        instruction: Inspirational statement about what the game will achieve for players and why it matters
+        title: 愿景声明
+        instruction: 关于游戏将为玩家实现什么以及为什么它很重要的鼓舞人心的声明
 
   - id: target-market
-    title: Target Market
-    instruction: Define the audience and market context. Apply `tasks#advanced-elicitation` after presenting this section.
+    title: 目标市场
+    instruction: 定义受众和市场背景。在呈现此部分后应用 `tasks#advanced-elicitation`。
     sections:
       - id: primary-audience
-        title: Primary Audience
+        title: 主要受众
         template: |
-          **Demographics:** {{age_range}}, {{platform_preference}}, {{gaming_experience}}
-          **Psychographics:** {{interests}}, {{motivations}}, {{play_patterns}}
-          **Gaming Preferences:** {{preferred_genres}}, {{session_length}}, {{difficulty_preference}}
+          **人口统计：** {{age_range}}, {{platform_preference}}, {{gaming_experience}}
+          **心理统计：** {{interests}}, {{motivations}}, {{play_patterns}}
+          **游戏偏好：** {{preferred_genres}}, {{session_length}}, {{difficulty_preference}}
       - id: secondary-audiences
-        title: Secondary Audiences
+        title: 次要受众
         template: |
-          **Audience 2:** {{description}}
-          **Audience 3:** {{description}}
+          **受众 2：** {{description}}
+          **受众 3：** {{description}}
       - id: market-context
-        title: Market Context
+        title: 市场背景
         template: |
-          **Genre:** {{primary_genre}} / {{secondary_genre}}
-          **Platform Strategy:** {{platform_focus}}
-          **Competitive Positioning:** {{differentiation_statement}}
+          **类型：** {{primary_genre}} / {{secondary_genre}}
+          **平台策略：** {{platform_focus}}
+          **竞争定位：** {{differentiation_statement}}
 
   - id: game-fundamentals
-    title: Game Fundamentals
-    instruction: Define the core gameplay elements. Each subsection should be specific enough to guide detailed design work.
+    title: 游戏基础
+    instruction: 定义核心游戏元素。每个小节都应足够具体，以指导详细的设计工作。
     sections:
       - id: core-gameplay-pillars
-        title: Core Gameplay Pillars
-        instruction: 3-5 fundamental principles that guide all design decisions
+        title: 核心游戏玩法支柱
+        instruction: 3-5个指导所有设计决策的基本原则
         type: numbered-list
         template: |
           **{{pillar_name}}** - {{description_and_rationale}}
       - id: primary-mechanics
-        title: Primary Mechanics
-        instruction: List the 3-5 most important gameplay mechanics that define the player experience
+        title: 主要机制
+        instruction: 列出定义玩家体验的3-5个最重要的游戏机制
         repeatable: true
         template: |
-          **Core Mechanic: {{mechanic_name}}**
+          **核心机制：{{mechanic_name}}**
 
-          - **Description:** {{how_it_works}}
-          - **Player Value:** {{why_its_fun}}
-          - **Implementation Scope:** {{complexity_estimate}}
+          - **描述：** {{how_it_works}}
+          - **玩家价值：** {{why_its_fun}}
+          - **实施范围：** {{complexity_estimate}}
       - id: player-experience-goals
-        title: Player Experience Goals
-        instruction: Define what emotions and experiences the game should create for players
+        title: 玩家体验目标
+        instruction: 定义游戏应为玩家创造什么样的情感和体验
         template: |
-          **Primary Experience:** {{main_emotional_goal}}
-          **Secondary Experiences:** {{supporting_emotional_goals}}
-          **Engagement Pattern:** {{how_player_engagement_evolves}}
+          **主要体验：** {{main_emotional_goal}}
+          **次要体验：** {{supporting_emotional_goals}}
+          **参与模式：** {{how_player_engagement_evolves}}
 
   - id: scope-constraints
-    title: Scope and Constraints
-    instruction: Define the boundaries and limitations that will shape development. Apply `tasks#advanced-elicitation` to clarify any constraints.
+    title: 范围和约束
+    instruction: 定义将影响开发的边界和限制。应用 `tasks#advanced-elicitation` 来澄清任何约束。
     sections:
       - id: project-scope
-        title: Project Scope
+        title: 项目范围
         template: |
-          **Game Length:** {{estimated_content_hours}}
-          **Content Volume:** {{levels_areas_content_amount}}
-          **Feature Complexity:** {{simple|moderate|complex}}
-          **Scope Comparison:** "Similar to {{reference_game}} but with {{key_differences}}"
+          **游戏时长：** {{estimated_content_hours}}
+          **内容量：** {{levels_areas_content_amount}}
+          **功能复杂度：** {{simple|moderate|complex}}
+          **范围比较：** "类似于 {{reference_game}} 但有 {{key_differences}}"
       - id: technical-constraints
-        title: Technical Constraints
+        title: 技术约束
         template: |
-          **Platform Requirements:**
+          **平台要求：**
 
-          - Primary: {{platform_1}} - {{requirements}}
-          - Secondary: {{platform_2}} - {{requirements}}
+          - 主要：{{platform_1}} - {{requirements}}
+          - 次要：{{platform_2}} - {{requirements}}
 
-          **Technical Specifications:**
+          **技术规格：**
 
-          - Engine: Phaser 3 + TypeScript
-          - Performance Target: {{fps_target}} FPS on {{target_device}}
-          - Memory Budget: <{{memory_limit}}MB
-          - Load Time Goal: <{{load_time_seconds}}s
+          - 引擎：Phaser 3 + TypeScript
+          - 性能目标：在 {{target_device}} 上达到 {{fps_target}} FPS
+          - 内存预算：<{{memory_limit}}MB
+          - 加载时间目标：<{{load_time_seconds}}s
       - id: resource-constraints
-        title: Resource Constraints
+        title: 资源约束
         template: |
-          **Team Size:** {{team_composition}}
-          **Timeline:** {{development_duration}}
-          **Budget Considerations:** {{budget_constraints_or_targets}}
-          **Asset Requirements:** {{art_audio_content_needs}}
+          **团队规模：** {{team_composition}}
+          **时间表：** {{development_duration}}
+          **预算考虑：** {{budget_constraints_or_targets}}
+          **资产要求：** {{art_audio_content_needs}}
       - id: business-constraints
-        title: Business Constraints
+        title: 业务约束
         condition: has_business_goals
         template: |
-          **Monetization Model:** {{free|premium|freemium|subscription}}
-          **Revenue Goals:** {{revenue_targets_if_applicable}}
-          **Platform Requirements:** {{store_certification_needs}}
-          **Launch Timeline:** {{target_launch_window}}
+          **盈利模式：** {{free|premium|freemium|subscription}}
+          **收入目标：** {{revenue_targets_if_applicable}}
+          **平台要求：** {{store_certification_needs}}
+          **发布时间表：** {{target_launch_window}}
 
   - id: reference-framework
-    title: Reference Framework
-    instruction: Provide context through references and competitive analysis
+    title: 参考框架
+    instruction: 通过参考和竞争分析提供背景
     sections:
       - id: inspiration-games
-        title: Inspiration Games
+        title: 灵感游戏
         sections:
           - id: primary-references
-            title: Primary References
+            title: 主要参考
             type: numbered-list
             repeatable: true
             template: |
               **{{reference_game}}** - {{what_we_learn_from_it}}
       - id: competitive-analysis
-        title: Competitive Analysis
+        title: 竞争分析
         template: |
-          **Direct Competitors:**
+          **直接竞争者：**
 
           - {{competitor_1}}: {{strengths_and_weaknesses}}
           - {{competitor_2}}: {{strengths_and_weaknesses}}
 
-          **Differentiation Strategy:**
+          **差异化策略：**
           {{how_we_differ_and_why_thats_valuable}}
       - id: market-opportunity
-        title: Market Opportunity
+        title: 市场机会
         template: |
-          **Market Gap:** {{underserved_need_or_opportunity}}
-          **Timing Factors:** {{why_now_is_the_right_time}}
-          **Success Metrics:** {{how_well_measure_success}}
+          **市场空白：** {{underserved_need_or_opportunity}}
+          **时机因素：** {{why_now_is_the_right_time}}
+          **成功指标：** {{how_well_measure_success}}
 
   - id: content-framework
-    title: Content Framework
-    instruction: Outline the content structure and progression without full design detail
+    title: 内容框架
+    instruction: 概述内容结构和进程，无需完整的设计细节
     sections:
       - id: game-structure
-        title: Game Structure
+        title: 游戏结构
         template: |
-          **Overall Flow:** {{linear|hub_world|open_world|procedural}}
-          **Progression Model:** {{how_players_advance}}
-          **Session Structure:** {{typical_play_session_flow}}
+          **总体流程：** {{linear|hub_world|open_world|procedural}}
+          **进程模型：** {{how_players_advance}}
+          **会话结构：** {{typical_play_session_flow}}
       - id: content-categories
-        title: Content Categories
+        title: 内容类别
         template: |
-          **Core Content:**
+          **核心内容：**
 
           - {{content_type_1}}: {{quantity_and_description}}
           - {{content_type_2}}: {{quantity_and_description}}
 
-          **Optional Content:**
+          **可选内容：**
 
           - {{optional_content_type}}: {{quantity_and_description}}
 
-          **Replay Elements:**
+          **重玩元素：**
 
           - {{replayability_features}}
       - id: difficulty-accessibility
-        title: Difficulty and Accessibility
+        title: 难度和无障碍性
         template: |
-          **Difficulty Approach:** {{how_challenge_is_structured}}
-          **Accessibility Features:** {{planned_accessibility_support}}
-          **Skill Requirements:** {{what_skills_players_need}}
+          **难度方法：** {{how_challenge_is_structured}}
+          **无障碍功能：** {{planned_accessibility_support}}
+          **技能要求：** {{what_skills_players_need}}
 
   - id: art-audio-direction
-    title: Art and Audio Direction
-    instruction: Establish the aesthetic vision that will guide asset creation
+    title: 艺术和音频方向
+    instruction: 建立将指导资产创作的美学愿景
     sections:
       - id: visual-style
-        title: Visual Style
+        title: 视觉风格
         template: |
-          **Art Direction:** {{style_description}}
-          **Reference Materials:** {{visual_inspiration_sources}}
-          **Technical Approach:** {{2d_style_pixel_vector_etc}}
-          **Color Strategy:** {{color_palette_mood}}
+          **艺术方向：** {{style_description}}
+          **参考资料：** {{visual_inspiration_sources}}
+          **技术方法：** {{2d_style_pixel_vector_etc}}
+          **色彩策略：** {{color_palette_mood}}
       - id: audio-direction
-        title: Audio Direction
+        title: 音频方向
         template: |
-          **Music Style:** {{genre_and_mood}}
-          **Sound Design:** {{audio_personality}}
-          **Implementation Needs:** {{technical_audio_requirements}}
+          **音乐风格：** {{genre_and_mood}}
+          **声音设计：** {{audio_personality}}
+          **实施需求：** {{technical_audio_requirements}}
       - id: ui-ux-approach
-        title: UI/UX Approach
+        title: UI/UX 方法
         template: |
-          **Interface Style:** {{ui_aesthetic}}
-          **User Experience Goals:** {{ux_priorities}}
-          **Platform Adaptations:** {{cross_platform_considerations}}
+          **界面风格：** {{ui_aesthetic}}
+          **用户体验目标：** {{ux_priorities}}
+          **平台适配：** {{cross_platform_considerations}}
 
   - id: risk-assessment
-    title: Risk Assessment
-    instruction: Identify potential challenges and mitigation strategies
+    title: 风险评估
+    instruction: 确定潜在的挑战和缓解策略
     sections:
       - id: technical-risks
-        title: Technical Risks
+        title: 技术风险
         type: table
         template: |
-          | Risk | Probability | Impact | Mitigation Strategy |
+          | 风险 | 概率 | 影响 | 缓解策略 |
           | ---- | ----------- | ------ | ------------------- |
           | {{technical_risk}} | {{high|med|low}} | {{high|med|low}} | {{mitigation_approach}} |
       - id: design-risks
-        title: Design Risks
+        title: 设计风险
         type: table
         template: |
-          | Risk | Probability | Impact | Mitigation Strategy |
+          | 风险 | 概率 | 影响 | 缓解策略 |
           | ---- | ----------- | ------ | ------------------- |
           | {{design_risk}} | {{high|med|low}} | {{high|med|low}} | {{mitigation_approach}} |
       - id: market-risks
-        title: Market Risks
+        title: 市场风险
         type: table
         template: |
-          | Risk | Probability | Impact | Mitigation Strategy |
+          | 风险 | 概率 | 影响 | 缓解策略 |
           | ---- | ----------- | ------ | ------------------- |
           | {{market_risk}} | {{high|med|low}} | {{high|med|low}} | {{mitigation_approach}} |
 
   - id: success-criteria
-    title: Success Criteria
-    instruction: Define measurable goals for the project
+    title: 成功标准
+    instruction: 定义项目的可衡量目标
     sections:
       - id: player-experience-metrics
-        title: Player Experience Metrics
+        title: 玩家体验指标
         template: |
-          **Engagement Goals:**
+          **参与度目标：**
 
-          - Tutorial completion rate: >{{percentage}}%
-          - Average session length: {{duration}} minutes
-          - Player retention: D1 {{d1}}%, D7 {{d7}}%, D30 {{d30}}%
+          - 教程完成率: >{{percentage}}%
+          - 平均会话时长: {{duration}} 分钟
+          - 玩家留存率: D1 {{d1}}%, D7 {{d7}}%, D30 {{d30}}%
 
-          **Quality Benchmarks:**
+          **质量基准：**
 
-          - Player satisfaction: >{{rating}}/10
-          - Completion rate: >{{percentage}}%
-          - Technical performance: {{fps_target}} FPS consistent
+          - 玩家满意度: >{{rating}}/10
+          - 完成率: >{{percentage}}%
+          - 技术性能: {{fps_target}} FPS 持续
       - id: development-metrics
-        title: Development Metrics
+        title: 开发指标
         template: |
-          **Technical Targets:**
+          **技术目标：**
 
-          - Zero critical bugs at launch
-          - Performance targets met on all platforms
-          - Load times under {{seconds}}s
+          - 发布时无严重错误
+          - 在所有平台上满足性能目标
+          - 加载时间低于 {{seconds}}s
 
-          **Process Goals:**
+          **流程目标：**
 
-          - Development timeline adherence
-          - Feature scope completion
-          - Quality assurance standards
+          - 遵守开发时间表
+          - 完成功能范围
+          - 质量保证标准
       - id: business-metrics
-        title: Business Metrics
+        title: 业务指标
         condition: has_business_goals
         template: |
-          **Commercial Goals:**
+          **商业目标：**
 
-          - {{revenue_target}} in first {{time_period}}
-          - {{user_acquisition_target}} players in first {{time_period}}
-          - {{retention_target}} monthly active users
+          - 第一个 {{time_period}} 内收入 {{revenue_target}}
+          - 第一个 {{time_period}} 内 {{user_acquisition_target}} 玩家
+          - {{retention_target}} 月活跃用户
 
   - id: next-steps
-    title: Next Steps
-    instruction: Define immediate actions following the brief completion
+    title: 后续步骤
+    instruction: 定义简介完成后立即采取的行动
     sections:
       - id: immediate-actions
-        title: Immediate Actions
+        title: 立即行动
         type: numbered-list
         template: |
           **{{action_item}}** - {{details_and_timeline}}
       - id: development-roadmap
-        title: Development Roadmap
+        title: 开发路线图
         sections:
           - id: phase-1-preproduction
-            title: "Phase 1: Pre-Production ({{duration}})"
+            title: "阶段 1：预制作 ({{duration}})"
             type: bullet-list
             template: |
-              - Detailed Game Design Document creation
-              - Technical architecture planning
-              - Art style exploration and pipeline setup
+              - 详细的游戏设计文档创建
+              - 技术架构规划
+              - 艺术风格探索和流程设置
           - id: phase-2-prototype
-            title: "Phase 2: Prototype ({{duration}})"
+            title: "阶段 2：原型 ({{duration}})"
             type: bullet-list
             template: |
-              - Core mechanic implementation
-              - Technical proof of concept
-              - Initial playtesting and iteration
+              - 核心机制实施
+              - 技术概念验证
+              - 初始游戏测试和迭代
           - id: phase-3-production
-            title: "Phase 3: Production ({{duration}})"
+            title: "阶段 3：制作 ({{duration}})"
             type: bullet-list
             template: |
-              - Full feature development
-              - Content creation and integration
-              - Comprehensive testing and optimization
+              - 全功能开发
+              - 内容创建和集成
+              - 全面测试和优化
       - id: documentation-pipeline
-        title: Documentation Pipeline
+        title: 文档管道
         sections:
           - id: required-documents
-            title: Required Documents
+            title: 所需文档
             type: numbered-list
             template: |
-              Game Design Document (GDD) - {{target_completion}}
-              Technical Architecture Document - {{target_completion}}
-              Art Style Guide - {{target_completion}}
-              Production Plan - {{target_completion}}
+              游戏设计文档 (GDD) - {{target_completion}}
+              技术架构文档 - {{target_completion}}
+              艺术风格指南 - {{target_completion}}
+              制作计划 - {{target_completion}}
       - id: validation-plan
-        title: Validation Plan
+        title: 验证计划
         template: |
-          **Concept Testing:**
+          **概念测试：**
 
           - {{validation_method_1}} - {{timeline}}
           - {{validation_method_2}} - {{timeline}}
 
-          **Prototype Testing:**
+          **原型测试：**
 
           - {{testing_approach}} - {{timeline}}
           - {{feedback_collection_method}} - {{timeline}}
 
   - id: appendices
-    title: Appendices
+    title: 附录
     sections:
       - id: research-materials
-        title: Research Materials
-        instruction: Include any supporting research, competitive analysis, or market data that informed the brief
+        title: 研究材料
+        instruction: 包括任何支持性的研究、竞争分析或市场数据，这些都为本简介提供了信息
       - id: brainstorming-notes
-        title: Brainstorming Session Notes
-        instruction: Reference any brainstorming sessions that led to this brief
+        title: 头脑风暴会议记录
+        instruction: 引用任何促成本简介的头脑风暴会议
       - id: stakeholder-input
-        title: Stakeholder Input
-        instruction: Include key input from stakeholders that shaped the vision
+        title: 利益相关者输入
+        instruction: 包括塑造愿景的利益相关者的关键输入
       - id: change-log
-        title: Change Log
-        instruction: Track document versions and changes
+        title: 变更日志
+        instruction: 跟踪文档版本和变更
         type: table
         template: |
-          | Date | Version | Description | Author |
+          | 日期 | 版本 | 描述 | 作者 |
           | :--- | :------ | :---------- | :----- |

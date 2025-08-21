@@ -1,218 +1,218 @@
-<!-- Powered by BMAD™ Core -->
+<!-- 由 BMAD™ 核心驱动 -->
 
-# Create Game Development Story Task
+# 创建游戏开发故事任务
 
-## Purpose
+## 目的
 
-Create detailed, actionable game development stories that enable AI developers to implement specific game features without requiring additional design decisions.
+创建详细、可操作的游戏开发故事，使 AI 开发者能够实施特定的游戏功能，而无需额外的设计决策。
 
-## When to Use
+## 何时使用
 
-- Breaking down game epics into implementable stories
-- Converting GDD features into development tasks
-- Preparing work for game developers
-- Ensuring clear handoffs from design to development
+- 将游戏史诗分解为可实施的故事
+- 将 GDD 功能转换为开发任务
+- 为游戏开发者准备工作
+- 确保从设计到开发的清晰交接
 
-## Prerequisites
+## 先决条件
 
-Before creating stories, ensure you have:
+在创建故事之前，请确保您拥有：
 
-- Completed Game Design Document (GDD)
-- Game Architecture Document
-- Epic definition this story belongs to
-- Clear understanding of the specific game feature
+- 完整的游戏设计文档 (GDD)
+- 游戏架构文档
+- 此故事所属的史诗定义
+- 对特定游戏功能的清晰理解
 
-## Process
+## 流程
 
-### 1. Story Identification
+### 1. 故事识别
 
-**Review Epic Context:**
+**审查史诗背景：**
 
-- Understand the epic's overall goal
-- Identify specific features that need implementation
-- Review any existing stories in the epic
-- Ensure no duplicate work
+- 理解史诗的总体目标
+- 确定需要实施的特定功能
+- 审查史诗中任何现有的故事
+- 确保没有重复工作
 
-**Feature Analysis:**
+**功能分析：**
 
-- Reference specific GDD sections
-- Understand player experience goals
-- Identify technical complexity
-- Estimate implementation scope
+- 参考特定的 GDD 部分
+- 理解玩家体验目标
+- 确定技术复杂性
+- 估算实施范围
 
-### 2. Story Scoping
+### 2. 故事范围界定
 
-**Single Responsibility:**
+**单一职责：**
 
-- Focus on one specific game feature
-- Ensure story is completable in 1-3 days
-- Break down complex features into multiple stories
-- Maintain clear boundaries with other stories
+- 专注于一个特定的游戏功能
+- 确保故事可在1-3天内完成
+- 将复杂功能分解为多个故事
+- 与其他故事保持清晰的界限
 
-**Implementation Clarity:**
+**实施清晰度：**
 
-- Define exactly what needs to be built
-- Specify all technical requirements
-- Include all necessary integration points
-- Provide clear success criteria
+- 准确定义需要构建的内容
+- 指定所有技术要求
+- 包括所有必要的集成点
+- 提供清晰的成功标准
 
-### 3. Template Execution
+### 3. 模板执行
 
-**Load Template:**
-Use `{root}/templates/game-story-tmpl.md` following all embedded LLM instructions
+**加载模板：**
+使用 `{root}/templates/game-story-tmpl.md` 并遵循所有嵌入的 LLM 指令
 
-**Key Focus Areas:**
+**关键关注领域：**
 
-- Clear, actionable description
-- Specific acceptance criteria
-- Detailed technical specifications
-- Complete implementation task list
-- Comprehensive testing requirements
+- 清晰、可操作的描述
+- 具体的验收标准
+- 详细的技术规格
+- 完整的实施任务列表
+- 全面的测试要求
 
-### 4. Story Validation
+### 4. 故事验证
 
-**Technical Review:**
+**技术审查：**
 
-- Verify all technical specifications are complete
-- Ensure integration points are clearly defined
-- Confirm file paths match architecture
-- Validate TypeScript interfaces and classes
+- 验证所有技术规格是否完整
+- 确保集成点已明确定义
+- 确认文件路径与架构匹配
+- 验证 TypeScript 接口和类
 
-**Game Design Alignment:**
+**游戏设计对齐：**
 
-- Confirm story implements GDD requirements
-- Verify player experience goals are met
-- Check balance parameters are included
-- Ensure game mechanics are correctly interpreted
+- 确认故事实施了 GDD 要求
+- 验证是否满足玩家体验目标
+- 检查是否包含了平衡参数
+- 确保游戏机制被正确解读
 
-**Implementation Readiness:**
+**实施准备：**
 
-- All dependencies identified
-- Assets requirements specified
-- Testing criteria defined
-- Definition of Done complete
+- 确定了所有依赖项
+- 指定了资产要求
+- 定义了测试标准
+- 完成了“完成的定义”
 
-### 5. Quality Assurance
+### 5. 质量保证
 
-**Apply Checklist:**
-Execute `{root}/checklists/game-story-dod-checklist.md` against completed story
+**应用清单：**
+对完成的故事执行 `{root}/checklists/game-story-dod-checklist.md`
 
-**Story Criteria:**
+**故事标准：**
 
-- Story is immediately actionable
-- No design decisions left to developer
-- Technical requirements are complete
-- Testing requirements are comprehensive
-- Performance requirements are specified
+- 故事立即可操作
+- 没有留给开发者的设计决策
+- 技术要求完整
+- 测试要求全面
+- 指定了性能要求
 
-### 6. Story Refinement
+### 6. 故事优化
 
-**Developer Perspective:**
+**开发者视角：**
 
-- Can a developer start implementation immediately?
-- Are all technical questions answered?
-- Is the scope appropriate for the estimated points?
-- Are all dependencies clearly identified?
+- 开发者可以立即开始实施吗？
+- 所有技术问题都得到解答了吗？
+- 范围是否与估算的故事点相符？
+- 所有依赖项都已明确识别了吗？
 
-**Iterative Improvement:**
+**迭代改进：**
 
-- Address any gaps or ambiguities
-- Clarify complex technical requirements
-- Ensure story fits within epic scope
-- Verify story points estimation
+- 解决任何差距或模糊之处
+- 澄清复杂的技术要求
+- 确保故事符合史诗范围
+- 验证故事点估算
 
-## Story Elements Checklist
+## 故事元素清单
 
-### Required Sections
+### 必需部分
 
-- [ ] Clear, specific description
-- [ ] Complete acceptance criteria (functional, technical, game design)
-- [ ] Detailed technical specifications
-- [ ] File creation/modification list
-- [ ] TypeScript interfaces and classes
-- [ ] Integration point specifications
-- [ ] Ordered implementation tasks
-- [ ] Comprehensive testing requirements
-- [ ] Performance criteria
-- [ ] Dependencies clearly identified
-- [ ] Definition of Done checklist
+- [ ] 清晰、具体的描述
+- [ ] 完整的验收标准（功能、技术、游戏设计）
+- [ ] 详细的技术规格
+- [ ] 文件创建/修改列表
+- [ ] TypeScript 接口和类
+- [ ] 集成点规格
+- [ ] 有序的实施任务
+- [ ] 全面的测试要求
+- [ ] 性能标准
+- [ ] 明确识别的依赖项
+- [ ] “完成的定义”清单
 
-### Game-Specific Requirements
+### 游戏特定要求
 
-- [ ] GDD section references
-- [ ] Game mechanic implementation details
-- [ ] Player experience goals
-- [ ] Balance parameters
-- [ ] Phaser 3 specific requirements
-- [ ] Performance targets (60 FPS)
-- [ ] Cross-platform considerations
+- [ ] GDD 部分参考
+- [ ] 游戏机制实施细节
+- [ ] 玩家体验目标
+- [ ] 平衡参数
+- [ ] Phaser 3 特定要求
+- [ ] 性能目标 (60 FPS)
+- [ ] 跨平台考虑
 
-### Technical Quality
+### 技术质量
 
-- [ ] TypeScript strict mode compliance
-- [ ] Architecture document alignment
-- [ ] Code organization follows standards
-- [ ] Error handling requirements
-- [ ] Memory management considerations
-- [ ] Testing strategy defined
+- [ ] 符合 TypeScript 严格模式
+- [ ] 与架构文档对齐
+- [ ] 代码组织遵循标准
+- [ ] 错误处理要求
+- [ ] 内存管理考虑
+- [ ] 定义了测试策略
 
-## Common Pitfalls
+## 常见陷阱
 
-**Scope Issues:**
+**范围问题：**
 
-- Story too large (break into multiple stories)
-- Story too vague (add specific requirements)
-- Missing dependencies (identify all prerequisites)
-- Unclear boundaries (define what's in/out of scope)
+- 故事太大（分解为多个故事）
+- 故事太模糊（添加具体要求）
+- 缺少依赖项（识别所有先决条件）
+- 边界不清（定义范围内的和范围外的内容）
 
-**Technical Issues:**
+**技术问题：**
 
-- Missing integration details
-- Incomplete technical specifications
-- Undefined interfaces or classes
-- Missing performance requirements
+- 缺少集成细节
+- 技术规格不完整
+- 未定义的接口或类
+- 缺少性能要求
 
-**Game Design Issues:**
+**游戏设计问题：**
 
-- Not referencing GDD properly
-- Missing player experience context
-- Unclear game mechanic implementation
-- Missing balance parameters
+- 未正确引用 GDD
+- 缺少玩家体验背景
+- 游戏机制实施不明确
+- 缺少平衡参数
 
-## Success Criteria
+## 成功标准
 
-**Story Readiness:**
+**故事准备就绪：**
 
-- [ ] Developer can start implementation immediately
-- [ ] No additional design decisions required
-- [ ] All technical questions answered
-- [ ] Testing strategy is complete
-- [ ] Performance requirements are clear
-- [ ] Story fits within epic scope
+- [ ] 开发者可以立即开始实施
+- [ ] 无需额外的设计决策
+- [ ] 所有技术问题都已得到解答
+- [ ] 测试策略是完整的
+- [ ] 性能要求是清晰的
+- [ ] 故事符合史诗范围
 
-**Quality Validation:**
+**质量验证：**
 
-- [ ] Game story DOD checklist passes
-- [ ] Architecture alignment confirmed
-- [ ] GDD requirements covered
-- [ ] Implementation tasks are ordered and specific
-- [ ] Dependencies are complete and accurate
+- [ ] 游戏故事 DOD 清单通过
+- [ ] 确认架构对齐
+- [ ] 涵盖了 GDD 要求
+- [ ] 实施任务是有序且具体的
+- [ ] 依赖项是完整和准确的
 
-## Handoff Protocol
+## 交接协议
 
-**To Game Developer:**
+**致游戏开发者：**
 
-1. Provide story document
-2. Confirm GDD and architecture access
-3. Verify all dependencies are met
-4. Answer any clarification questions
-5. Establish check-in schedule
+1. 提供故事文档
+2. 确认 GDD 和架构的访问权限
+3. 验证所有依赖项都已满足
+4. 回答任何澄清问题
+5. 建立签到时间表
 
-**Story Status Updates:**
+**故事状态更新：**
 
-- Draft → Ready for Development
-- In Development → Code Review
-- Code Review → Testing
-- Testing → Done
+- 草稿 → 准备开发
+- 开发中 → 代码审查
+- 代码审查 → 测试
+- 测试 → 完成
 
-This task ensures game development stories are immediately actionable and enable efficient AI-driven development of game features.
+此任务确保游戏开发故事立即可操作，并能高效地通过 AI 驱动开发游戏功能。

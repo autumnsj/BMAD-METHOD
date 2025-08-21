@@ -1,12 +1,12 @@
-# <!-- Powered by BMAD™ Core -->
+# <!-- 由 BMAD™ 核心驱动 -->
 template:
   id: game-story-template-v2
-  name: Game Development Story
+  name: 游戏开发故事
   version: 2.0
   output:
     format: markdown
     filename: "stories/{{epic_name}}/{{story_id}}-{{story_name}}.md"
-    title: "Story: {{story_title}}"
+    title: "故事：{{story_title}}"
 
 workflow:
   mode: interactive
@@ -14,48 +14,48 @@ workflow:
 sections:
   - id: initial-setup
     instruction: |
-      This template creates detailed game development stories that are immediately actionable by game developers. Each story should focus on a single, implementable feature that contributes to the overall game functionality.
+      此模板创建详细的游戏开发故事，可由游戏开发者立即执行。每个故事应专注于一个单一、可实施的功能，该功能有助于整体游戏功能。
 
-      Before starting, ensure you have access to:
+      开始之前，请确保您可以访问：
 
-      - Game Design Document (GDD)
-      - Game Architecture Document
-      - Any existing stories in this epic
+      - 游戏设计文档 (GDD)
+      - 游戏架构文档
+      - 此史诗中的任何现有故事
 
-      The story should be specific enough that a developer can implement it without requiring additional design decisions.
+      故事应足够具体，以便开发者无需额外的设计决策即可实施。
 
   - id: story-header
     content: |
-      **Epic:** {{epic_name}}  
-      **Story ID:** {{story_id}}  
-      **Priority:** {{High|Medium|Low}}  
-      **Points:** {{story_points}}  
-      **Status:** Draft
+      **史诗：** {{epic_name}}
+      **故事ID：** {{story_id}}
+      **优先级：** {{High|Medium|Low}}
+      **故事点：** {{story_points}}
+      **状态：** 草稿
 
   - id: description
-    title: Description
-    instruction: Provide a clear, concise description of what this story implements. Focus on the specific game feature or system being built. Reference the GDD section that defines this feature.
+    title: 描述
+    instruction: 提供此故事实施内容的清晰、简洁的描述。重点关注正在构建的特定游戏功能或系统。引用定义此功能的 GDD 部分。
     template: "{{clear_description_of_what_needs_to_be_implemented}}"
 
   - id: acceptance-criteria
-    title: Acceptance Criteria
-    instruction: Define specific, testable conditions that must be met for the story to be considered complete. Each criterion should be verifiable and directly related to gameplay functionality.
+    title: 验收标准
+    instruction: 定义故事被视为完成必须满足的特定、可测试的条件。每个标准都应是可验证的，并直接关系到游戏功能。
     sections:
       - id: functional-requirements
-        title: Functional Requirements
+        title: 功能需求
         type: checklist
         items:
           - "{{specific_functional_requirement}}"
       - id: technical-requirements
-        title: Technical Requirements
+        title: 技术需求
         type: checklist
         items:
-          - "Code follows TypeScript strict mode standards"
-          - "Maintains 60 FPS on target devices"
-          - "No memory leaks or performance degradation"
+          - "代码遵循 TypeScript 严格模式标准"
+          - "在目标设备上保持 60 FPS"
+          - "无内存泄漏或性能下降"
           - "{{specific_technical_requirement}}"
       - id: game-design-requirements
-        title: Game Design Requirements
+        title: 游戏设计需求
         type: checklist
         items:
           - "{{gameplay_requirement_from_gdd}}"
@@ -63,24 +63,24 @@ sections:
           - "{{player_experience_requirement}}"
 
   - id: technical-specifications
-    title: Technical Specifications
-    instruction: Provide specific technical details that guide implementation. Include class names, file locations, and integration points based on the game architecture.
+    title: 技术规格
+    instruction: 提供指导实施的具体技术细节。包括基于游戏架构的类名、文件位置和集成点。
     sections:
       - id: files-to-modify
-        title: Files to Create/Modify
+        title: 要创建/修改的文件
         template: |
-          **New Files:**
+          **新文件：**
 
           - `{{file_path_1}}` - {{purpose}}
           - `{{file_path_2}}` - {{purpose}}
 
-          **Modified Files:**
+          **修改的文件：**
 
           - `{{existing_file_1}}` - {{changes_needed}}
           - `{{existing_file_2}}` - {{changes_needed}}
       - id: class-interface-definitions
-        title: Class/Interface Definitions
-        instruction: Define specific TypeScript interfaces and class structures needed
+        title: 类/接口定义
+        instruction: 定义所需的特定 TypeScript 接口和类结构
         type: code
         language: typescript
         template: |
@@ -96,159 +96,159 @@ sections:
               private {{property}}: {{type}};
 
               constructor({{params}}) {
-                  // Implementation requirements
+                  // 实施要求
               }
 
               public {{method}}({{params}}): {{return_type}} {
-                  // Method requirements
+                  // 方法要求
               }
           }
       - id: integration-points
-        title: Integration Points
-        instruction: Specify how this feature integrates with existing systems
+        title: 集成点
+        instruction: 指定此功能如何与现有系统集成
         template: |
-          **Scene Integration:**
+          **场景集成：**
 
           - {{scene_name}}: {{integration_details}}
 
-          **System Dependencies:**
+          **系统依赖：**
 
           - {{system_name}}: {{dependency_description}}
 
-          **Event Communication:**
+          **事件通信：**
 
-          - Emits: `{{event_name}}` when {{condition}}
-          - Listens: `{{event_name}}` to {{response}}
+          - 发出：`{{event_name}}` 当 {{condition}}
+          - 监听：`{{event_name}}` 以 {{response}}
 
   - id: implementation-tasks
-    title: Implementation Tasks
-    instruction: Break down the implementation into specific, ordered tasks. Each task should be completable in 1-4 hours.
+    title: 实施任务
+    instruction: 将实施分解为具体的、有序的任务。每个任务应可在1-4小时内完成。
     sections:
       - id: dev-agent-record
-        title: Dev Agent Record
+        title: 开发代理记录
         template: |
-          **Tasks:**
+          **任务：**
 
           - [ ] {{task_1_description}}
           - [ ] {{task_2_description}}
           - [ ] {{task_3_description}}
           - [ ] {{task_4_description}}
-          - [ ] Write unit tests for {{component}}
-          - [ ] Integration testing with {{related_system}}
-          - [ ] Performance testing and optimization
+          - [ ] 为 {{component}} 编写单元测试
+          - [ ] 与 {{related_system}} 进行集成测试
+          - [ ] 性能测试和优化
 
-          **Debug Log:**
-          | Task | File | Change | Reverted? |
+          **调试日志：**
+          | 任务 | 文件 | 更改 | 已恢复？ |
           |------|------|--------|-----------|
           | | | | |
 
-          **Completion Notes:**
+          **完成说明：**
 
-          <!-- Only note deviations from requirements, keep under 50 words -->
+          <!-- 仅记录与需求的偏差，保持在50字以内 -->
 
-          **Change Log:**
+          **变更日志：**
 
-          <!-- Only requirement changes during implementation -->
+          <!-- 仅记录实施期间的需求变更 -->
 
   - id: game-design-context
-    title: Game Design Context
-    instruction: Reference the specific sections of the GDD that this story implements
+    title: 游戏设计背景
+    instruction: 引用此故事实施的 GDD 特定部分
     template: |
-      **GDD Reference:** {{section_name}} ({{page_or_section_number}})
+      **GDD 参考：** {{section_name}} ({{page_or_section_number}})
 
-      **Game Mechanic:** {{mechanic_name}}
+      **游戏机制：** {{mechanic_name}}
 
-      **Player Experience Goal:** {{experience_description}}
+      **玩家体验目标：** {{experience_description}}
 
-      **Balance Parameters:**
+      **平衡参数：**
 
       - {{parameter_1}}: {{value_or_range}}
       - {{parameter_2}}: {{value_or_range}}
 
   - id: testing-requirements
-    title: Testing Requirements
-    instruction: Define specific testing criteria for this game feature
+    title: 测试要求
+    instruction: 为此游戏功能定义具体的测试标准
     sections:
       - id: unit-tests
-        title: Unit Tests
+        title: 单元测试
         template: |
-          **Test Files:**
+          **测试文件：**
 
           - `tests/{{component_name}}.test.ts`
 
-          **Test Scenarios:**
+          **测试场景：**
 
           - {{test_scenario_1}}
           - {{test_scenario_2}}
           - {{edge_case_test}}
       - id: game-testing
-        title: Game Testing
+        title: 游戏测试
         template: |
-          **Manual Test Cases:**
+          **手动测试用例：**
 
           1. {{test_case_1_description}}
 
-             - Expected: {{expected_behavior}}
-             - Performance: {{performance_expectation}}
+             - 预期：{{expected_behavior}}
+             - 性能：{{performance_expectation}}
 
           2. {{test_case_2_description}}
-             - Expected: {{expected_behavior}}
-             - Edge Case: {{edge_case_handling}}
+             - 预期：{{expected_behavior}}
+             - 边缘情况：{{edge_case_handling}}
       - id: performance-tests
-        title: Performance Tests
+        title: 性能测试
         template: |
-          **Metrics to Verify:**
+          **要验证的指标：**
 
-          - Frame rate maintains {{fps_target}} FPS
-          - Memory usage stays under {{memory_limit}}MB
+          - 帧率保持在 {{fps_target}} FPS
+          - 内存使用保持在 {{memory_limit}}MB 以下
           - {{feature_specific_performance_metric}}
 
   - id: dependencies
-    title: Dependencies
-    instruction: List any dependencies that must be completed before this story can be implemented
+    title: 依赖项
+    instruction: 列出在此故事可以实施之前必须完成的任何依赖项
     template: |
-      **Story Dependencies:**
+      **故事依赖：**
 
       - {{story_id}}: {{dependency_description}}
 
-      **Technical Dependencies:**
+      **技术依赖：**
 
       - {{system_or_file}}: {{requirement}}
 
-      **Asset Dependencies:**
+      **资产依赖：**
 
       - {{asset_type}}: {{asset_description}}
-      - Location: `{{asset_path}}`
+      - 位置：`{{asset_path}}`
 
   - id: definition-of-done
-    title: Definition of Done
-    instruction: Checklist that must be completed before the story is considered finished
+    title: 完成的定义
+    instruction: 在故事被视为完成之前必须完成的清单
     type: checklist
     items:
-      - "All acceptance criteria met"
-      - "Code reviewed and approved"
-      - "Unit tests written and passing"
-      - "Integration tests passing"
-      - "Performance targets met"
-      - "No linting errors"
-      - "Documentation updated"
+      - "所有验收标准均已满足"
+      - "代码已审查并批准"
+      - "单元测试已编写并通过"
+      - "集成测试通过"
+      - "性能目标已达到"
+      - "无 linting 错误"
+      - "文档已更新"
       - "{{game_specific_dod_item}}"
 
   - id: notes
-    title: Notes
-    instruction: Any additional context, design decisions, or implementation notes
+    title: 备注
+    instruction: 任何额外的背景、设计决策或实施说明
     template: |
-      **Implementation Notes:**
+      **实施说明：**
 
       - {{note_1}}
       - {{note_2}}
 
-      **Design Decisions:**
+      **设计决策：**
 
       - {{decision_1}}: {{rationale}}
       - {{decision_2}}: {{rationale}}
 
-      **Future Considerations:**
+      **未来考虑：**
 
       - {{future_enhancement_1}}
       - {{future_optimization_1}}

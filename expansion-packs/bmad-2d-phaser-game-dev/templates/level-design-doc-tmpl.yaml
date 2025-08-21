@@ -1,12 +1,12 @@
-# <!-- Powered by BMAD™ Core -->
+# <!-- 由 BMAD™ 核心驱动 -->
 template:
   id: level-design-doc-template-v2
-  name: Level Design Document
+  name: 关卡设计文档
   version: 2.0
   output:
     format: markdown
     filename: "docs/{{game_name}}-level-design-document.md"
-    title: "{{game_title}} Level Design Document"
+    title: "{{game_title}} 关卡设计文档"
 
 workflow:
   mode: interactive
@@ -14,275 +14,275 @@ workflow:
 sections:
   - id: initial-setup
     instruction: |
-      This template creates comprehensive level design documentation that guides both content creation and technical implementation. This document should provide enough detail for developers to create level loading systems and for designers to create specific levels.
+      此模板创建了全面的关卡设计文档，用于指导内容创作和技术实施。本文档应提供足够的细节，以便开发者创建关卡加载系统，设计师创建具体关卡。
 
-      If available, review: Game Design Document (GDD), Game Architecture Document. This document should align with the game mechanics and technical systems defined in those documents.
+      如果可用，请审查：游戏设计文档 (GDD)、游戏架构文档。本文档应与这些文档中定义的游戏机制和技术系统保持一致。
 
   - id: introduction
-    title: Introduction
-    instruction: Establish the purpose and scope of level design for this game
+    title: 引言
+    instruction: 确立此游戏关卡设计的目的和范围
     content: |
-      This document defines the level design framework for {{game_title}}, providing guidelines for creating engaging, balanced levels that support the core gameplay mechanics defined in the Game Design Document.
+      本文档定义了 {{game_title}} 的关卡设计框架，为创建引人入胜、平衡的关卡提供了指导，这些关卡支持游戏设计文档中定义的核心游戏机制。
 
-      This framework ensures consistency across all levels while providing flexibility for creative level design within established technical and design constraints.
+      该框架确保了所有关卡的一致性，同时在既定的技术和设计约束内为创意关卡设计提供了灵活性。
     sections:
       - id: change-log
-        title: Change Log
-        instruction: Track document versions and changes
+        title: 变更日志
+        instruction: 跟踪文档版本和变更
         type: table
         template: |
-          | Date | Version | Description | Author |
+          | 日期 | 版本 | 描述 | 作者 |
           | :--- | :------ | :---------- | :----- |
 
   - id: level-design-philosophy
-    title: Level Design Philosophy
-    instruction: Establish the overall approach to level design based on the game's core pillars and mechanics. Apply `tasks#advanced-elicitation` after presenting this section.
+    title: 关卡设计理念
+    instruction: 根据游戏的核心支柱和机制，建立关卡设计的总体方法。在呈现此部分后应用 `tasks#advanced-elicitation`。
     sections:
       - id: design-principles
-        title: Design Principles
-        instruction: Define 3-5 core principles that guide all level design decisions
+        title: 设计原则
+        instruction: 定义3-5个指导所有关卡设计决策的核心原则
         type: numbered-list
         template: |
           **{{principle_name}}** - {{description}}
       - id: player-experience-goals
-        title: Player Experience Goals
-        instruction: Define what players should feel and learn in each level category
+        title: 玩家体验目标
+        instruction: 定义玩家在每个关卡类别中应该感受到什么和学到什么
         template: |
-          **Tutorial Levels:** {{experience_description}}
-          **Standard Levels:** {{experience_description}}
-          **Challenge Levels:** {{experience_description}}
-          **Boss Levels:** {{experience_description}}
+          **教程关卡：** {{experience_description}}
+          **标准关卡：** {{experience_description}}
+          **挑战关卡：** {{experience_description}}
+          **Boss 关卡：** {{experience_description}}
       - id: level-flow-framework
-        title: Level Flow Framework
-        instruction: Define the standard structure for level progression
+        title: 关卡流程框架
+        instruction: 定义关卡进程的标准结构
         template: |
-          **Introduction Phase:** {{duration}} - {{purpose}}
-          **Development Phase:** {{duration}} - {{purpose}}
-          **Climax Phase:** {{duration}} - {{purpose}}
-          **Resolution Phase:** {{duration}} - {{purpose}}
+          **介绍阶段：** {{duration}} - {{purpose}}
+          **发展阶段：** {{duration}} - {{purpose}}
+          **高潮阶段：** {{duration}} - {{purpose}}
+          **解决阶段：** {{duration}} - {{purpose}}
 
   - id: level-categories
-    title: Level Categories
-    instruction: Define different types of levels based on the GDD requirements. Each category should be specific enough for implementation.
+    title: 关卡类别
+    instruction: 根据 GDD 要求定义不同类型的关卡。每个类别都应足够具体以便实施。
     repeatable: true
     sections:
       - id: level-category
-        title: "{{category_name}} Levels"
+        title: "{{category_name}} 关卡"
         template: |
-          **Purpose:** {{gameplay_purpose}}
+          **目的：** {{gameplay_purpose}}
 
-          **Target Duration:** {{min_time}} - {{max_time}} minutes
+          **目标时长：** {{min_time}} - {{max_time}} 分钟
 
-          **Difficulty Range:** {{difficulty_scale}}
+          **难度范围：** {{difficulty_scale}}
 
-          **Key Mechanics Featured:**
+          **主要特色机制：**
 
           - {{mechanic_1}} - {{usage_description}}
           - {{mechanic_2}} - {{usage_description}}
 
-          **Player Objectives:**
+          **玩家目标：**
 
-          - Primary: {{primary_objective}}
-          - Secondary: {{secondary_objective}}
-          - Hidden: {{secret_objective}}
+          - 主要：{{primary_objective}}
+          - 次要：{{secondary_objective}}
+          - 隐藏：{{secret_objective}}
 
-          **Success Criteria:**
+          **成功标准：**
 
           - {{completion_requirement_1}}
           - {{completion_requirement_2}}
 
-          **Technical Requirements:**
+          **技术要求：**
 
-          - Maximum entities: {{entity_limit}}
-          - Performance target: {{fps_target}} FPS
-          - Memory budget: {{memory_limit}}MB
-          - Asset requirements: {{asset_needs}}
+          - 最大实体数：{{entity_limit}}
+          - 性能目标：{{fps_target}} FPS
+          - 内存预算：{{memory_limit}}MB
+          - 资产要求：{{asset_needs}}
 
   - id: level-progression-system
-    title: Level Progression System
-    instruction: Define how players move through levels and how difficulty scales
+    title: 关卡进程系统
+    instruction: 定义玩家如何通过关卡以及难度如何扩展
     sections:
       - id: world-structure
-        title: World Structure
-        instruction: Based on GDD requirements, define the overall level organization
+        title: 世界结构
+        instruction: 根据 GDD 要求，定义总体关卡组织
         template: |
-          **Organization Type:** {{linear|hub_world|open_world}}
+          **组织类型：** {{linear|hub_world|open_world}}
 
-          **Total Level Count:** {{number}}
+          **总关卡数：** {{number}}
 
-          **World Breakdown:**
+          **世界分解：**
 
-          - World 1: {{level_count}} levels - {{theme}} - {{difficulty_range}}
-          - World 2: {{level_count}} levels - {{theme}} - {{difficulty_range}}
-          - World 3: {{level_count}} levels - {{theme}} - {{difficulty_range}}
+          - 世界 1：{{level_count}} 关卡 - {{theme}} - {{difficulty_range}}
+          - 世界 2：{{level_count}} 关卡 - {{theme}} - {{difficulty_range}}
+          - 世界 3：{{level_count}} 关卡 - {{theme}} - {{difficulty_range}}
       - id: difficulty-progression
-        title: Difficulty Progression
-        instruction: Define how challenge increases across the game
+        title: 难度进程
+        instruction: 定义挑战如何在整个游戏中增加
         sections:
           - id: progression-curve
-            title: Progression Curve
+            title: 进程曲线
             type: code
             language: text
             template: |
-              Difficulty
+              难度
                   ^     ___/```
                   |    /
                   |   /     ___/```
                   |  /     /
                   | /     /
                   |/     /
-                  +-----------> Level Number
-                 Tutorial  Early  Mid  Late
+                  +-----------> 关卡编号
+                 教程  早期  中期  后期
           - id: scaling-parameters
-            title: Scaling Parameters
+            title: 扩展参数
             type: bullet-list
             template: |
-              - Enemy count: {{start_count}} → {{end_count}}
-              - Enemy difficulty: {{start_diff}} → {{end_diff}}
-              - Level complexity: {{start_complex}} → {{end_complex}}
-              - Time pressure: {{start_time}} → {{end_time}}
+              - 敌人数量：{{start_count}} → {{end_count}}
+              - 敌人难度：{{start_diff}} → {{end_diff}}
+              - 关卡复杂度：{{start_complex}} → {{end_complex}}
+              - 时间压力：{{start_time}} → {{end_time}}
       - id: unlock-requirements
-        title: Unlock Requirements
-        instruction: Define how players access new levels
+        title: 解锁要求
+        instruction: 定义玩家如何访问新关卡
         template: |
-          **Progression Gates:**
+          **进程门槛：**
 
-          - Linear progression: Complete previous level
-          - Star requirements: {{star_count}} stars to unlock
-          - Skill gates: Demonstrate {{skill_requirement}}
-          - Optional content: {{unlock_condition}}
+          - 线性进程：完成前一个关卡
+          - 星星要求：{{star_count}} 颗星星解锁
+          - 技能门槛：展示 {{skill_requirement}}
+          - 可选内容：{{unlock_condition}}
 
   - id: level-design-components
-    title: Level Design Components
-    instruction: Define the building blocks used to create levels
+    title: 关卡设计组件
+    instruction: 定义用于创建关卡的构建块
     sections:
       - id: environmental-elements
-        title: Environmental Elements
-        instruction: Define all environmental components that can be used in levels
+        title: 环境元素
+        instruction: 定义可在关卡中使用的所有环境组件
         template: |
-          **Terrain Types:**
+          **地形类型：**
 
           - {{terrain_1}}: {{properties_and_usage}}
           - {{terrain_2}}: {{properties_and_usage}}
 
-          **Interactive Objects:**
+          **互动对象：**
 
           - {{object_1}}: {{behavior_and_purpose}}
           - {{object_2}}: {{behavior_and_purpose}}
 
-          **Hazards and Obstacles:**
+          **危险和障碍：**
 
           - {{hazard_1}}: {{damage_and_behavior}}
           - {{hazard_2}}: {{damage_and_behavior}}
       - id: collectibles-rewards
-        title: Collectibles and Rewards
-        instruction: Define all collectible items and their placement rules
+        title: 收藏品和奖励
+        instruction: 定义所有收藏品及其放置规则
         template: |
-          **Collectible Types:**
+          **收藏品类型：**
 
           - {{collectible_1}}: {{value_and_purpose}}
           - {{collectible_2}}: {{value_and_purpose}}
 
-          **Placement Guidelines:**
+          **放置指南：**
 
-          - Mandatory collectibles: {{placement_rules}}
-          - Optional collectibles: {{placement_rules}}
-          - Secret collectibles: {{placement_rules}}
+          - 强制收藏品：{{placement_rules}}
+          - 可选收藏品：{{placement_rules}}
+          - 秘密收藏品：{{placement_rules}}
 
-          **Reward Distribution:**
+          **奖励分配：**
 
-          - Easy to find: {{percentage}}%
-          - Moderate challenge: {{percentage}}%
-          - High skill required: {{percentage}}%
+          - 容易找到：{{percentage}}%
+          - 中等挑战：{{percentage}}%
+          - 需要高技能：{{percentage}}%
       - id: enemy-placement-framework
-        title: Enemy Placement Framework
-        instruction: Define how enemies should be placed and balanced in levels
+        title: 敌人放置框架
+        instruction: 定义应如何在关卡中放置和平衡敌人
         template: |
-          **Enemy Categories:**
+          **敌人类别：**
 
           - {{enemy_type_1}}: {{behavior_and_usage}}
           - {{enemy_type_2}}: {{behavior_and_usage}}
 
-          **Placement Principles:**
+          **放置原则：**
 
-          - Introduction encounters: {{guideline}}
-          - Standard encounters: {{guideline}}
-          - Challenge encounters: {{guideline}}
+          - 介绍性遭遇：{{guideline}}
+          - 标准遭遇：{{guideline}}
+          - 挑战性遭遇：{{guideline}}
 
-          **Difficulty Scaling:**
+          **难度扩展：**
 
-          - Enemy count progression: {{scaling_rule}}
-          - Enemy type introduction: {{pacing_rule}}
-          - Encounter complexity: {{complexity_rule}}
+          - 敌人数量进程：{{scaling_rule}}
+          - 敌人类型介绍：{{pacing_rule}}
+          - 遭遇复杂度：{{complexity_rule}}
 
   - id: level-creation-guidelines
-    title: Level Creation Guidelines
-    instruction: Provide specific guidelines for creating individual levels
+    title: 关卡创建指南
+    instruction: 提供创建单个关卡的具体指南
     sections:
       - id: level-layout-principles
-        title: Level Layout Principles
+        title: 关卡布局原则
         template: |
-          **Spatial Design:**
+          **空间设计：**
 
-          - Grid size: {{grid_dimensions}}
-          - Minimum path width: {{width_units}}
-          - Maximum vertical distance: {{height_units}}
-          - Safe zones placement: {{safety_guidelines}}
+          - 网格大小：{{grid_dimensions}}
+          - 最小路径宽度：{{width_units}}
+          - 最大垂直距离：{{height_units}}
+          - 安全区放置：{{safety_guidelines}}
 
-          **Navigation Design:**
+          **导航设计：**
 
-          - Clear path indication: {{visual_cues}}
-          - Landmark placement: {{landmark_rules}}
-          - Dead end avoidance: {{dead_end_policy}}
-          - Multiple path options: {{branching_rules}}
+          - 清晰的路径指示：{{visual_cues}}
+          - 地标放置：{{landmark_rules}}
+          - 避免死胡同：{{dead_end_policy}}
+          - 多路径选项：{{branching_rules}}
       - id: pacing-and-flow
-        title: Pacing and Flow
-        instruction: Define how to control the rhythm and pace of gameplay within levels
+        title: 节奏和流程
+        instruction: 定义如何在关卡内控制游戏玩法的节奏
         template: |
-          **Action Sequences:**
+          **动作序列：**
 
-          - High intensity duration: {{max_duration}}
-          - Rest period requirement: {{min_rest_time}}
-          - Intensity variation: {{pacing_pattern}}
+          - 高强度持续时间：{{max_duration}}
+          - 休息时间要求：{{min_rest_time}}
+          - 强度变化：{{pacing_pattern}}
 
-          **Learning Sequences:**
+          **学习序列：**
 
-          - New mechanic introduction: {{teaching_method}}
-          - Practice opportunity: {{practice_duration}}
-          - Skill application: {{application_context}}
+          - 新机制介绍：{{teaching_method}}
+          - 练习机会：{{practice_duration}}
+          - 技能应用：{{application_context}}
       - id: challenge-design
-        title: Challenge Design
-        instruction: Define how to create appropriate challenges for each level type
+        title: 挑战设计
+        instruction: 定义如何为每种关卡类型创建适当的挑战
         template: |
-          **Challenge Types:**
+          **挑战类型：**
 
-          - Execution challenges: {{skill_requirements}}
-          - Puzzle challenges: {{complexity_guidelines}}
-          - Time challenges: {{time_pressure_rules}}
-          - Resource challenges: {{resource_management}}
+          - 执行挑战：{{skill_requirements}}
+          - 解谜挑战：{{complexity_guidelines}}
+          - 时间挑战：{{time_pressure_rules}}
+          - 资源挑战：{{resource_management}}
 
-          **Difficulty Calibration:**
+          **难度校准：**
 
-          - Skill check frequency: {{frequency_guidelines}}
-          - Failure recovery: {{retry_mechanics}}
-          - Hint system integration: {{help_system}}
+          - 技能检查频率：{{frequency_guidelines}}
+          - 失败恢复：{{retry_mechanics}}
+          - 提示系统集成：{{help_system}}
 
   - id: technical-implementation
-    title: Technical Implementation
-    instruction: Define technical requirements for level implementation
+    title: 技术实施
+    instruction: 定义关卡实施的技术要求
     sections:
       - id: level-data-structure
-        title: Level Data Structure
-        instruction: Define how level data should be structured for implementation
+        title: 关卡数据结构
+        instruction: 定义关卡数据应如何结构化以供实施
         template: |
-          **Level File Format:**
+          **关卡文件格式：**
 
-          - Data format: {{json|yaml|custom}}
-          - File naming: `level_{{world}}_{{number}}.{{extension}}`
-          - Data organization: {{structure_description}}
+          - 数据格式：{{json|yaml|custom}}
+          - 文件命名：`level_{{world}}_{{number}}.{{extension}}`
+          - 数据组织：{{structure_description}}
         sections:
           - id: required-data-fields
-            title: Required Data Fields
+            title: 必需的数据字段
             type: code
             language: json
             template: |
@@ -310,176 +310,176 @@ sections:
                 ]
               }
       - id: asset-integration
-        title: Asset Integration
-        instruction: Define how level assets are organized and loaded
+        title: 资产集成
+        instruction: 定义如何组织和加载关卡资产
         template: |
-          **Tilemap Requirements:**
+          **瓦片地图要求：**
 
-          - Tile size: {{tile_dimensions}}px
-          - Tileset organization: {{tileset_structure}}
-          - Layer organization: {{layer_system}}
-          - Collision data: {{collision_format}}
+          - 瓦片大小：{{tile_dimensions}}px
+          - 瓦片集组织：{{tileset_structure}}
+          - 图层组织：{{layer_system}}
+          - 碰撞数据：{{collision_format}}
 
-          **Audio Integration:**
+          **音频集成：**
 
-          - Background music: {{music_requirements}}
-          - Ambient sounds: {{ambient_system}}
-          - Dynamic audio: {{dynamic_audio_rules}}
+          - 背景音乐：{{music_requirements}}
+          - 环境声音：{{ambient_system}}
+          - 动态音频：{{dynamic_audio_rules}}
       - id: performance-optimization
-        title: Performance Optimization
-        instruction: Define performance requirements for level systems
+        title: 性能优化
+        instruction: 定义关卡系统的性能要求
         template: |
-          **Entity Limits:**
+          **实体限制：**
 
-          - Maximum active entities: {{entity_limit}}
-          - Maximum particles: {{particle_limit}}
-          - Maximum audio sources: {{audio_limit}}
+          - 最大活动实体数：{{entity_limit}}
+          - 最大粒子数：{{particle_limit}}
+          - 最大音频源数：{{audio_limit}}
 
-          **Memory Management:**
+          **内存管理：**
 
-          - Texture memory budget: {{texture_memory}}MB
-          - Audio memory budget: {{audio_memory}}MB
-          - Level loading time: <{{load_time}}s
+          - 纹理内存预算：{{texture_memory}}MB
+          - 音频内存预算：{{audio_memory}}MB
+          - 关卡加载时间：<{{load_time}}s
 
-          **Culling and LOD:**
+          **剔除和 LOD：**
 
-          - Off-screen culling: {{culling_distance}}
-          - Level-of-detail rules: {{lod_system}}
-          - Asset streaming: {{streaming_requirements}}
+          - 屏幕外剔除：{{culling_distance}}
+          - 细节层次规则：{{lod_system}}
+          - 资产流式传输：{{streaming_requirements}}
 
   - id: level-testing-framework
-    title: Level Testing Framework
-    instruction: Define how levels should be tested and validated
+    title: 关卡测试框架
+    instruction: 定义应如何测试和验证关卡
     sections:
       - id: automated-testing
-        title: Automated Testing
+        title: 自动化测试
         template: |
-          **Performance Testing:**
+          **性能测试：**
 
-          - Frame rate validation: Maintain {{fps_target}} FPS
-          - Memory usage monitoring: Stay under {{memory_limit}}MB
-          - Loading time verification: Complete in <{{load_time}}s
+          - 帧率验证：保持 {{fps_target}} FPS
+          - 内存使用监控：保持在 {{memory_limit}}MB 以下
+          - 加载时间验证：在 <{{load_time}}s 内完成
 
-          **Gameplay Testing:**
+          **游戏性测试：**
 
-          - Completion path validation: All objectives achievable
-          - Collectible accessibility: All items reachable
-          - Softlock prevention: No unwinnable states
+          - 完成路径验证：所有目标均可实现
+          - 收藏品可及性：所有物品均可到达
+          - 软锁预防：无无法获胜的状态
       - id: manual-testing-protocol
-        title: Manual Testing Protocol
+        title: 手动测试协议
         sections:
           - id: playtesting-checklist
-            title: Playtesting Checklist
+            title: 游戏测试清单
             type: checklist
             items:
-              - "Level completes within target time range"
-              - "All mechanics function correctly"
-              - "Difficulty feels appropriate for level category"
-              - "Player guidance is clear and effective"
-              - "No exploits or sequence breaks (unless intended)"
+              - "在目标时间范围内完成关卡"
+              - "所有机制功能正常"
+              - "难度感觉适合关卡类别"
+              - "玩家引导清晰有效"
+              - "无漏洞或序列中断（除非有意为之）"
           - id: player-experience-testing
-            title: Player Experience Testing
+            title: 玩家体验测试
             type: checklist
             items:
-              - "Tutorial levels teach effectively"
-              - "Challenge feels fair and rewarding"
-              - "Flow and pacing maintain engagement"
-              - "Audio and visual feedback support gameplay"
+              - "教程关卡教学有效"
+              - "挑战感觉公平且有回报"
+              - "流程和节奏保持参与感"
+              - "音频和视觉反馈支持游戏性"
       - id: balance-validation
-        title: Balance Validation
+        title: 平衡验证
         template: |
-          **Metrics Collection:**
+          **指标收集：**
 
-          - Completion rate: Target {{completion_percentage}}%
-          - Average completion time: {{target_time}} ± {{variance}}
-          - Death count per level: <{{max_deaths}}
-          - Collectible discovery rate: {{discovery_percentage}}%
+          - 完成率：目标 {{completion_percentage}}%
+          - 平均完成时间：{{target_time}} ± {{variance}}
+          - 每关死亡次数：<{{max_deaths}}
+          - 收藏品发现率：{{discovery_percentage}}%
 
-          **Iteration Guidelines:**
+          **迭代指南：**
 
-          - Adjustment criteria: {{criteria_for_changes}}
-          - Testing sample size: {{minimum_testers}}
-          - Validation period: {{testing_duration}}
+          - 调整标准：{{criteria_for_changes}}
+          - 测试样本量：{{minimum_testers}}
+          - 验证期：{{testing_duration}}
 
   - id: content-creation-pipeline
-    title: Content Creation Pipeline
-    instruction: Define the workflow for creating new levels
+    title: 内容创作管道
+    instruction: 定义创建新关卡的工作流程
     sections:
       - id: design-phase
-        title: Design Phase
+        title: 设计阶段
         template: |
-          **Concept Development:**
+          **概念开发：**
 
-          1. Define level purpose and goals
-          2. Create rough layout sketch
-          3. Identify key mechanics and challenges
-          4. Estimate difficulty and duration
+          1. 定义关卡目的和目标
+          2. 创建粗略的布局草图
+          3. 确定关键机制和挑战
+          4. 估算难度和时长
 
-          **Documentation Requirements:**
+          **文档要求：**
 
-          - Level design brief
-          - Layout diagrams
-          - Mechanic integration notes
-          - Asset requirement list
+          - 关卡设计简介
+          - 布局图
+          - 机制集成说明
+          - 资产要求列表
       - id: implementation-phase
-        title: Implementation Phase
+        title: 实施阶段
         template: |
-          **Technical Implementation:**
+          **技术实施：**
 
-          1. Create level data file
-          2. Build tilemap and layout
-          3. Place entities and objects
-          4. Configure level logic and triggers
-          5. Integrate audio and visual effects
+          1. 创建关卡数据文件
+          2. 构建瓦片地图和布局
+          3. 放置实体和对象
+          4. 配置关卡逻辑和触发器
+          5. 集成音频和视觉效果
 
-          **Quality Assurance:**
+          **质量保证：**
 
-          1. Automated testing execution
-          2. Internal playtesting
-          3. Performance validation
-          4. Bug fixing and polish
+          1. 执行自动化测试
+          2. 内部游戏测试
+          3. 性能验证
+          4. 错误修复和润色
       - id: integration-phase
-        title: Integration Phase
+        title: 集成阶段
         template: |
-          **Game Integration:**
+          **游戏集成：**
 
-          1. Level progression integration
-          2. Save system compatibility
-          3. Analytics integration
-          4. Achievement system integration
+          1. 关卡进程集成
+          2. 保存系统兼容性
+          3. 分析集成
+          4. 成就系统集成
 
-          **Final Validation:**
+          **最终验证：**
 
-          1. Full game context testing
-          2. Performance regression testing
-          3. Platform compatibility verification
-          4. Final approval and release
+          1. 完整游戏背景测试
+          2. 性能回归测试
+          3. 平台兼容性验证
+          4. 最终批准和发布
 
   - id: success-metrics
-    title: Success Metrics
-    instruction: Define how to measure level design success
+    title: 成功指标
+    instruction: 定义如何衡量关卡设计的成功
     sections:
       - id: player-engagement
-        title: Player Engagement
+        title: 玩家参与度
         type: bullet-list
         template: |
-          - Level completion rate: {{target_rate}}%
-          - Replay rate: {{replay_target}}%
-          - Time spent per level: {{engagement_time}}
-          - Player satisfaction scores: {{satisfaction_target}}/10
+          - 关卡完成率：{{target_rate}}%
+          - 重玩率：{{replay_target}}%
+          - 每关花费时间：{{engagement_time}}
+          - 玩家满意度分数：{{satisfaction_target}}/10
       - id: technical-performance
-        title: Technical Performance
+        title: 技术性能
         type: bullet-list
         template: |
-          - Frame rate consistency: {{fps_consistency}}%
-          - Loading time compliance: {{load_compliance}}%
-          - Memory usage efficiency: {{memory_efficiency}}%
-          - Crash rate: <{{crash_threshold}}%
+          - 帧率一致性：{{fps_consistency}}%
+          - 加载时间合规性：{{load_compliance}}%
+          - 内存使用效率：{{memory_efficiency}}%
+          - 崩溃率：<{{crash_threshold}}%
       - id: design-quality
-        title: Design Quality
+        title: 设计质量
         type: bullet-list
         template: |
-          - Difficulty curve adherence: {{curve_accuracy}}
-          - Mechanic integration effectiveness: {{integration_score}}
-          - Player guidance clarity: {{guidance_score}}
-          - Content accessibility: {{accessibility_rate}}%
+          - 难度曲线遵守情况：{{curve_accuracy}}
+          - 机制集成有效性：{{integration_score}}
+          - 玩家引导清晰度：{{guidance_score}}
+          - 内容无障碍性：{{accessibility_rate}}%

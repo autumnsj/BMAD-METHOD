@@ -1,66 +1,66 @@
-# <!-- Powered by BMAD™ Core -->
+# <!-- 由 BMAD™ 核心驱动 -->
 workflow:
   id: game-prototype
-  name: Game Prototype Development
-  description: Fast-track workflow for rapid game prototyping and concept validation. Optimized for game jams, proof-of-concept development, and quick iteration on game mechanics using Phaser 3 and TypeScript.
+  name: 游戏原型开发
+  description: 用于快速游戏原型制作和概念验证的快速通道工作流程。针对游戏果酱、概念验证开发以及使用 Phaser 3 和 TypeScript 快速迭代游戏机制进行了优化。
   type: prototype
   project_types:
-    - game-jam
-    - proof-of-concept
-    - mechanic-test
-    - technical-demo
-    - learning-project
-    - rapid-iteration
+    - 游戏果酱
+    - 概念验证
+    - 机制测试
+    - 技术演示
+    - 学习项目
+    - 快速迭代
   prototype_sequence:
     - step: concept_definition
       agent: game-designer
-      duration: 15-30 minutes
+      duration: 15-30 分钟
       creates: concept-summary.md
-      notes: Quickly define core game concept, primary mechanic, and target experience. Focus on what makes this game unique and fun.
+      notes: 快速定义核心游戏概念、主要机制和目标体验。专注于让这款游戏独特而有趣的地方。
     - step: rapid_design
       agent: game-designer
-      duration: 30-60 minutes
+      duration: 30-60 分钟
       creates: prototype-spec.md
       requires: concept-summary.md
       optional_steps:
         - quick_brainstorming
         - reference_research
-      notes: Create minimal but complete design specification. Focus on core mechanics, basic controls, and success/failure conditions.
+      notes: 创建最小但完整的设计规范。专注于核心机制、基本控制和成功/失败条件。
     - step: technical_planning
       agent: game-developer
-      duration: 15-30 minutes
+      duration: 15-30 分钟
       creates: prototype-architecture.md
       requires: prototype-spec.md
-      notes: Define minimal technical implementation plan. Identify core Phaser 3 systems needed and performance constraints.
+      notes: 定义最小的技术实施计划。确定所需的核心 Phaser 3 系统和性能限制。
     - step: implementation_stories
       agent: game-sm
-      duration: 30-45 minutes
+      duration: 30-45 分钟
       creates: prototype-stories/
       requires: prototype-spec.md, prototype-architecture.md
-      notes: Create 3-5 focused implementation stories for core prototype features. Each story should be completable in 2-4 hours.
+      notes: 为核心原型功能创建3-5个专注的实施故事。每个故事应可在2-4小时内完成。
     - step: iterative_development
       agent: game-developer
-      duration: varies
+      duration: 可变
       implements: prototype-stories/
-      notes: Implement stories in priority order. Test frequently and adjust design based on what feels fun. Document discoveries.
+      notes: 按优先级顺序实施故事。频繁测试并根据有趣的感觉调整设计。记录发现。
   workflow_end:
     action: prototype_evaluation
-    notes: "Prototype complete. Evaluate core mechanics, gather feedback, and decide next steps: iterate, expand, or archive."
+    notes: "原型完成。评估核心机制，收集反馈，并决定下一步：迭代、扩展或存档。"
   game_jam_sequence:
     - step: jam_concept
       agent: game-designer
-      duration: 10-15 minutes
+      duration: 10-15 分钟
       creates: jam-concept.md
-      notes: Define game concept based on jam theme. One sentence core mechanic, basic controls, win condition.
+      notes: 根据果酱主题定义游戏概念。一句话核心机制、基本控制、胜利条件。
     - step: jam_implementation
       agent: game-developer
-      duration: varies (jam timeline)
+      duration: 可变 (果酱时间表)
       creates: working-prototype
       requires: jam-concept.md
-      notes: Directly implement core mechanic. No formal stories - iterate rapidly on what's fun. Document major decisions.
+      notes: 直接实施核心机制。没有正式的故事 - 快速迭代有趣的内容。记录主要决策。
   jam_workflow_end:
     action: jam_submission
-    notes: Submit to game jam. Capture lessons learned and consider post-jam development if concept shows promise.
+    notes: 提交到游戏果酱。吸取经验教训，如果概念有前景，则考虑果酱后的开发。
   flow_diagram: |
     ```mermaid
     graph TD
@@ -92,85 +92,85 @@ workflow:
     ```
   decision_guidance:
     use_prototype_sequence_when:
-      - Learning new game development concepts
-      - Testing specific game mechanics
-      - Building portfolio pieces
-      - Have 1-7 days for development
-      - Need structured but fast development
-      - Want to validate game concepts before full development
+      - 学习新的游戏开发概念
+      - 测试特定的游戏机制
+      - 构建作品集
+      - 有1-7天的开发时间
+      - 需要结构化但快速的开发
+      - 希望在全面开发前验证游戏概念
     use_game_jam_sequence_when:
-      - Participating in time-constrained game jams
-      - Have 24-72 hours total development time
-      - Want to experiment with wild or unusual concepts
-      - Learning through rapid iteration
-      - Building networking/portfolio presence
+      - 参加时间受限的游戏果酱
+      - 总开发时间为24-72小时
+      - 想要尝试疯狂或不寻常的概念
+      - 通过快速迭代学习
+      - 建立人脉/作品集
   prototype_best_practices:
     scope_management:
-      - Start with absolute minimum viable gameplay
-      - One core mechanic implemented well beats many mechanics poorly
-      - Focus on "game feel" over features
-      - Cut features ruthlessly to meet timeline
+      - 从绝对最小可行游戏玩法开始
+      - 一个实现得好的核心机制胜过许多差的机制
+      - 专注于“游戏感觉”而非功能
+      - 为满足时间表而无情地削减功能
     rapid_iteration:
-      - Test the game every 1-2 hours of development
-      - Ask "Is this fun?" frequently during development
-      - Be willing to pivot mechanics if they don't feel good
-      - Document what works and what doesn't
+      - 每开发1-2小时就测试一次游戏
+      - 在开发过程中经常问“这好玩吗？”
+      - 如果机制感觉不好，愿意调整
+      - 记录哪些有效，哪些无效
     technical_efficiency:
-      - Use simple graphics (geometric shapes, basic sprites)
-      - Leverage Phaser 3's built-in systems heavily
-      - Avoid complex custom systems in prototypes
-      - Prioritize functional over polished
+      - 使用简单的图形（几何形状、基本精灵）
+      - 大量利用 Phaser 3 的内置系统
+      - 避免在原型中使用复杂的自定义系统
+      - 优先考虑功能而非润色
   prototype_evaluation_criteria:
     core_mechanic_validation:
-      - Is the primary mechanic engaging for 30+ seconds?
-      - Do players understand the mechanic without explanation?
-      - Does the mechanic have depth for extended play?
-      - Are there natural difficulty progression opportunities?
+      - 主要机制是否能吸引人30秒以上？
+      - 玩家无需解释就能理解机制吗？
+      - 机制是否有深度可供扩展游戏？
+      - 是否有自然的难度递增机会？
     technical_feasibility:
-      - Does the prototype run at acceptable frame rates?
-      - Are there obvious technical blockers for expansion?
-      - Is the codebase clean enough for further development?
-      - Are performance targets realistic for full game?
+      - 原型是否以可接受的帧率运行？
+      - 是否有明显的扩展技术障碍？
+      - 代码库是否足够干净以供进一步开发？
+      - 性能目标对于完整游戏是否现实？
     player_experience:
-      - Do testers engage with the game voluntarily?
-      - What emotions does the game create in players?
-      - Are players asking for "just one more try"?
-      - What do players want to see added or changed?
+      - 测试者是否自愿玩游戏？
+      - 游戏在玩家中产生了什么情绪？
+      - 玩家是否要求“再试一次”？
+      - 玩家希望看到添加或更改什么？
   post_prototype_options:
     iterate_and_improve:
       action: continue_prototyping
-      when: Core mechanic shows promise but needs refinement
-      next_steps: Create new prototype iteration focusing on identified improvements
+      when: 核心机制显示出潜力但需要优化
+      next_steps: 创建新的原型迭代，专注于已确定的改进
     expand_to_full_game:
       action: transition_to_full_development
-      when: Prototype validates strong game concept
-      next_steps: Use game-dev-greenfield workflow to create full game design and architecture
+      when: 原型验证了强大的游戏概念
+      next_steps: 使用 game-dev-greenfield 工作流程创建完整的游戏设计和架构
     pivot_concept:
       action: new_prototype_direction
-      when: Current mechanic doesn't work but insights suggest new direction
-      next_steps: Apply learnings to new prototype concept
+      when: 当前机制无效，但洞察力表明了新的方向
+      next_steps: 将学到的经验应用于新的原型概念
     archive_and_learn:
       action: document_learnings
-      when: Prototype doesn't work but provides valuable insights
-      next_steps: Document lessons learned and move to next prototype concept
+      when: 原型无效但提供了宝贵的见解
+      next_steps: 记录学到的经验教训并转向下一个原型概念
   time_boxing_guidance:
-    concept_phase: Maximum 30 minutes - if you can't explain the game simply, simplify it
-    design_phase: Maximum 1 hour - focus on core mechanics only
-    planning_phase: Maximum 30 minutes - identify critical path to playable prototype
-    implementation_phase: Time-boxed iterations - test every 2-4 hours of work
+    concept_phase: 最多30分钟 - 如果你不能简单地解释游戏，就简化它
+    design_phase: 最多1小时 - 只关注核心机制
+    planning_phase: 最多30分钟 - 确定可玩原型的关键路径
+    implementation_phase: 时间盒迭代 - 每2-4小时的工作测试一次
   success_metrics:
     development_velocity:
-      - Playable prototype in first day of development
-      - Core mechanic demonstrable within 4-6 hours of coding
-      - Major iteration cycles completed in 2-4 hour blocks
+      - 开发第一天即可玩原型
+      - 编码4-6小时内可演示核心机制
+      - 主要迭代周期在2-4小时内完成
     learning_objectives:
-      - Clear understanding of what makes the mechanic fun (or not)
-      - Technical feasibility assessment for full development
-      - Player reaction and engagement validation
-      - Design insights for future development
+      - 清楚地了解是什么让机制变得有趣（或不有趣）
+      - 全面开发的技术可行性评估
+      - 玩家反应和参与度验证
+      - 未来开发的设计见解
   handoff_prompts:
-    concept_to_design: Game concept defined. Create minimal design specification focusing on core mechanics and player experience.
-    design_to_technical: Design specification ready. Create technical implementation plan for rapid prototyping.
-    technical_to_stories: Technical plan complete. Create focused implementation stories for prototype development.
-    stories_to_implementation: Stories ready. Begin iterative implementation with frequent playtesting and design validation.
-    prototype_to_evaluation: Prototype playable. Evaluate core mechanics, gather feedback, and determine next development steps.
+    concept_to_design: 游戏概念已定义。创建最小的设计规范，重点关注核心机制和玩家体验。
+    design_to_technical: 设计规范已准备好。为快速原型制作创建技术实施计划。
+    technical_to_stories: 技术计划已完成。为原型开发创建专注的实施故事。
+    stories_to_implementation: 故事已准备好。开始迭代实施，并进行频繁的游戏测试和设计验证。
+    prototype_to_evaluation: 原型可玩。评估核心机制，收集反馈，并确定下一步的开发步骤。

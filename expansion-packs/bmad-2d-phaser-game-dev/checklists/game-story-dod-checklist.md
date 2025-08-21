@@ -1,162 +1,162 @@
-<!-- Powered by BMAD™ Core -->
+<!-- 由 BMAD™ 核心驱动 -->
 
-# Game Development Story Definition of Done Checklist
+# 游戏开发故事完成定义清单
 
-## Story Completeness
+## 故事完整性
 
-### Basic Story Elements
+### 基本故事元素
 
-- [ ] **Story Title** - Clear, descriptive title that identifies the feature
-- [ ] **Epic Assignment** - Story is properly assigned to relevant epic
-- [ ] **Priority Level** - Appropriate priority assigned (High/Medium/Low)
-- [ ] **Story Points** - Realistic estimation for implementation complexity
-- [ ] **Description** - Clear, concise description of what needs to be implemented
+- [ ] **故事标题** - 清晰、描述性的标题，用于标识功能
+- [ ] **史诗分配** - 故事已正确分配给相关史诗
+- [ ] **优先级** - 分配了适当的优先级（高/中/低）
+- [ ] **故事点** - 对实施复杂度的现实估计
+- [ ] **描述** - 清晰、简洁地描述需要实施的内容
 
-### Game Design Alignment
+### 游戏设计对齐
 
-- [ ] **GDD Reference** - Specific Game Design Document section referenced
-- [ ] **Game Mechanic Context** - Clear connection to game mechanics defined in GDD
-- [ ] **Player Experience Goal** - Describes the intended player experience
-- [ ] **Balance Parameters** - Includes any relevant game balance values
-- [ ] **Design Intent** - Purpose and rationale for the feature is clear
+- [ ] **GDD 参考** - 引用了特定的游戏设计文档部分
+- [ ] **游戏机制上下文** - 与 GDD 中定义的游戏机制有清晰的联系
+- [ ] **玩家体验目标** - 描述了预期的玩家体验
+- [ ] **平衡参数** - 包括任何相关的游戏平衡值
+- [ ] **设计意图** - 功能的目的和理由是清晰的
 
-## Technical Specifications
+## 技术规格
 
-### Architecture Compliance
+### 架构合规性
 
-- [ ] **File Organization** - Follows game architecture document structure
-- [ ] **Class Definitions** - TypeScript interfaces and classes are properly defined
-- [ ] **Integration Points** - Clear specification of how feature integrates with existing systems
-- [ ] **Event Communication** - Event emitting and listening requirements specified
-- [ ] **Dependencies** - All system dependencies clearly identified
+- [ ] **文件组织** - 遵循游戏架构文档结构
+- [ ] **类定义** - TypeScript 接口和类已正确定义
+- [ ] **集成点** - 清晰说明功能如何与现有系统集成
+- [ ] **事件通信** - 指定了事件发出和监听的要求
+- [ ] **依赖项** - 清楚地确定了所有系统依赖项
 
-### Phaser 3 Requirements
+### Phaser 3 要求
 
-- [ ] **Scene Integration** - Specifies which scenes are affected and how
-- [ ] **Game Object Usage** - Proper use of Phaser 3 game objects and components
-- [ ] **Physics Integration** - Physics requirements specified if applicable
-- [ ] **Asset Requirements** - All needed assets (sprites, audio, data) identified
-- [ ] **Performance Considerations** - 60 FPS target and optimization requirements
+- [ ] **场景集成** - 指定了哪些场景受到影响以及如何影响
+- [ ] **游戏对象使用** - 正确使用 Phaser 3 游戏对象和组件
+- [ ] **物理集成** - 如果适用，指定了物理要求
+- [ ] **资产要求** - 确定了所有需要的资产（精灵、音频、数据）
+- [ ] **性能考虑** - 60 FPS 目标和优化要求
 
-### Code Quality Standards
+### 代码质量标准
 
-- [ ] **TypeScript Strict Mode** - All code must comply with strict TypeScript
-- [ ] **Error Handling** - Error scenarios and handling requirements specified
-- [ ] **Memory Management** - Object pooling and cleanup requirements where needed
-- [ ] **Cross-Platform Support** - Desktop and mobile considerations addressed
-- [ ] **Code Organization** - Follows established game project structure
+- [ ] **TypeScript 严格模式** - 所有代码都必须符合严格的 TypeScript
+- [ ] **错误处理** - 指定了错误场景和处理要求
+- [ ] **内存管理** - 在需要时指定了对象池和清理要求
+- [ ] **跨平台支持** - 解决了桌面和移动端的考虑因素
+- [ ] **代码组织** - 遵循既定的游戏项目结构
 
-## Implementation Readiness
+## 实施准备
 
-### Acceptance Criteria
+### 验收标准
 
-- [ ] **Functional Requirements** - All functional acceptance criteria are specific and testable
-- [ ] **Technical Requirements** - Technical acceptance criteria are complete and verifiable
-- [ ] **Game Design Requirements** - Game-specific requirements match GDD specifications
-- [ ] **Performance Requirements** - Frame rate and memory usage criteria specified
-- [ ] **Completeness** - No acceptance criteria are vague or unmeasurable
+- [ ] **功能需求** - 所有功能验收标准都是具体且可测试的
+- [ ] **技术需求** - 技术验收标准是完整且可验证的
+- [ ] **游戏设计需求** - 游戏特定需求与 GDD 规范相匹配
+- [ ] **性能需求** - 指定了帧率和内存使用标准
+- [ ] **完整性** - 没有模糊或无法衡量的验收标准
 
-### Implementation Tasks
+### 实施任务
 
-- [ ] **Task Breakdown** - Story broken into specific, ordered implementation tasks
-- [ ] **Task Scope** - Each task is completable in 1-4 hours
-- [ ] **Task Clarity** - Each task has clear, actionable instructions
-- [ ] **File Specifications** - Exact file paths and purposes specified
-- [ ] **Development Flow** - Tasks follow logical implementation order
+- [ ] **任务分解** - 故事被分解为具体的、有序的实施任务
+- [ ] **任务范围** - 每个任务都可以在1-4小时内完成
+- [ ] **任务清晰度** - 每个任务都有清晰、可操作的说明
+- [ ] **文件规格** - 指定了确切的文件路径和用途
+- [ ] **开发流程** - 任务遵循逻辑实施顺序
 
-### Dependencies
+### 依赖项
 
-- [ ] **Story Dependencies** - All prerequisite stories identified with IDs
-- [ ] **Technical Dependencies** - Required systems and files identified
-- [ ] **Asset Dependencies** - All needed assets specified with locations
-- [ ] **External Dependencies** - Any third-party or external requirements noted
-- [ ] **Dependency Validation** - All dependencies are actually available
+- [ ] **故事依赖项** - 确定了所有先决故事及其ID
+- [ ] **技术依赖项** - 确定了所需的系统和文件
+- [ ] **资产依赖项** - 指定了所有需要的资产及其位置
+- [ ] **外部依赖项** - 注意到了任何第三方或外部要求
+- [ ] **依赖项验证** - 所有依赖项实际上都可用
 
-## Testing Requirements
+## 测试要求
 
-### Test Coverage
+### 测试覆盖率
 
-- [ ] **Unit Test Requirements** - Specific unit test files and scenarios defined
-- [ ] **Integration Test Cases** - Integration testing with other game systems specified
-- [ ] **Manual Test Cases** - Game-specific manual testing procedures defined
-- [ ] **Performance Tests** - Frame rate and memory testing requirements specified
-- [ ] **Edge Case Testing** - Edge cases and error conditions covered
+- [ ] **单元测试要求** - 定义了特定的单元测试文件和场景
+- [ ] **集成测试用例** - 指定了与其他游戏系统的集成测试
+- [ ] **手动测试用例** - 定义了特定于游戏的手动测试程序
+- [ ] **性能测试** - 指定了帧率和内存测试要求
+- [ ] **边缘情况测试** - 覆盖了边缘情况和错误条件
 
-### Test Implementation
+### 测试实施
 
-- [ ] **Test File Paths** - Exact test file locations specified
-- [ ] **Test Scenarios** - All test scenarios are complete and executable
-- [ ] **Expected Behaviors** - Clear expected outcomes for all tests defined
-- [ ] **Performance Metrics** - Specific performance targets for testing
-- [ ] **Test Data** - Any required test data or mock objects specified
+- [ ] **测试文件路径** - 指定了确切的测试文件位置
+- [ ] **测试场景** - 所有测试场景都是完整且可执行的
+- [ ] **预期行为** - 为所有测试定义了清晰的预期结果
+- [ ] **性能指标** - 用于测试的特定性能目标
+- [ ] **测试数据** - 指定了任何所需的测试数据或模拟对象
 
-## Game-Specific Quality
+## 游戏特定质量
 
-### Gameplay Implementation
+### 游戏性实施
 
-- [ ] **Mechanic Accuracy** - Implementation matches GDD mechanic specifications
-- [ ] **Player Controls** - Input handling requirements are complete
-- [ ] **Game Feel** - Requirements for juice, feedback, and responsiveness specified
-- [ ] **Balance Implementation** - Numeric values and parameters from GDD included
-- [ ] **State Management** - Game state changes and persistence requirements defined
+- [ ] **机制准确性** - 实施与 GDD 机制规范相匹配
+- [ ] **玩家控制** - 输入处理要求是完整的
+- [ ] **游戏感觉** - 指定了“juice”、反馈和响应性的要求
+- [ ] **平衡实施** - 包括了来自 GDD 的数值和参数
+- [ ] **状态管理** - 定义了游戏状态更改和持久性要求
 
-### User Experience
+### 用户体验
 
-- [ ] **UI Requirements** - User interface elements and behaviors specified
-- [ ] **Audio Integration** - Sound effect and music requirements defined
-- [ ] **Visual Feedback** - Animation and visual effect requirements specified
-- [ ] **Accessibility** - Mobile touch and responsive design considerations
-- [ ] **Error Recovery** - User-facing error handling and recovery specified
+- [ ] **UI 要求** - 指定了用户界面元素和行为
+- [ ] **音频集成** - 定义了音效和音乐要求
+- [ ] **视觉反馈** - 指定了动画和视觉效果要求
+- [ ] **辅助功能** - 移动触摸和响应式设计考虑
+- [ ] **错误恢复** - 指定了面向用户的错误处理和恢复
 
-### Performance Optimization
+### 性能优化
 
-- [ ] **Frame Rate Targets** - Specific FPS requirements for different platforms
-- [ ] **Memory Usage** - Memory consumption limits and monitoring requirements
-- [ ] **Asset Optimization** - Texture, audio, and data optimization requirements
-- [ ] **Mobile Considerations** - Touch controls and mobile performance requirements
-- [ ] **Loading Performance** - Asset loading and scene transition requirements
+- [ ] **帧率目标** - 不同平台的特定 FPS 要求
+- [ ] **内存使用** - 内存消耗限制和监控要求
+- [ ] **资产优化** - 纹理、音频和数据优化要求
+- [ ] **移动端考虑** - 触摸控制和移动性能要求
+- [ ] **加载性能** - 资产加载和场景转换要求
 
-## Documentation and Communication
+## 文档与沟通
 
-### Story Documentation
+### 故事文档
 
-- [ ] **Implementation Notes** - Additional context and implementation guidance provided
-- [ ] **Design Decisions** - Key design choices documented with rationale
-- [ ] **Future Considerations** - Potential future enhancements or modifications noted
-- [ ] **Change Tracking** - Process for tracking any requirement changes during development
-- [ ] **Reference Materials** - Links to relevant GDD sections and architecture docs
+- [ ] **实施说明** - 提供了额外的上下文和实施指导
+- [ ] **设计决策** - 记录了关键设计选择及其理由
+- [ ] **未来考虑** - 注意到了潜在的未来增强或修改
+- [ ] **变更跟踪** - 开发期间跟踪任何需求变更的流程
+- [ ] **参考资料** - 链接到相关的 GDD 部分和架构文档
 
-### Developer Handoff
+### 开发者交接
 
-- [ ] **Immediate Actionability** - Developer can start implementation without additional questions
-- [ ] **Complete Context** - All necessary context provided within the story
-- [ ] **Clear Boundaries** - What is and isn't included in the story scope is clear
-- [ ] **Success Criteria** - Objective measures for story completion defined
-- [ ] **Communication Plan** - Process for developer questions and updates established
+- [ ] **立即可操作性** - 开发者无需额外提问即可开始实施
+- [ ] **完整上下文** - 在故事中提供了所有必要的上下文
+- [ ] **清晰的边界** - 故事范围中包含和不包含的内容是清晰的
+- [ ] **成功标准** - 定义了故事完成的客观衡量标准
+- [ ] **沟通计划** - 建立了开发者提问和更新的流程
 
-## Final Validation
+## 最终验证
 
-### Story Readiness
+### 故事准备就绪
 
-- [ ] **No Ambiguity** - No sections require interpretation or additional design decisions
-- [ ] **Technical Completeness** - All technical requirements are specified and actionable
-- [ ] **Scope Appropriateness** - Story scope matches assigned story points
-- [ ] **Quality Standards** - Story meets all game development quality standards
-- [ ] **Review Completion** - Story has been reviewed for completeness and accuracy
+- [ ] **无歧义** - 没有部分需要解释或额外的设计决策
+- [ ] **技术完整性** - 所有技术要求都已指定并可操作
+- [ ] **范围适当性** - 故事范围与分配的故事点相匹配
+- [ ] **质量标准** - 故事符合所有游戏开发质量标准
+- [ ] **审查完成** - 故事已经过完整性和准确性审查
 
-### Implementation Preparedness
+### 实施准备
 
-- [ ] **Environment Ready** - Development environment requirements specified
-- [ ] **Resources Available** - All required resources (assets, docs, dependencies) accessible
-- [ ] **Testing Prepared** - Testing environment and data requirements specified
-- [ ] **Definition of Done** - Clear, objective completion criteria established
-- [ ] **Handoff Complete** - Story is ready for developer assignment and implementation
+- [ ] **环境就绪** - 指定了开发环境要求
+- [ ] **资源可用** - 所有必需的资源（资产、文档、依赖项）均可访问
+- [ ] **测试准备就绪** - 指定了测试环境和数据要求
+- [ ] **完成的定义** - 建立了清晰、客观的完成标准
+- [ ] **交接完成** - 故事已准备好分配给开发者并实施
 
-## Checklist Completion
+## 清单完成
 
-**Overall Story Quality:** ⭐⭐⭐⭐⭐
+**总体故事质量：** ⭐⭐⭐⭐⭐
 
-**Ready for Development:** [ ] Yes [ ] No
+**准备好进行开发：** [ ] 是 [ ] 否
 
-**Additional Notes:**
-_Any specific concerns, recommendations, or clarifications needed before development begins._
+**附加说明：**
+_在开发开始前需要的任何具体关注点、建议或澄清。_

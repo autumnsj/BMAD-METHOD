@@ -1,12 +1,12 @@
-# <!-- Powered by BMAD™ Core -->
+# <!-- 由 BMAD™ 核心驱动 -->
 template:
   id: game-architecture-template-v2
-  name: Game Architecture Document
+  name: 游戏架构文档
   version: 2.0
   output:
     format: markdown
     filename: "docs/{{game_name}}-game-architecture.md"
-    title: "{{game_title}} Game Architecture Document"
+    title: "{{game_title}} 游戏架构文档"
 
 workflow:
   mode: interactive
@@ -14,138 +14,138 @@ workflow:
 sections:
   - id: initial-setup
     instruction: |
-      This template creates a comprehensive game architecture document specifically for Phaser 3 + TypeScript projects. This should provide the technical foundation for all game development stories and epics.
+      此模板专门为 Phaser 3 + TypeScript 项目创建全面的游戏架构文档。这应为所有游戏开发故事和史诗提供技术基础。
 
-      If available, review any provided documents: Game Design Document (GDD), Technical Preferences. This architecture should support all game mechanics defined in the GDD.
+      如果可用，请审查任何提供的文档：游戏设计文档 (GDD)、技术偏好。此架构应支持 GDD 中定义的所有游戏机制。
 
   - id: introduction
-    title: Introduction
-    instruction: Establish the document's purpose and scope for game development
+    title: 引言
+    instruction: 为游戏开发建立文档的目的和范围
     content: |
-      This document outlines the complete technical architecture for {{game_title}}, a 2D game built with Phaser 3 and TypeScript. It serves as the technical foundation for AI-driven game development, ensuring consistency and scalability across all game systems.
+      本文档概述了 {{game_title}} 的完整技术架构，这是一款使用 Phaser 3 和 TypeScript 构建的 2D 游戏。它作为 AI 驱动的游戏开发的技术基础，确保所有游戏系统的一致性和可扩展性。
 
-      This architecture is designed to support the gameplay mechanics defined in the Game Design Document while maintaining 60 FPS performance and cross-platform compatibility.
+      此架构旨在支持游戏设计文档中定义的游戏机制，同时保持 60 FPS 的性能和跨平台兼容性。
     sections:
       - id: change-log
-        title: Change Log
-        instruction: Track document versions and changes
+        title: 变更日志
+        instruction: 跟踪文档版本和变更
         type: table
         template: |
-          | Date | Version | Description | Author |
+          | 日期 | 版本 | 描述 | 作者 |
           | :--- | :------ | :---------- | :----- |
 
   - id: technical-overview
-    title: Technical Overview
-    instruction: Present all subsections together, then apply `tasks#advanced-elicitation` protocol to the complete section.
+    title: 技术概述
+    instruction: 将所有小节一起呈现，然后对整个部分应用 `tasks#advanced-elicitation` 协议。
     sections:
       - id: architecture-summary
-        title: Architecture Summary
+        title: 架构摘要
         instruction: |
-          Provide a comprehensive overview covering:
+          提供一个全面的概述，涵盖：
 
-          - Game engine choice and configuration
-          - Project structure and organization
-          - Key systems and their interactions
-          - Performance and optimization strategy
-          - How this architecture achieves GDD requirements
+          - 游戏引擎选择和配置
+          - 项目结构和组织
+          - 关键系统及其交互
+          - 性能和优化策略
+          - 此架构如何实现 GDD 要求
       - id: platform-targets
-        title: Platform Targets
-        instruction: Based on GDD requirements, confirm platform support
+        title: 平台目标
+        instruction: 根据 GDD 要求，确认平台支持
         template: |
-          **Primary Platform:** {{primary_platform}}
-          **Secondary Platforms:** {{secondary_platforms}}
-          **Minimum Requirements:** {{min_specs}}
-          **Target Performance:** 60 FPS on {{target_device}}
+          **主要平台：** {{primary_platform}}
+          **次要平台：** {{secondary_platforms}}
+          **最低要求：** {{min_specs}}
+          **目标性能：** 在 {{target_device}} 上达到 60 FPS
       - id: technology-stack
-        title: Technology Stack
+        title: 技术栈
         template: |
-          **Core Engine:** Phaser 3.70+
-          **Language:** TypeScript 5.0+ (Strict Mode)
-          **Build Tool:** {{build_tool}} (Webpack/Vite/Parcel)
-          **Package Manager:** {{package_manager}}
-          **Testing:** {{test_framework}}
-          **Deployment:** {{deployment_platform}}
+          **核心引擎：** Phaser 3.70+
+          **语言：** TypeScript 5.0+ (严格模式)
+          **构建工具：** {{build_tool}} (Webpack/Vite/Parcel)
+          **包管理器：** {{package_manager}}
+          **测试：** {{test_framework}}
+          **部署：** {{deployment_platform}}
 
   - id: project-structure
-    title: Project Structure
-    instruction: Define the complete project organization that developers will follow
+    title: 项目结构
+    instruction: 定义开发者将遵循的完整项目组织
     sections:
       - id: repository-organization
-        title: Repository Organization
-        instruction: Design a clear folder structure for game development
+        title: 仓库组织
+        instruction: 为游戏开发设计一个清晰的文件夹结构
         type: code
         language: text
         template: |
           {{game_name}}/
           ├── src/
-          │   ├── scenes/          # Game scenes
-          │   ├── gameObjects/     # Custom game objects
-          │   ├── systems/         # Core game systems
-          │   ├── utils/           # Utility functions
-          │   ├── types/           # TypeScript type definitions
-          │   ├── config/          # Game configuration
-          │   └── main.ts          # Entry point
+          │   ├── scenes/          # 游戏场景
+          │   ├── gameObjects/     # 自定义游戏对象
+          │   ├── systems/         # 核心游戏系统
+          │   ├── utils/           # 实用功能
+          │   ├── types/           # TypeScript 类型定义
+          │   ├── config/          # 游戏配置
+          │   └── main.ts          # 入口点
           ├── assets/
-          │   ├── images/          # Sprite assets
-          │   ├── audio/           # Sound files
-          │   ├── data/            # JSON data files
-          │   └── fonts/           # Font files
-          ├── public/              # Static web assets
-          ├── tests/               # Test files
-          ├── docs/                # Documentation
-          │   ├── stories/         # Development stories
-          │   └── architecture/    # Technical docs
-          └── dist/                # Built game files
+          │   ├── images/          # 精灵资产
+          │   ├── audio/           # 声音文件
+          │   ├── data/            # JSON 数据文件
+          │   └── fonts/           # 字体文件
+          ├── public/              # 静态 Web 资产
+          ├── tests/               # 测试文件
+          ├── docs/                # 文档
+          │   ├── stories/         # 开发故事
+          │   └── architecture/    # 技术文档
+          └── dist/                # 构建的游戏文件
       - id: module-organization
-        title: Module Organization
-        instruction: Define how TypeScript modules should be organized
+        title: 模块组织
+        instruction: 定义应如何组织 TypeScript 模块
         sections:
           - id: scene-structure
-            title: Scene Structure
+            title: 场景结构
             type: bullet-list
             template: |
-              - Each scene in separate file
-              - Scene-specific logic contained
-              - Clear data passing between scenes
+              - 每个场景在单独的文件中
+              - 包含特定于场景的逻辑
+              - 场景之间清晰的数据传递
           - id: game-object-pattern
-            title: Game Object Pattern
+            title: 游戏对象模式
             type: bullet-list
             template: |
-              - Component-based architecture
-              - Reusable game object classes
-              - Type-safe property definitions
+              - 基于组件的架构
+              - 可重用的游戏对象类
+              - 类型安全的属性定义
           - id: system-architecture
-            title: System Architecture
+            title: 系统架构
             type: bullet-list
             template: |
-              - Singleton managers for global systems
-              - Event-driven communication
-              - Clear separation of concerns
+              - 用于全局系统的单例管理器
+              - 事件驱动的通信
+              - 明确的关注点分离
 
   - id: core-game-systems
-    title: Core Game Systems
-    instruction: Detail each major system that needs to be implemented. Each system should be specific enough for developers to create implementation stories.
+    title: 核心游戏系统
+    instruction: 详细说明需要实施的每个主要系统。每个系统都应足够具体，以便开发者可以创建实施故事。
     sections:
       - id: scene-management
-        title: Scene Management System
+        title: 场景管理系统
         template: |
-          **Purpose:** Handle game flow and scene transitions
+          **目的：** 处理游戏流程和场景转换
 
-          **Key Components:**
+          **关键组件：**
 
-          - Scene loading and unloading
-          - Data passing between scenes
-          - Transition effects
-          - Memory management
+          - 场景加载和卸载
+          - 场景之间的数据传递
+          - 过渡效果
+          - 内存管理
 
-          **Implementation Requirements:**
+          **实施要求：**
 
-          - Preload scene for asset loading
-          - Menu system with navigation
-          - Gameplay scenes with state management
-          - Pause/resume functionality
+          - 用于资产加载的预加载场景
+          - 带导航的菜单系统
+          - 带状态管理的游戏场景
+          - 暂停/恢复功能
 
-          **Files to Create:**
+          **要创建的文件：**
 
           - `src/scenes/BootScene.ts`
           - `src/scenes/PreloadScene.ts`
@@ -153,209 +153,209 @@ sections:
           - `src/scenes/GameScene.ts`
           - `src/systems/SceneManager.ts`
       - id: game-state-management
-        title: Game State Management
+        title: 游戏状态管理
         template: |
-          **Purpose:** Track player progress and game status
+          **目的：** 跟踪玩家进度和游戏状态
 
-          **State Categories:**
+          **状态类别：**
 
-          - Player progress (levels, unlocks)
-          - Game settings (audio, controls)
-          - Session data (current level, score)
-          - Persistent data (achievements, statistics)
+          - 玩家进度（关卡、解锁）
+          - 游戏设置（音频、控制）
+          - 会话数据（当前关卡、分数）
+          - 持久数据（成就、统计）
 
-          **Implementation Requirements:**
+          **实施要求：**
 
-          - Save/load system with localStorage
-          - State validation and error recovery
-          - Cross-session data persistence
-          - Settings management
+          - 使用 localStorage 的保存/加载系统
+          - 状态验证和错误恢复
+          - 跨会话数据持久性
+          - 设置管理
 
-          **Files to Create:**
+          **要创建的文件：**
 
           - `src/systems/GameState.ts`
           - `src/systems/SaveManager.ts`
           - `src/types/GameData.ts`
       - id: asset-management
-        title: Asset Management System
+        title: 资产管理系统
         template: |
-          **Purpose:** Efficient loading and management of game assets
+          **目的：** 高效加载和管理游戏资产
 
-          **Asset Categories:**
+          **资产类别：**
 
-          - Sprite sheets and animations
-          - Audio files and music
-          - Level data and configurations
-          - UI assets and fonts
+          - 精灵表和动画
+          - 音频文件和音乐
+          - 关卡数据和配置
+          - UI 资产和字体
 
-          **Implementation Requirements:**
+          **实施要求：**
 
-          - Progressive loading strategy
-          - Asset caching and optimization
-          - Error handling for failed loads
-          - Memory management for large assets
+          - 渐进式加载策略
+          - 资产缓存和优化
+          - 加载失败的错误处理
+          - 大型资产的内存管理
 
-          **Files to Create:**
+          **要创建的文件：**
 
           - `src/systems/AssetManager.ts`
           - `src/config/AssetConfig.ts`
           - `src/utils/AssetLoader.ts`
       - id: input-management
-        title: Input Management System
+        title: 输入管理系统
         template: |
-          **Purpose:** Handle all player input across platforms
+          **目的：** 处理所有跨平台的玩家输入
 
-          **Input Types:**
+          **输入类型：**
 
-          - Keyboard controls
-          - Mouse/pointer interaction
-          - Touch gestures (mobile)
-          - Gamepad support (optional)
+          - 键盘控制
+          - 鼠标/指针交互
+          - 触摸手势（移动端）
+          - 游戏手柄支持（可选）
 
-          **Implementation Requirements:**
+          **实施要求：**
 
-          - Input mapping and configuration
-          - Touch-friendly mobile controls
-          - Input buffering for responsive gameplay
-          - Customizable control schemes
+          - 输入映射和配置
+          - 移动端触摸友好的控制
+          - 用于响应式游戏玩法的输入缓冲
+          - 可定制的控制方案
 
-          **Files to Create:**
+          **要创建的文件：**
 
           - `src/systems/InputManager.ts`
           - `src/utils/TouchControls.ts`
           - `src/types/InputTypes.ts`
       - id: game-mechanics-systems
-        title: Game Mechanics Systems
-        instruction: For each major mechanic defined in the GDD, create a system specification
+        title: 游戏机制系统
+        instruction: 为 GDD 中定义的每个主要机制创建一个系统规范
         repeatable: true
         sections:
           - id: mechanic-system
-            title: "{{mechanic_name}} System"
+            title: "{{mechanic_name}} 系统"
             template: |
-              **Purpose:** {{system_purpose}}
+              **目的：** {{system_purpose}}
 
-              **Core Functionality:**
+              **核心功能：**
 
               - {{feature_1}}
               - {{feature_2}}
               - {{feature_3}}
 
-              **Dependencies:** {{required_systems}}
+              **依赖项：** {{required_systems}}
 
-              **Performance Considerations:** {{optimization_notes}}
+              **性能考虑：** {{optimization_notes}}
 
-              **Files to Create:**
+              **要创建的文件：**
 
               - `src/systems/{{system_name}}.ts`
               - `src/gameObjects/{{related_object}}.ts`
               - `src/types/{{system_types}}.ts`
       - id: physics-collision
-        title: Physics & Collision System
+        title: 物理与碰撞系统
         template: |
-          **Physics Engine:** {{physics_choice}} (Arcade Physics/Matter.js)
+          **物理引擎：** {{physics_choice}} (Arcade Physics/Matter.js)
 
-          **Collision Categories:**
+          **碰撞类别：**
 
-          - Player collision
-          - Enemy interactions
-          - Environmental objects
-          - Collectibles and items
+          - 玩家碰撞
+          - 敌人互动
+          - 环境对象
+          - 收藏品和物品
 
-          **Implementation Requirements:**
+          **实施要求：**
 
-          - Optimized collision detection
-          - Physics body management
-          - Collision callbacks and events
-          - Performance monitoring
+          - 优化的碰撞检测
+          - 物理实体管理
+          - 碰撞回调和事件
+          - 性能监控
 
-          **Files to Create:**
+          **要创建的文件：**
 
           - `src/systems/PhysicsManager.ts`
           - `src/utils/CollisionGroups.ts`
       - id: audio-system
-        title: Audio System
+        title: 音频系统
         template: |
-          **Audio Requirements:**
+          **音频要求：**
 
-          - Background music with looping
-          - Sound effects for actions
-          - Audio settings and volume control
-          - Mobile audio optimization
+          - 带循环的背景音乐
+          - 动作音效
+          - 音频设置和音量控制
+          - 移动端音频优化
 
-          **Implementation Features:**
+          **实施功能：**
 
-          - Audio sprite management
-          - Dynamic music system
-          - Spatial audio (if applicable)
-          - Audio pooling for performance
+          - 音频精灵管理
+          - 动态音乐系统
+          - 空间音频（如果适用）
+          - 用于性能的音频池
 
-          **Files to Create:**
+          **要创建的文件：**
 
           - `src/systems/AudioManager.ts`
           - `src/config/AudioConfig.ts`
       - id: ui-system
-        title: UI System
+        title: UI 系统
         template: |
-          **UI Components:**
+          **UI 组件：**
 
-          - HUD elements (score, health, etc.)
-          - Menu navigation
-          - Modal dialogs
-          - Settings screens
+          - HUD 元素（分数、生命值等）
+          - 菜单导航
+          - 模态对话框
+          - 设置屏幕
 
-          **Implementation Requirements:**
+          **实施要求：**
 
-          - Responsive layout system
-          - Touch-friendly interface
-          - Keyboard navigation support
-          - Animation and transitions
+          - 响应式布局系统
+          - 触摸友好的界面
+          - 键盘导航支持
+          - 动画和过渡
 
-          **Files to Create:**
+          **要创建的文件：**
 
           - `src/systems/UIManager.ts`
           - `src/gameObjects/UI/`
           - `src/types/UITypes.ts`
 
   - id: performance-architecture
-    title: Performance Architecture
-    instruction: Define performance requirements and optimization strategies
+    title: 性能架构
+    instruction: 定义性能要求和优化策略
     sections:
       - id: performance-targets
-        title: Performance Targets
+        title: 性能目标
         template: |
-          **Frame Rate:** 60 FPS sustained, 30 FPS minimum
-          **Memory Usage:** <{{memory_limit}}MB total
-          **Load Times:** <{{initial_load}}s initial, <{{level_load}}s per level
-          **Battery Optimization:** Reduced updates when not visible
+          **帧率：** 持续 60 FPS，最低 30 FPS
+          **内存使用：** 总计 <{{memory_limit}}MB
+          **加载时间：** 初始 <{{initial_load}}s，每关卡 <{{level_load}}s
+          **电池优化：** 不可见时减少更新
       - id: optimization-strategies
-        title: Optimization Strategies
+        title: 优化策略
         sections:
           - id: object-pooling
-            title: Object Pooling
+            title: 对象池
             type: bullet-list
             template: |
-              - Bullets and projectiles
-              - Particle effects
-              - Enemy objects
-              - UI elements
+              - 子弹和射弹
+              - 粒子效果
+              - 敌人对象
+              - UI 元素
           - id: asset-optimization
-            title: Asset Optimization
+            title: 资产优化
             type: bullet-list
             template: |
-              - Texture atlases for sprites
-              - Audio compression
-              - Lazy loading for large assets
-              - Progressive enhancement
+              - 用于精灵的纹理图集
+              - 音频压缩
+              - 大型资产的延迟加载
+              - 渐进增强
           - id: rendering-optimization
-            title: Rendering Optimization
+            title: 渲染优化
             type: bullet-list
             template: |
-              - Sprite batching
-              - Culling off-screen objects
-              - Reduced particle counts on mobile
-              - Texture resolution scaling
+              - 精灵批处理
+              - 剔除屏幕外对象
+              - 减少移动端的粒子数量
+              - 纹理分辨率缩放
           - id: optimization-files
-            title: Files to Create
+            title: 要创建的文件
             type: bullet-list
             template: |
               - `src/utils/ObjectPool.ts`
@@ -363,11 +363,11 @@ sections:
               - `src/config/OptimizationConfig.ts`
 
   - id: game-configuration
-    title: Game Configuration
-    instruction: Define all configurable aspects of the game
+    title: 游戏配置
+    instruction: 定义游戏的所有可配置方面
     sections:
       - id: phaser-configuration
-        title: Phaser Configuration
+        title: Phaser 配置
         type: code
         language: typescript
         template: |
@@ -387,11 +387,11 @@ sections:
                       debug: false
                   }
               },
-              // Additional configuration...
+              // 附加配置...
           };
       - id: game-balance-configuration
-        title: Game Balance Configuration
-        instruction: Based on GDD, define configurable game parameters
+        title: 游戏平衡配置
+        instruction: 根据 GDD，定义可配置的游戏参数
         type: code
         language: typescript
         template: |
@@ -400,79 +400,79 @@ sections:
               player: {
                   speed: {{player_speed}},
                   health: {{player_health}},
-                  // Additional player parameters...
+                  // 其他玩家参数...
               },
               difficulty: {
                   easy: {{easy_params}},
                   normal: {{normal_params}},
                   hard: {{hard_params}}
               },
-              // Additional balance parameters...
+              // 其他平衡参数...
           };
 
   - id: development-guidelines
-    title: Development Guidelines
-    instruction: Provide coding standards specific to game development
+    title: 开发指南
+    instruction: 提供特定于游戏开发的编码标准
     sections:
       - id: typescript-standards
-        title: TypeScript Standards
+        title: TypeScript 标准
         sections:
           - id: type-safety
-            title: Type Safety
+            title: 类型安全
             type: bullet-list
             template: |
-              - Use strict mode
-              - Define interfaces for all data structures
-              - Avoid `any` type usage
-              - Use enums for game states
+              - 使用严格模式
+              - 为所有数据结构定义接口
+              - 避免使用 `any` 类型
+              - 使用枚举表示游戏状态
           - id: code-organization
-            title: Code Organization
+            title: 代码组织
             type: bullet-list
             template: |
-              - One class per file
-              - Clear naming conventions
-              - Proper error handling
-              - Comprehensive documentation
+              - 每个文件一个类
+              - 清晰的命名约定
+              - 正确的错误处理
+              - 全面的文档
       - id: phaser-best-practices
-        title: Phaser 3 Best Practices
+        title: Phaser 3 最佳实践
         sections:
           - id: scene-management-practices
-            title: Scene Management
+            title: 场景管理
             type: bullet-list
             template: |
-              - Clean up resources in shutdown()
-              - Use scene data for communication
-              - Implement proper event handling
-              - Avoid memory leaks
+              - 在 shutdown() 中清理资源
+              - 使用场景数据进行通信
+              - 实现正确的事件处理
+              - 避免内存泄漏
           - id: game-object-design
-            title: Game Object Design
+            title: 游戏对象设计
             type: bullet-list
             template: |
-              - Extend Phaser classes appropriately
-              - Use component-based architecture
-              - Implement object pooling where needed
-              - Follow consistent update patterns
+              - 适当地扩展 Phaser 类
+              - 使用基于组件的架构
+              - 在需要时实现对象池
+              - 遵循一致的更新模式
       - id: testing-strategy
-        title: Testing Strategy
+        title: 测试策略
         sections:
           - id: unit-testing
-            title: Unit Testing
+            title: 单元测试
             type: bullet-list
             template: |
-              - Test game logic separately from Phaser
-              - Mock Phaser dependencies
-              - Test utility functions
-              - Validate game balance calculations
+              - 将游戏逻辑与 Phaser 分开测试
+              - 模拟 Phaser 依赖项
+              - 测试实用功能
+              - 验证游戏平衡计算
           - id: integration-testing
-            title: Integration Testing
+            title: 集成测试
             type: bullet-list
             template: |
-              - Scene loading and transitions
-              - Save/load functionality
-              - Input handling
-              - Performance benchmarks
+              - 场景加载和转换
+              - 保存/加载功能
+              - 输入处理
+              - 性能基准
           - id: test-files
-            title: Files to Create
+            title: 要创建的文件
             type: bullet-list
             template: |
               - `tests/utils/GameLogic.test.ts`
@@ -480,135 +480,135 @@ sections:
               - `tests/performance/FrameRate.test.ts`
 
   - id: deployment-architecture
-    title: Deployment Architecture
-    instruction: Define how the game will be built and deployed
+    title: 部署架构
+    instruction: 定义如何构建和部署游戏
     sections:
       - id: build-process
-        title: Build Process
+        title: 构建过程
         sections:
           - id: development-build
-            title: Development Build
+            title: 开发构建
             type: bullet-list
             template: |
-              - Fast compilation
-              - Source maps enabled
-              - Debug logging active
-              - Hot reload support
+              - 快速编译
+              - 启用源映射
+              - 激活调试日志
+              - 热重载支持
           - id: production-build
-            title: Production Build
+            title: 生产构建
             type: bullet-list
             template: |
-              - Minified and optimized
-              - Asset compression
-              - Performance monitoring
-              - Error tracking
+              - 压缩和优化
+              - 资产压缩
+              - 性能监控
+              - 错误跟踪
       - id: deployment-strategy
-        title: Deployment Strategy
+        title: 部署策略
         sections:
           - id: web-deployment
-            title: Web Deployment
+            title: Web 部署
             type: bullet-list
             template: |
-              - Static hosting ({{hosting_platform}})
-              - CDN for assets
-              - Progressive loading
-              - Browser compatibility
+              - 静态托管 ({{hosting_platform}})
+              - 用于资产的 CDN
+              - 渐进式加载
+              - 浏览器兼容性
           - id: mobile-packaging
-            title: Mobile Packaging
+            title: 移动端打包
             type: bullet-list
             template: |
-              - Cordova/Capacitor wrapper
-              - Platform-specific optimization
-              - App store requirements
-              - Performance testing
+              - Cordova/Capacitor 包装器
+              - 平台特定优化
+              - 应用商店要求
+              - 性能测试
 
   - id: implementation-roadmap
-    title: Implementation Roadmap
-    instruction: Break down the architecture implementation into phases that align with the GDD development phases
+    title: 实施路线图
+    instruction: 将架构实施分解为与 GDD 开发阶段一致的阶段
     sections:
       - id: phase-1-foundation
-        title: "Phase 1: Foundation ({{duration}})"
+        title: "阶段 1：基础 ({{duration}})"
         sections:
           - id: phase-1-core
-            title: Core Systems
+            title: 核心系统
             type: bullet-list
             template: |
-              - Project setup and configuration
-              - Basic scene management
-              - Asset loading pipeline
-              - Input handling framework
+              - 项目设置和配置
+              - 基本场景管理
+              - 资产加载管道
+              - 输入处理框架
           - id: phase-1-epics
-            title: Story Epics
+            title: 故事史诗
             type: bullet-list
             template: |
-              - "Engine Setup and Configuration"
-              - "Basic Scene Management System"
-              - "Asset Loading Foundation"
+              - "引擎设置和配置"
+              - "基本场景管理系统"
+              - "资产加载基础"
       - id: phase-2-game-systems
-        title: "Phase 2: Game Systems ({{duration}})"
+        title: "阶段 2：游戏系统 ({{duration}})"
         sections:
           - id: phase-2-gameplay
-            title: Gameplay Systems
+            title: 游戏系统
             type: bullet-list
             template: |
-              - {{primary_mechanic}} implementation
-              - Physics and collision system
-              - Game state management
-              - UI framework
+              - {{primary_mechanic}} 实施
+              - 物理和碰撞系统
+              - 游戏状态管理
+              - UI 框架
           - id: phase-2-epics
-            title: Story Epics
+            title: 故事史诗
             type: bullet-list
             template: |
-              - "{{primary_mechanic}} System Implementation"
-              - "Physics and Collision Framework"
-              - "Game State Management System"
+              - "{{primary_mechanic}} 系统实施"
+              - "物理和碰撞框架"
+              - "游戏状态管理系统"
       - id: phase-3-content-polish
-        title: "Phase 3: Content & Polish ({{duration}})"
+        title: "阶段 3：内容与润色 ({{duration}})"
         sections:
           - id: phase-3-content
-            title: Content Systems
+            title: 内容系统
             type: bullet-list
             template: |
-              - Level loading and management
-              - Audio system integration
-              - Performance optimization
-              - Final polish and testing
+              - 关卡加载和管理
+              - 音频系统集成
+              - 性能优化
+              - 最终润色和测试
           - id: phase-3-epics
-            title: Story Epics
+            title: 故事史诗
             type: bullet-list
             template: |
-              - "Level Management System"
-              - "Audio Integration and Optimization"
-              - "Performance Optimization and Testing"
+              - "关卡管理系统"
+              - "音频集成和优化"
+              - "性能优化和测试"
 
   - id: risk-assessment
-    title: Risk Assessment
-    instruction: Identify potential technical risks and mitigation strategies
+    title: 风险评估
+    instruction: 确定潜在的技术风险和缓解策略
     type: table
     template: |
-      | Risk                         | Probability | Impact     | Mitigation Strategy |
+      | 风险 | 概率 | 影响 | 缓解策略 |
       | ---------------------------- | ----------- | ---------- | ------------------- |
-      | Performance issues on mobile | {{prob}}    | {{impact}} | {{mitigation}}      |
-      | Asset loading bottlenecks    | {{prob}}    | {{impact}} | {{mitigation}}      |
-      | Cross-platform compatibility | {{prob}}    | {{impact}} | {{mitigation}}      |
+      | 移动端性能问题 | {{prob}} | {{impact}} | {{mitigation}} |
+      | 资产加载瓶颈 | {{prob}} | {{impact}} | {{mitigation}} |
+      | 跨平台兼容性 | {{prob}} | {{impact}} | {{mitigation}} |
 
   - id: success-criteria
-    title: Success Criteria
-    instruction: Define measurable technical success criteria
+    title: 成功标准
+    instruction: 定义可衡量的技术成功标准
     sections:
       - id: technical-metrics
-        title: Technical Metrics
+        title: 技术指标
         type: bullet-list
         template: |
-          - All systems implemented per specification
-          - Performance targets met consistently
-          - Zero critical bugs in core systems
-          - Successful deployment across target platforms
+          - 所有系统均按规范实施
+          - 持续满足性能目标
+          - 核心系统中无严重错误
+          - 在目标平台上成功部署
       - id: code-quality
-        title: Code Quality
+        title: 代码质量
         type: bullet-list
         template: |
-          - 90%+ test coverage on game logic
-          - Zero TypeScript errors in strict mode
-          - Consistent adherence to coding standards
-          - Comprehensive documentation coverage
+          - 游戏逻辑测试覆盖率 90%+
+          - 严格模式下无 TypeScript 错误
+          - 一致遵守编码标准
+          - 全面的文档覆盖

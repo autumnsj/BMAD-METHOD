@@ -1,252 +1,252 @@
-<!-- Powered by BMAD™ Core -->
+<!-- 由 BMAD™ 核心驱动 -->
 
-# Game Development BMad Knowledge Base
+# 游戏开发 BMad 知识库
 
-## Overview
+## 概述
 
-This game development expansion of BMad-Method specializes in creating 2D games using Phaser 3 and TypeScript. It extends the core BMad framework with game-specific agents, workflows, and best practices for professional game development.
+BMad-Method 的这个游戏开发扩展包专门用于使用 Phaser 3 和 TypeScript 创建 2D 游戏。它通过特定于游戏的人工智能代理、工作流程和专业游戏开发的最佳实践，扩展了核心 BMad 框架。
 
-### Game Development Focus
+### 游戏开发重点
 
-- **Target Engine**: Phaser 3.70+ with TypeScript 5.0+
-- **Platform Strategy**: Web-first with mobile optimization
-- **Development Approach**: Agile story-driven development
-- **Performance Target**: 60 FPS on target devices
-- **Architecture**: Component-based game systems
+- **目标引擎**：Phaser 3.70+ 与 TypeScript 5.0+
+- **平台策略**：Web 优先，并进行移动优化
+- **开发方法**：敏捷的故事驱动开发
+- **性能目标**：在目标设备上达到 60 FPS
+- **架构**：基于组件的游戏系统
 
-## Core Game Development Philosophy
+## 核心游戏开发理念
 
-### Player-First Development
+### 玩家至上的开发
 
-You are developing games as a "Player Experience CEO" - thinking like a game director with unlimited creative resources and a singular vision for player enjoyment. Your AI agents are your specialized game development team:
+您正在以“玩家体验 CEO”的身份开发游戏——像一位拥有无限创意资源和对玩家享受有单一愿景的游戏总监一样思考。您的 AI 代理是您专业化的游戏开发团队：
 
-- **Direct**: Provide clear game design vision and player experience goals
-- **Refine**: Iterate on gameplay mechanics until they're compelling
-- **Oversee**: Maintain creative alignment across all development disciplines
-- **Playfocus**: Every decision serves the player experience
+- **指导**：提供清晰的游戏设计愿景和玩家体验目标
+- **完善**：迭代游戏机制，直到它们引人入胜
+- **监督**：在所有开发领域保持创意上的一致性
+- **以玩家为中心**：每个决策都服务于玩家体验
 
-### Game Development Principles
+### 游戏开发原则
 
-1. **PLAYER_EXPERIENCE_FIRST**: Every mechanic must serve player engagement and fun
-2. **ITERATIVE_DESIGN**: Prototype, test, refine - games are discovered through iteration
-3. **TECHNICAL_EXCELLENCE**: 60 FPS performance and cross-platform compatibility are non-negotiable
-4. **STORY_DRIVEN_DEV**: Game features are implemented through detailed development stories
-5. **BALANCE_THROUGH_DATA**: Use metrics and playtesting to validate game balance
-6. **DOCUMENT_EVERYTHING**: Clear specifications enable proper game implementation
-7. **START_SMALL_ITERATE_FAST**: Core mechanics first, then expand and polish
-8. **EMBRACE_CREATIVE_CHAOS**: Games evolve - adapt design based on what's fun
+1. **玩家体验至上**：每个机制都必须服务于玩家的参与度和乐趣
+2. **迭代设计**：原型、测试、完善——游戏是通过迭代发现的
+3. **卓越技术**：60 FPS 的性能和跨平台兼容性是不可协商的
+4. **故事驱动开发**：游戏功能通过详细的开发故事来实现
+5. **通过数据平衡**：使用指标和游戏测试来验证游戏平衡
+6. **记录一切**：清晰的规范有助于正确的游戏实施
+7. **从小处着手，快速迭代**：首先是核心机制，然后扩展和润色
+8. **拥抱创意混乱**：游戏在不断发展——根据有趣的内容调整设计
 
-## Game Development Workflow
+## 游戏开发工作流程
 
-### Phase 1: Game Concept and Design
+### 阶段 1：游戏概念与设计
 
-1. **Game Designer**: Start with brainstorming and concept development
-   - Use \*brainstorm to explore game concepts and mechanics
-   - Create Game Brief using game-brief-tmpl
-   - Develop core game pillars and player experience goals
+1. **游戏设计师**：从头脑风暴和概念开发开始
+   - 使用 \*brainstorm 探索游戏概念和机制
+   - 使用 game-brief-tmpl 创建游戏简介
+   - 制定核心游戏支柱和玩家体验目标
 
-2. **Game Designer**: Create comprehensive Game Design Document
-   - Use game-design-doc-tmpl to create detailed GDD
-   - Define all game mechanics, progression, and balance
-   - Specify technical requirements and platform targets
+2. **游戏设计师**：创建全面的游戏设计文档
+   - 使用 game-design-doc-tmpl 创建详细的 GDD
+   - 定义所有游戏机制、进程和平衡
+   - 指定技术要求和平台目标
 
-3. **Game Designer**: Develop Level Design Framework
-   - Create level-design-doc-tmpl for content guidelines
-   - Define level types, difficulty progression, and content structure
-   - Establish performance and technical constraints for levels
+3. **游戏设计师**：开发关卡设计框架
+   - 为内容指南创建 level-design-doc-tmpl
+   - 定义关卡类型、难度进程和内容结构
+   - 为关卡建立性能和技术约束
 
-### Phase 2: Technical Architecture
+### 阶段 2：技术架构
 
-4. **Solution Architect** (or Game Designer): Create Technical Architecture
-   - Use game-architecture-tmpl to design technical implementation
-   - Define Phaser 3 systems, performance optimization, and code structure
-   - Align technical architecture with game design requirements
+4. **解决方案架构师**（或游戏设计师）：创建技术架构
+   - 使用 game-architecture-tmpl 设计技术实施方案
+   - 定义 Phaser 3 系统、性能优化和代码结构
+   - 使技术架构与游戏设计要求保持一致
 
-### Phase 3: Story-Driven Development
+### 阶段 3：故事驱动开发
 
-5. **Game Scrum Master**: Break down design into development stories
-   - Use create-game-story task to create detailed implementation stories
-   - Each story should be immediately actionable by game developers
-   - Apply game-story-dod-checklist to ensure story quality
+5. **游戏 Scrum Master**：将设计分解为开发故事
+   - 使用 create-game-story 任务创建详细的实施故事
+   - 每个故事都应该能被游戏开发者立即执行
+   - 应用 game-story-dod-checklist 以确保故事质量
 
-6. **Game Developer**: Implement game features story by story
-   - Follow TypeScript strict mode and Phaser 3 best practices
-   - Maintain 60 FPS performance target throughout development
-   - Use test-driven development for game logic components
+6. **游戏开发者**：逐个故事地实施游戏功能
+   - 遵循 TypeScript 严格模式和 Phaser 3 最佳实践
+   - 在整个开发过程中保持 60 FPS 的性能目标
+   - 对游戏逻辑组件使用测试驱动开发
 
-7. **Iterative Refinement**: Continuous playtesting and improvement
-   - Test core mechanics early and often
-   - Validate game balance through metrics and player feedback
-   - Iterate on design based on implementation discoveries
+7. **迭代完善**：持续的游戏测试和改进
+   - 尽早并经常测试核心机制
+   - 通过指标和玩家反馈验证游戏平衡
+   - 根据实施中的发现迭代设计
 
-## Game-Specific Development Guidelines
+## 游戏特定开发指南
 
-### Phaser 3 + TypeScript Standards
+### Phaser 3 + TypeScript 标准
 
-**Project Structure:**
+**项目结构：**
 
 ```text
 game-project/
 ├── src/
-│   ├── scenes/          # Game scenes (BootScene, MenuScene, GameScene)
-│   ├── gameObjects/     # Custom game objects and entities
-│   ├── systems/         # Core game systems (GameState, InputManager, etc.)
-│   ├── utils/           # Utility functions and helpers
-│   ├── types/           # TypeScript type definitions
-│   └── config/          # Game configuration and balance
-├── assets/              # Game assets (images, audio, data)
+│   ├── scenes/          # 游戏场景 (BootScene, MenuScene, GameScene)
+│   ├── gameObjects/     # 自定义游戏对象和实体
+│   ├── systems/         # 核心游戏系统 (GameState, InputManager, 等)
+│   ├── utils/           # 实用功能和辅助函数
+│   ├── types/           # TypeScript 类型定义
+│   └── config/          # 游戏配置和平衡
+├── assets/              # 游戏资产 (图像, 音频, 数据)
 ├── docs/
-│   ├── stories/         # Development stories
-│   └── design/          # Game design documents
-└── tests/               # Unit and integration tests
+│   ├── stories/         # 开发故事
+│   └── design/          # 游戏设计文档
+└── tests/               # 单元和集成测试
 ```
 
-**Performance Requirements:**
+**性能要求：**
 
-- Maintain 60 FPS on target devices
-- Memory usage under specified limits per level
-- Loading times under 3 seconds for levels
-- Smooth animation and responsive controls
+- 在目标设备上保持 60 FPS
+- 每个级别的内存使用量低于指定限制
+- 关卡加载时间低于3秒
+- 流畅的动画和响应迅速的控制
 
-**Code Quality:**
+**代码质量：**
 
-- TypeScript strict mode compliance
-- Component-based architecture
-- Object pooling for frequently created/destroyed objects
-- Error handling and graceful degradation
+- 符合 TypeScript 严格模式
+- 基于组件的架构
+- 对频繁创建/销毁的对象使用对象池
+- 错误处理和优雅降级
 
-### Game Development Story Structure
+### 游戏开发故事结构
 
-**Story Requirements:**
+**故事要求：**
 
-- Clear reference to Game Design Document section
-- Specific acceptance criteria for game functionality
-- Technical implementation details for Phaser 3
-- Performance requirements and optimization considerations
-- Testing requirements including gameplay validation
+- 清晰引用游戏设计文档部分
+- 针对游戏功能的具体验收标准
+- Phaser 3 的技术实施细节
+- 性能要求和优化考虑
+- 包括游戏性验证在内的测试要求
 
-**Story Categories:**
+**故事类别：**
 
-- **Core Mechanics**: Fundamental gameplay systems
-- **Level Content**: Individual levels and content implementation
-- **UI/UX**: User interface and player experience features
-- **Performance**: Optimization and technical improvements
-- **Polish**: Visual effects, audio, and game feel enhancements
+- **核心机制**：基础游戏系统
+- **关卡内容**：单个关卡和内容实施
+- **UI/UX**：用户界面和玩家体验功能
+- **性能**：优化和技术改进
+- **润色**：视觉效果、音频和游戏感觉增强
 
-### Quality Assurance for Games
+### 游戏质量保证
 
-**Testing Approach:**
+**测试方法：**
 
-- Unit tests for game logic (separate from Phaser)
-- Integration tests for game systems
-- Performance benchmarking and profiling
-- Gameplay testing and balance validation
-- Cross-platform compatibility testing
+- 游戏逻辑的单元测试（与 Phaser 分离）
+- 游戏系统的集成测试
+- 性能基准测试和分析
+- 游戏性测试和平衡验证
+- 跨平台兼容性测试
 
-**Performance Monitoring:**
+**性能监控：**
 
-- Frame rate consistency tracking
-- Memory usage monitoring
-- Asset loading performance
-- Input responsiveness validation
-- Battery usage optimization (mobile)
+- 帧率一致性跟踪
+- 内存使用监控
+- 资产加载性能
+- 输入响应性验证
+- 电池使用优化（移动端）
 
-## Game Development Team Roles
+## 游戏开发团队角色
 
-### Game Designer (Alex)
+### 游戏设计师 (Alex)
 
-- **Primary Focus**: Game mechanics, player experience, design documentation
-- **Key Outputs**: Game Brief, Game Design Document, Level Design Framework
-- **Specialties**: Brainstorming, game balance, player psychology, creative direction
+- **主要关注点**：游戏机制、玩家体验、设计文档
+- **主要产出**：游戏简介、游戏设计文档、关卡设计框架
+- **专长**：头脑风暴、游戏平衡、玩家心理、创意指导
 
-### Game Developer (Maya)
+### 游戏开发者 (Maya)
 
-- **Primary Focus**: Phaser 3 implementation, technical excellence, performance
-- **Key Outputs**: Working game features, optimized code, technical architecture
-- **Specialties**: TypeScript/Phaser 3, performance optimization, cross-platform development
+- **主要关注点**：Phaser 3 实施、卓越技术、性能
+- **主要产出**：可工作的游戏功能、优化的代码、技术架构
+- **专长**：TypeScript/Phaser 3、性能优化、跨平台开发
 
-### Game Scrum Master (Jordan)
+### 游戏 Scrum Master (Jordan)
 
-- **Primary Focus**: Story creation, development planning, agile process
-- **Key Outputs**: Detailed implementation stories, sprint planning, quality assurance
-- **Specialties**: Story breakdown, developer handoffs, process optimization
+- **主要关注点**：故事创建、开发规划、敏捷流程
+- **主要产出**：详细的实施故事、冲刺计划、质量保证
+- **专长**：故事分解、开发者交接、流程优化
 
-## Platform-Specific Considerations
+## 平台特定考虑
 
-### Web Platform
+### Web 平台
 
-- Browser compatibility across modern browsers
-- Progressive loading for large assets
-- Touch-friendly mobile controls
-- Responsive design for different screen sizes
+- 在现代浏览器中的浏览器兼容性
+- 大型资产的渐进式加载
+- 移动端触摸友好的控制
+- 针对不同屏幕尺寸的响应式设计
 
-### Mobile Optimization
+### 移动端优化
 
-- Touch gesture support and responsive controls
-- Battery usage optimization
-- Performance scaling for different device capabilities
-- App store compliance and packaging
+- 触摸手势支持和响应式控制
+- 电池使用优化
+- 针对不同设备能力的性能扩展
+- 应用商店合规性和打包
 
-### Performance Targets
+### 性能目标
 
-- **Desktop**: 60 FPS at 1080p resolution
-- **Mobile**: 60 FPS on mid-range devices, 30 FPS minimum on low-end
-- **Loading**: Initial load under 5 seconds, level transitions under 2 seconds
-- **Memory**: Under 100MB total usage, under 50MB per level
+- **桌面端**：1080p 分辨率下 60 FPS
+- **移动端**：中端设备上 60 FPS，低端设备上最低 30 FPS
+- **加载**：初始加载低于 5 秒，关卡转换低于 2 秒
+- **内存**：总使用量低于 100MB，每个关卡低于 50MB
 
-## Success Metrics for Game Development
+## 游戏开发成功指标
 
-### Technical Metrics
+### 技术指标
 
-- Frame rate consistency (>90% of time at target FPS)
-- Memory usage within budgets
-- Loading time targets met
-- Zero critical bugs in core gameplay systems
+- 帧率一致性（>90% 的时间在目标 FPS）
+- 内存使用在预算范围内
+- 满足加载时间目标
+- 核心游戏系统中无严重错误
 
-### Player Experience Metrics
+### 玩家体验指标
 
-- Tutorial completion rate >80%
-- Level completion rates appropriate for difficulty curve
-- Average session length meets design targets
-- Player retention and engagement metrics
+- 教程完成率 >80%
+- 关卡完成率与难度曲线相适应
+- 平均会话时长达到设计目标
+- 玩家留存率和参与度指标
 
-### Development Process Metrics
+### 开发过程指标
 
-- Story completion within estimated timeframes
-- Code quality metrics (test coverage, linting compliance)
-- Documentation completeness and accuracy
-- Team velocity and delivery consistency
+- 在预估时间内完成故事
+- 代码质量指标（测试覆盖率、linting 合规性）
+- 文档的完整性和准确性
+- 团队速度和交付一致性
 
-## Common Game Development Patterns
+## 常见游戏开发模式
 
-### Scene Management
+### 场景管理
 
-- Boot scene for initial setup and configuration
-- Preload scene for asset loading with progress feedback
-- Menu scene for navigation and settings
-- Game scenes for actual gameplay
-- Clean transitions between scenes with proper cleanup
+- 用于初始设置和配置的启动场景
+- 用于资产加载并提供进度反馈的预加载场景
+- 用于导航和设置的菜单场景
+- 用于实际游戏的游戏场景
+- 场景之间进行干净的转换并有适当的清理
 
-### Game State Management
+### 游戏状态管理
 
-- Persistent data (player progress, unlocks, settings)
-- Session data (current level, score, temporary state)
-- Save/load system with error recovery
-- Settings management with platform storage
+- 持久化数据（玩家进度、解锁、设置）
+- 会话数据（当前关卡、分数、临时状态）
+- 带有错误恢复的保存/加载系统
+- 使用平台存储的设置管理
 
-### Input Handling
+### 输入处理
 
-- Cross-platform input abstraction
-- Touch gesture support for mobile
-- Keyboard and gamepad support for desktop
-- Customizable control schemes
+- 跨平台输入抽象
+- 移动端的触摸手势支持
+- 桌面端的键盘和手柄支持
+- 可定制的控制方案
 
-### Performance Optimization
+### 性能优化
 
-- Object pooling for bullets, effects, enemies
-- Texture atlasing and sprite optimization
-- Audio compression and streaming
-- Culling and level-of-detail systems
-- Memory management and garbage collection optimization
+- 子弹、效果、敌人的对象池
+- 纹理图集和精灵优化
+- 音频压缩和流式传输
+- 剔除和细节层次系统
+- 内存管理和垃圾回收优化
 
-This knowledge base provides the foundation for effective game development using the BMad-Method framework with specialized focus on 2D game creation using Phaser 3 and TypeScript.
+该知识库为使用 BMad-Method 框架进行有效的游戏开发提供了基础，并特别关注使用 Phaser 3 和 TypeScript 创建 2D 游戏。

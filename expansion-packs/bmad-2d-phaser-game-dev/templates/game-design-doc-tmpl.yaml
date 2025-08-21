@@ -1,12 +1,12 @@
-# <!-- Powered by BMAD™ Core -->
+# <!-- 由 BMAD™ 核心驱动 -->
 template:
   id: game-design-doc-template-v2
-  name: Game Design Document (GDD)
+  name: 游戏设计文档 (GDD)
   version: 2.0
   output:
     format: markdown
     filename: "docs/{{game_name}}-game-design-document.md"
-    title: "{{game_title}} Game Design Document (GDD)"
+    title: "{{game_title}} 游戏设计文档 (GDD)"
 
 workflow:
   mode: interactive
@@ -14,331 +14,331 @@ workflow:
 sections:
   - id: initial-setup
     instruction: |
-      This template creates a comprehensive Game Design Document that will serve as the foundation for all game development work. The GDD should be detailed enough that developers can create user stories and epics from it. Focus on gameplay systems, mechanics, and technical requirements that can be broken down into implementable features.
+      此模板创建一个全面的游戏设计文档，作为所有游戏开发工作的基础。GDD 应足够详细，以便开发者可以从中创建用户故事和史诗。重点关注可分解为可实施功能的游戏系统、机制和技术要求。
 
-      If available, review any provided documents or ask if any are optionally available: Project Brief, Market Research, Competitive Analysis
+      如果可用，请审查任何提供的文档或询问是否有可选的可用文档：项目简介、市场研究、竞争分析
 
   - id: executive-summary
-    title: Executive Summary
-    instruction: Create a compelling overview that captures the essence of the game. Present this section first and get user feedback before proceeding.
+    title: 执行摘要
+    instruction: 创建一个引人入胜的概述，捕捉游戏的精髓。首先呈现此部分，并在继续之前获取用户反馈。
     sections:
       - id: core-concept
-        title: Core Concept
-        instruction: 2-3 sentences that clearly describe what the game is and why players will love it
+        title: 核心概念
+        instruction: 用2-3句话清晰地描述游戏是什么以及为什么玩家会喜欢它
       - id: target-audience
-        title: Target Audience
-        instruction: Define the primary and secondary audience with demographics and gaming preferences
+        title: 目标受众
+        instruction: 定义主要和次要受众的人口统计和游戏偏好
         template: |
-          **Primary:** {{age_range}}, {{player_type}}, {{platform_preference}}
-          **Secondary:** {{secondary_audience}}
+          **主要：** {{age_range}}, {{player_type}}, {{platform_preference}}
+          **次要：** {{secondary_audience}}
       - id: platform-technical
-        title: Platform & Technical Requirements
-        instruction: Based on the technical preferences or user input, define the target platforms
+        title: 平台和技术要求
+        instruction: 根据技术偏好或用户输入，定义目标平台
         template: |
-          **Primary Platform:** {{platform}}
-          **Engine:** Phaser 3 + TypeScript
-          **Performance Target:** 60 FPS on {{minimum_device}}
-          **Screen Support:** {{resolution_range}}
+          **主要平台：** {{platform}}
+          **引擎：** Phaser 3 + TypeScript
+          **性能目标：** 在 {{minimum_device}} 上达到 60 FPS
+          **屏幕支持：** {{resolution_range}}
       - id: unique-selling-points
-        title: Unique Selling Points
-        instruction: List 3-5 key features that differentiate this game from competitors
+        title: 独特卖点
+        instruction: 列出3-5个使该游戏与竞争对手区别开来的关键功能
         type: numbered-list
         template: "{{usp}}"
 
   - id: core-gameplay
-    title: Core Gameplay
-    instruction: This section defines the fundamental game mechanics. After presenting each subsection, apply `tasks#advanced-elicitation` protocol to ensure completeness.
+    title: 核心游戏玩法
+    instruction: 本节定义了基础游戏机制。在呈现每个小节后，应用 `tasks#advanced-elicitation` 协议以确保完整性。
     sections:
       - id: game-pillars
-        title: Game Pillars
-        instruction: Define 3-5 core pillars that guide all design decisions. These should be specific and actionable.
+        title: 游戏支柱
+        instruction: 定义3-5个指导所有设计决策的核心支柱。这些应该是具体和可操作的。
         type: numbered-list
         template: |
           **{{pillar_name}}** - {{description}}
       - id: core-gameplay-loop
-        title: Core Gameplay Loop
-        instruction: Define the 30-60 second loop that players will repeat. Be specific about timing and player actions.
+        title: 核心游戏循环
+        instruction: 定义玩家将重复的30-60秒循环。具体说明时间和玩家操作。
         template: |
-          **Primary Loop ({{duration}} seconds):**
+          **主要循环 ({{duration}} 秒):**
 
           1. {{action_1}} ({{time_1}}s)
           2. {{action_2}} ({{time_2}}s)
           3. {{action_3}} ({{time_3}}s)
           4. {{reward_feedback}} ({{time_4}}s)
       - id: win-loss-conditions
-        title: Win/Loss Conditions
-        instruction: Clearly define success and failure states
+        title: 赢/输条件
+        instruction: 清晰定义成功和失败状态
         template: |
-          **Victory Conditions:**
+          **胜利条件：**
 
           - {{win_condition_1}}
           - {{win_condition_2}}
 
-          **Failure States:**
+          **失败状态：**
 
           - {{loss_condition_1}}
           - {{loss_condition_2}}
 
   - id: game-mechanics
-    title: Game Mechanics
-    instruction: Detail each major mechanic that will need to be implemented. Each mechanic should be specific enough for developers to create implementation stories.
+    title: 游戏机制
+    instruction: 详细说明需要实施的每个主要机制。每个机制都应足够具体，以便开发者可以创建实施故事。
     sections:
       - id: primary-mechanics
-        title: Primary Mechanics
+        title: 主要机制
         repeatable: true
         sections:
           - id: mechanic
             title: "{{mechanic_name}}"
             template: |
-              **Description:** {{detailed_description}}
+              **描述：** {{detailed_description}}
 
-              **Player Input:** {{input_method}}
+              **玩家输入：** {{input_method}}
 
-              **System Response:** {{game_response}}
+              **系统响应：** {{game_response}}
 
-              **Implementation Notes:**
+              **实施说明：**
 
               - {{tech_requirement_1}}
               - {{tech_requirement_2}}
               - {{performance_consideration}}
 
-              **Dependencies:** {{other_mechanics_needed}}
+              **依赖项：** {{other_mechanics_needed}}
       - id: controls
-        title: Controls
-        instruction: Define all input methods for different platforms
+        title: 控制
+        instruction: 定义不同平台的所有输入法
         type: table
         template: |
-          | Action | Desktop | Mobile | Gamepad |
+          | 操作 | 桌面 | 移动 | 手柄 |
           | ------ | ------- | ------ | ------- |
           | {{action}} | {{key}} | {{gesture}} | {{button}} |
 
   - id: progression-balance
-    title: Progression & Balance
-    instruction: Define how players advance and how difficulty scales. This section should provide clear parameters for implementation.
+    title: 进程与平衡
+    instruction: 定义玩家如何前进以及难度如何扩展。本节应为实施提供清晰的参数。
     sections:
       - id: player-progression
-        title: Player Progression
+        title: 玩家进程
         template: |
-          **Progression Type:** {{linear|branching|metroidvania}}
+          **进程类型：** {{linear|branching|metroidvania}}
 
-          **Key Milestones:**
+          **关键里程碑：**
 
           1. **{{milestone_1}}** - {{unlock_description}}
           2. **{{milestone_2}}** - {{unlock_description}}
           3. **{{milestone_3}}** - {{unlock_description}}
       - id: difficulty-curve
-        title: Difficulty Curve
-        instruction: Provide specific parameters for balancing
+        title: 难度曲线
+        instruction: 提供用于平衡的具体参数
         template: |
-          **Tutorial Phase:** {{duration}} - {{difficulty_description}}
-          **Early Game:** {{duration}} - {{difficulty_description}}
-          **Mid Game:** {{duration}} - {{difficulty_description}}
-          **Late Game:** {{duration}} - {{difficulty_description}}
+          **教程阶段：** {{duration}} - {{difficulty_description}}
+          **游戏早期：** {{duration}} - {{difficulty_description}}
+          **游戏中期：** {{duration}} - {{difficulty_description}}
+          **游戏后期：** {{duration}} - {{difficulty_description}}
       - id: economy-resources
-        title: Economy & Resources
+        title: 经济与资源
         condition: has_economy
-        instruction: Define any in-game currencies, resources, or collectibles
+        instruction: 定义任何游戏内货币、资源或收藏品
         type: table
         template: |
-          | Resource | Earn Rate | Spend Rate | Purpose | Cap |
+          | 资源 | 赚取率 | 消耗率 | 用途 | 上限 |
           | -------- | --------- | ---------- | ------- | --- |
           | {{resource}} | {{rate}} | {{rate}} | {{use}} | {{max}} |
 
   - id: level-design-framework
-    title: Level Design Framework
-    instruction: Provide guidelines for level creation that developers can use to create level implementation stories
+    title: 关卡设计框架
+    instruction: 提供开发者可用于创建关卡实施故事的关卡创建指南
     sections:
       - id: level-types
-        title: Level Types
+        title: 关卡类型
         repeatable: true
         sections:
           - id: level-type
             title: "{{level_type_name}}"
             template: |
-              **Purpose:** {{gameplay_purpose}}
-              **Duration:** {{target_time}}
-              **Key Elements:** {{required_mechanics}}
-              **Difficulty:** {{relative_difficulty}}
+              **目的：** {{gameplay_purpose}}
+              **时长：** {{target_time}}
+              **关键元素：** {{required_mechanics}}
+              **难度：** {{relative_difficulty}}
 
-              **Structure Template:**
+              **结构模板：**
 
-              - Introduction: {{intro_description}}
-              - Challenge: {{main_challenge}}
-              - Resolution: {{completion_requirement}}
+              - 介绍：{{intro_description}}
+              - 挑战：{{main_challenge}}
+              - 解决：{{completion_requirement}}
       - id: level-progression
-        title: Level Progression
+        title: 关卡进程
         template: |
-          **World Structure:** {{linear|hub|open}}
-          **Total Levels:** {{number}}
-          **Unlock Pattern:** {{progression_method}}
+          **世界结构：** {{linear|hub|open}}
+          **总关卡数：** {{number}}
+          **解锁模式：** {{progression_method}}
 
   - id: technical-specifications
-    title: Technical Specifications
-    instruction: Define technical requirements that will guide architecture and implementation decisions. Review any existing technical preferences.
+    title: 技术规格
+    instruction: 定义将指导架构和实施决策的技术要求。审查任何现有的技术偏好。
     sections:
       - id: performance-requirements
-        title: Performance Requirements
+        title: 性能要求
         template: |
-          **Frame Rate:** 60 FPS (minimum 30 FPS on low-end devices)
-          **Memory Usage:** <{{memory_limit}}MB
-          **Load Times:** <{{load_time}}s initial, <{{level_load}}s between levels
-          **Battery Usage:** Optimized for mobile devices
+          **帧率：** 60 FPS (在低端设备上最低 30 FPS)
+          **内存使用：** <{{memory_limit}}MB
+          **加载时间：** 初始 <{{load_time}}s，关卡之间 <{{level_load}}s
+          **电池使用：** 针对移动设备进行优化
       - id: platform-specific
-        title: Platform Specific
+        title: 平台特定
         template: |
-          **Desktop:**
+          **桌面端：**
 
-          - Resolution: {{min_resolution}} - {{max_resolution}}
-          - Input: Keyboard, Mouse, Gamepad
-          - Browser: Chrome 80+, Firefox 75+, Safari 13+
+          - 分辨率：{{min_resolution}} - {{max_resolution}}
+          - 输入：键盘、鼠标、手柄
+          - 浏览器：Chrome 80+, Firefox 75+, Safari 13+
 
-          **Mobile:**
+          **移动端：**
 
-          - Resolution: {{mobile_min}} - {{mobile_max}}
-          - Input: Touch, Tilt (optional)
-          - OS: iOS 13+, Android 8+
+          - 分辨率：{{mobile_min}} - {{mobile_max}}
+          - 输入：触摸、倾斜（可选）
+          - 操作系统：iOS 13+, Android 8+
       - id: asset-requirements
-        title: Asset Requirements
-        instruction: Define asset specifications for the art and audio teams
+        title: 资产要求
+        instruction: 为艺术和音频团队定义资产规格
         template: |
-          **Visual Assets:**
+          **视觉资产：**
 
-          - Art Style: {{style_description}}
-          - Color Palette: {{color_specification}}
-          - Animation: {{animation_requirements}}
-          - UI Resolution: {{ui_specs}}
+          - 艺术风格：{{style_description}}
+          - 调色板：{{color_specification}}
+          - 动画：{{animation_requirements}}
+          - UI 分辨率：{{ui_specs}}
 
-          **Audio Assets:**
+          **音频资产：**
 
-          - Music Style: {{music_genre}}
-          - Sound Effects: {{sfx_requirements}}
-          - Voice Acting: {{voice_needs}}
+          - 音乐风格：{{music_genre}}
+          - 音效：{{sfx_requirements}}
+          - 配音：{{voice_needs}}
 
   - id: technical-architecture-requirements
-    title: Technical Architecture Requirements
-    instruction: Define high-level technical requirements that the game architecture must support
+    title: 技术架构要求
+    instruction: 定义游戏架构必须支持的高级技术要求
     sections:
       - id: engine-configuration
-        title: Engine Configuration
+        title: 引擎配置
         template: |
-          **Phaser 3 Setup:**
+          **Phaser 3 设置：**
 
-          - TypeScript: Strict mode enabled
-          - Physics: {{physics_system}} (Arcade/Matter)
-          - Renderer: WebGL with Canvas fallback
-          - Scale Mode: {{scale_mode}}
+          - TypeScript：启用严格模式
+          - 物理：{{physics_system}} (Arcade/Matter)
+          - 渲染器：WebGL，带 Canvas 后备
+          - 缩放模式：{{scale_mode}}
       - id: code-architecture
-        title: Code Architecture
+        title: 代码架构
         template: |
-          **Required Systems:**
+          **所需系统：**
 
-          - Scene Management
-          - State Management
-          - Asset Loading
-          - Save/Load System
-          - Input Management
-          - Audio System
-          - Performance Monitoring
+          - 场景管理
+          - 状态管理
+          - 资产加载
+          - 保存/加载系统
+          - 输入管理
+          - 音频系统
+          - 性能监控
       - id: data-management
-        title: Data Management
+        title: 数据管理
         template: |
-          **Save Data:**
+          **保存数据：**
 
-          - Progress tracking
-          - Settings persistence
-          - Statistics collection
+          - 进度跟踪
+          - 设置持久化
+          - 统计数据收集
           - {{additional_data}}
 
   - id: development-phases
-    title: Development Phases
-    instruction: Break down the development into phases that can be converted to epics
+    title: 开发阶段
+    instruction: 将开发分解为可转换为史诗的阶段
     sections:
       - id: phase-1-core-systems
-        title: "Phase 1: Core Systems ({{duration}})"
+        title: "阶段 1：核心系统 ({{duration}})"
         sections:
           - id: foundation-epic
-            title: "Epic: Foundation"
+            title: "史诗：基础"
             type: bullet-list
             template: |
-              - Engine setup and configuration
-              - Basic scene management
-              - Core input handling
-              - Asset loading pipeline
+              - 引擎设置和配置
+              - 基本场景管理
+              - 核心输入处理
+              - 资产加载管道
           - id: core-mechanics-epic
-            title: "Epic: Core Mechanics"
+            title: "史诗：核心机制"
             type: bullet-list
             template: |
-              - {{primary_mechanic}} implementation
-              - Basic physics and collision
-              - Player controller
+              - {{primary_mechanic}} 实施
+              - 基本物理和碰撞
+              - 玩家控制器
       - id: phase-2-gameplay-features
-        title: "Phase 2: Gameplay Features ({{duration}})"
+        title: "阶段 2：游戏功能 ({{duration}})"
         sections:
           - id: game-systems-epic
-            title: "Epic: Game Systems"
+            title: "史诗：游戏系统"
             type: bullet-list
             template: |
-              - {{mechanic_2}} implementation
-              - {{mechanic_3}} implementation
-              - Game state management
+              - {{mechanic_2}} 实施
+              - {{mechanic_3}} 实施
+              - 游戏状态管理
           - id: content-creation-epic
-            title: "Epic: Content Creation"
+            title: "史诗：内容创建"
             type: bullet-list
             template: |
-              - Level loading system
-              - First playable levels
-              - Basic UI implementation
+              - 关卡加载系统
+              - 第一个可玩关卡
+              - 基本 UI 实施
       - id: phase-3-polish-optimization
-        title: "Phase 3: Polish & Optimization ({{duration}})"
+        title: "阶段 3：润色与优化 ({{duration}})"
         sections:
           - id: performance-epic
-            title: "Epic: Performance"
+            title: "史诗：性能"
             type: bullet-list
             template: |
-              - Optimization and profiling
-              - Mobile platform testing
-              - Memory management
+              - 优化和分析
+              - 移动平台测试
+              - 内存管理
           - id: user-experience-epic
-            title: "Epic: User Experience"
+            title: "史诗：用户体验"
             type: bullet-list
             template: |
-              - Audio implementation
-              - Visual effects and polish
-              - Final UI/UX refinement
+              - 音频实施
+              - 视觉效果和润色
+              - 最终 UI/UX 优化
 
   - id: success-metrics
-    title: Success Metrics
-    instruction: Define measurable goals for the game
+    title: 成功指标
+    instruction: 定义游戏的可衡量目标
     sections:
       - id: technical-metrics
-        title: Technical Metrics
+        title: 技术指标
         type: bullet-list
         template: |
-          - Frame rate: {{fps_target}}
-          - Load time: {{load_target}}
-          - Crash rate: <{{crash_threshold}}%
-          - Memory usage: <{{memory_target}}MB
+          - 帧率：{{fps_target}}
+          - 加载时间：{{load_target}}
+          - 崩溃率：<{{crash_threshold}}%
+          - 内存使用：<{{memory_target}}MB
       - id: gameplay-metrics
-        title: Gameplay Metrics
+        title: 游戏性指标
         type: bullet-list
         template: |
-          - Tutorial completion: {{completion_rate}}%
-          - Average session: {{session_length}} minutes
-          - Level completion: {{level_completion}}%
-          - Player retention: D1 {{d1}}%, D7 {{d7}}%
+          - 教程完成率：{{completion_rate}}%
+          - 平均会话：{{session_length}} 分钟
+          - 关卡完成率：{{level_completion}}%
+          - 玩家留存率：D1 {{d1}}%, D7 {{d7}}%
 
   - id: appendices
-    title: Appendices
+    title: 附录
     sections:
       - id: change-log
-        title: Change Log
-        instruction: Track document versions and changes
+        title: 变更日志
+        instruction: 跟踪文档版本和变更
         type: table
         template: |
-          | Date | Version | Description | Author |
+          | 日期 | 版本 | 描述 | 作者 |
           | :--- | :------ | :---------- | :----- |
       - id: references
-        title: References
-        instruction: List any competitive analysis, inspiration, or research sources
+        title: 参考资料
+        instruction: 列出任何竞争分析、灵感或研究来源
         type: bullet-list
         template: "{{reference}}"

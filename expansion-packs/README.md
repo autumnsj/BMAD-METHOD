@@ -1,3 +1,3 @@
-# BMad Method Expansion Packs
+# BMad 方法扩展包
 
-Expansion packs extend BMad-Method beyond traditional software development, providing specialized agent teams, templates, and workflows for specific domains and industries. Each pack is a self-contained ecosystem designed to bring the power of AI-assisted workflows to any field. Coming soon.
+扩展包将 BMad-Method 扩展到传统软件开发之外，为特定领域和行业提供专门的代理团队、模板和工作流程。每个包都是一个独立的生态系统，旨在将 AI 辅助工作流的强大功能带到任何领域。即将推出。

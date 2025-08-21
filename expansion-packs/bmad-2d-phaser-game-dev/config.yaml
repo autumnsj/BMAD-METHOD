@@ -1,9 +1,8 @@
-# <!-- Powered by BMAD™ Core -->
+# <!-- 由 BMAD™ 核心驱动 -->
 name: bmad-2d-phaser-game-dev
 version: 1.13.0
-short-title: Phaser 3 2D Game Dev Pack
+short-title: Phaser 3 2D 游戏开发包
 description: >-
-  2D Game Development expansion pack for BMad Method - Phaser 3 & TypeScript
-  focused
+  BMad 方法的 2D 游戏开发扩展包 - 专注于 Phaser 3 和 TypeScript
 author: Brian (BMad)
 slashPrefix: bmad2dp

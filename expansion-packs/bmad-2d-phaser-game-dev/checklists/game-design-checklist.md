@@ -1,203 +1,203 @@
-<!-- Powered by BMAD™ Core -->
+<!-- 由 BMAD™ 核心驱动 -->
 
-# Game Design Document Quality Checklist
+# 游戏设计文档质量清单
 
-## Document Completeness
+## 文档完整性
 
-### Executive Summary
+### 执行摘要
 
-- [ ] **Core Concept** - Game concept is clearly explained in 2-3 sentences
-- [ ] **Target Audience** - Primary and secondary audiences defined with demographics
-- [ ] **Platform Requirements** - Technical platforms and requirements specified
-- [ ] **Unique Selling Points** - 3-5 key differentiators from competitors identified
-- [ ] **Technical Foundation** - Phaser 3 + TypeScript requirements confirmed
+- [ ] **核心概念** - 游戏概念在2-3句话内清晰解释
+- [ ] **目标受众** - 定义了主要和次要受众及其人口统计特征
+- [ ] **平台要求** - 指定了技术平台和要求
+- [ ] **独特卖点** - 确定了3-5个与竞争对手的关键差异化因素
+- [ ] **技术基础** - 确认了 Phaser 3 + TypeScript 的要求
 
-### Game Design Foundation
+### 游戏设计基础
 
-- [ ] **Game Pillars** - 3-5 core design pillars defined and actionable
-- [ ] **Core Gameplay Loop** - 30-60 second loop documented with specific timings
-- [ ] **Win/Loss Conditions** - Clear victory and failure states defined
-- [ ] **Player Motivation** - Clear understanding of why players will engage
-- [ ] **Scope Realism** - Game scope is achievable with available resources
+- [ ] **游戏支柱** - 定义了3-5个核心设计支柱并可操作
+- [ ] **核心游戏循环** - 记录了30-60秒的循环并有具体的时间安排
+- [ ] **赢/输条件** - 定义了清晰的胜利和失败状态
+- [ ] **玩家动机** - 清晰理解玩家为何会参与
+- [ ] **范围现实性** - 游戏范围在可用资源下是可实现的
 
-## Gameplay Mechanics
+## 游戏机制
 
-### Core Mechanics Documentation
+### 核心机制文档
 
-- [ ] **Primary Mechanics** - 3-5 core mechanics detailed with implementation notes
-- [ ] **Mechanic Integration** - How mechanics work together is clear
-- [ ] **Player Input** - All input methods specified for each platform
-- [ ] **System Responses** - Game responses to player actions documented
-- [ ] **Performance Impact** - Performance considerations for each mechanic noted
+- [ ] **主要机制** - 详细说明了3-5个核心机制并附有实施说明
+- [ ] **机制整合** - 清晰说明了机制之间如何协同工作
+- [ ] **玩家输入** - 为每个平台指定了所有输入法
+- [ ] **系统响应** - 记录了游戏对玩家操作的响应
+- [ ] **性能影响** - 注意到了每个机制的性能考虑
 
-### Controls and Interaction
+### 控制与互动
 
-- [ ] **Multi-Platform Controls** - Desktop, mobile, and gamepad controls defined
-- [ ] **Input Responsiveness** - Requirements for responsive game feel specified
-- [ ] **Accessibility Options** - Control customization and accessibility considered
-- [ ] **Touch Optimization** - Mobile-specific control adaptations designed
-- [ ] **Edge Case Handling** - Unusual input scenarios addressed
+- [ ] **多平台控制** - 定义了桌面、移动和手柄控制
+- [ ] **输入响应性** - 指定了响应式游戏感觉的要求
+- [ ] **辅助功能选项** - 考虑了控制自定义和辅助功能
+- [ ] **触摸优化** - 设计了针对移动设备的特定控制适配
+- [ ] **边缘情况处理** - 处理了异常输入场景
 
-## Progression and Balance
+## 进程与平衡
 
-### Player Progression
+### 玩家进程
 
-- [ ] **Progression Type** - Linear, branching, or metroidvania approach defined
-- [ ] **Key Milestones** - Major progression points documented
-- [ ] **Unlock System** - What players unlock and when is specified
-- [ ] **Difficulty Scaling** - How challenge increases over time is detailed
-- [ ] **Player Agency** - Meaningful player choices and consequences defined
+- [ ] **进程类型** - 定义了线性、分支或类银河战士恶魔城方法
+- [ ] **关键里程碑** - 记录了主要的进程节点
+- [ ] **解锁系统** - 指定了玩家解锁的内容和时间
+- [ ] **难度扩展** - 详细说明了挑战如何随时间增加
+- [ ] **玩家能动性** - 定义了有意义的玩家选择和后果
 
-### Game Balance
+### 游戏平衡
 
-- [ ] **Balance Parameters** - Numeric values for key game systems provided
-- [ ] **Difficulty Curve** - Appropriate challenge progression designed
-- [ ] **Economy Design** - Resource systems balanced for engagement
-- [ ] **Player Testing** - Plan for validating balance through playtesting
-- [ ] **Iteration Framework** - Process for adjusting balance post-implementation
+- [ ] **平衡参数** - 提供了关键游戏系统的数值
+- [ ] **难度曲线** - 设计了适当的挑战进程
+- [ ] **经济设计** - 为参与度平衡了资源系统
+- [ ] **玩家测试** - 计划通过游戏测试来验证平衡性
+- [ ] **迭代框架** - 实施后调整平衡的流程
 
-## Level Design Framework
+## 关卡设计框架
 
-### Level Structure
+### 关卡结构
 
-- [ ] **Level Types** - Different level categories defined with purposes
-- [ ] **Level Progression** - How players move through levels specified
-- [ ] **Duration Targets** - Expected play time for each level type
-- [ ] **Difficulty Distribution** - Appropriate challenge spread across levels
-- [ ] **Replay Value** - Elements that encourage repeated play designed
+- [ ] **关卡类型** - 定义了不同关卡类别及其用途
+- [ ] **关卡进程** - 指定了玩家如何在关卡中移动
+- [ ] **持续时间目标** - 每种关卡类型的预期游戏时间
+- [ ] **难度分布** - 在关卡中适当分布挑战
+- [ ] **重玩价值** - 设计了鼓励重复游戏的元素
 
-### Content Guidelines
+### 内容指南
 
-- [ ] **Level Creation Rules** - Clear guidelines for level designers
-- [ ] **Mechanic Introduction** - How new mechanics are taught in levels
-- [ ] **Pacing Variety** - Mix of action, puzzle, and rest moments planned
-- [ ] **Secret Content** - Hidden areas and optional challenges designed
-- [ ] **Accessibility Options** - Multiple difficulty levels or assist modes considered
+- [ ] **关卡创建规则** - 为关卡设计师提供了清晰的指南
+- [ ] **机制介绍** - 如何在关卡中教授新机制
+- [ ] **节奏多样性** - 计划了动作、解谜和休息时刻的混合
+- [ ] **秘密内容** - 设计了隐藏区域和可选挑战
+- [ ] **辅助功能选项** - 考虑了多种难度级别或辅助模式
 
-## Technical Implementation Readiness
+## 技术实施准备
 
-### Performance Requirements
+### 性能要求
 
-- [ ] **Frame Rate Targets** - 60 FPS target with minimum acceptable rates
-- [ ] **Memory Budgets** - Maximum memory usage limits defined
-- [ ] **Load Time Goals** - Acceptable loading times for different content
-- [ ] **Battery Optimization** - Mobile battery usage considerations addressed
-- [ ] **Scalability Plan** - How performance scales across different devices
+- [ ] **帧率目标** - 60 FPS 目标及最低可接受速率
+- [ ] **内存预算** - 定义了最大内存使用限制
+- [ ] **加载时间目标** - 不同内容的可接受加载时间
+- [ ] **电池优化** - 考虑了移动设备电池使用情况
+- [ ] **可扩展性计划** - 性能如何在不同设备上扩展的计划
 
-### Platform Specifications
+### 平台规格
 
-- [ ] **Desktop Requirements** - Minimum and recommended PC/Mac specs
-- [ ] **Mobile Optimization** - iOS and Android specific requirements
-- [ ] **Browser Compatibility** - Supported browsers and versions listed
-- [ ] **Cross-Platform Features** - Shared and platform-specific features identified
-- [ ] **Update Strategy** - Plan for post-launch updates and patches
+- [ ] **桌面要求** - 最低和推荐的 PC/Mac 规格
+- [ ] **移动优化** - iOS 和 Android 特定要求
+- [ ] **浏览器兼容性** - 列出了支持的浏览器和版本
+- [ ] **跨平台功能** - 确定了共享和平台特定的功能
+- [ ] **更新策略** - 发布后更新和补丁的计划
 
-### Asset Requirements
+### 资产要求
 
-- [ ] **Art Style Definition** - Clear visual style with reference materials
-- [ ] **Asset Specifications** - Technical requirements for all asset types
-- [ ] **Audio Requirements** - Music and sound effect specifications
-- [ ] **UI/UX Guidelines** - User interface design principles established
-- [ ] **Localization Plan** - Text and cultural localization requirements
+- [ ] **艺术风格定义** - 清晰的视觉风格及参考资料
+- [ ] **资产规格** - 所有资产类型的技术要求
+- [ ] **音频要求** - 音乐和音效规格
+- [ ] **UI/UX 指南** - 建立了用户界面设计原则
+- [ ] **本地化计划** - 文本和文化本地化要求
 
-## Development Planning
+## 开发计划
 
-### Implementation Phases
+### 实施阶段
 
-- [ ] **Phase Breakdown** - Development divided into logical phases
-- [ ] **Epic Definitions** - Major development epics identified
-- [ ] **Dependency Mapping** - Prerequisites between features documented
-- [ ] **Risk Assessment** - Technical and design risks identified with mitigation
-- [ ] **Milestone Planning** - Key deliverables and deadlines established
+- [ ] **阶段分解** - 将开发分为逻辑阶段
+- [ ] **史诗定义** - 确定了主要的开发史诗
+- [ ] **依赖映射** - 记录了功能之间的先决条件
+- [ ] **风险评估** - 确定了技术和设计风险并有缓解措施
+- [ ] **里程碑规划** - 建立了关键交付物和截止日期
 
-### Team Requirements
+### 团队要求
 
-- [ ] **Role Definitions** - Required team roles and responsibilities
-- [ ] **Skill Requirements** - Technical skills needed for implementation
-- [ ] **Resource Allocation** - Time and effort estimates for major features
-- [ ] **External Dependencies** - Third-party tools, assets, or services needed
-- [ ] **Communication Plan** - How team members will coordinate work
+- [ ] **角色定义** - 所需的团队角色和职责
+- [ ] **技能要求** - 实施所需的技术技能
+- [ ] **资源分配** - 主要功能的时间和精力估算
+- [ ] **外部依赖** - 所需的第三方工具、资产或服务
+- [ ] **沟通计划** - 团队成员如何协调工作
 
-## Quality Assurance
+## 质量保证
 
-### Success Metrics
+### 成功指标
 
-- [ ] **Technical Metrics** - Measurable technical performance goals
-- [ ] **Gameplay Metrics** - Player engagement and retention targets
-- [ ] **Quality Benchmarks** - Standards for bug rates and polish level
-- [ ] **User Experience Goals** - Specific UX objectives and measurements
-- [ ] **Business Objectives** - Commercial or project success criteria
+- [ ] **技术指标** - 可衡量的技术性能目标
+- [ ] **游戏性指标** - 玩家参与度和保留率目标
+- [ ] **质量基准** - 错误率和打磨水平的标准
+- [ ] **用户体验目标** - 特定的 UX 目标和衡量标准
+- [ ] **业务目标** - 商业或项目成功标准
 
-### Testing Strategy
+### 测试策略
 
-- [ ] **Playtesting Plan** - How and when player feedback will be gathered
-- [ ] **Technical Testing** - Performance and compatibility testing approach
-- [ ] **Balance Validation** - Methods for confirming game balance
-- [ ] **Accessibility Testing** - Plan for testing with diverse players
-- [ ] **Iteration Process** - How feedback will drive design improvements
+- [ ] **游戏测试计划** - 如何以及何时收集玩家反馈
+- [ ] **技术测试** - 性能和兼容性测试方法
+- [ ] **平衡验证** - 确认游戏平衡的方法
+- [ ] **辅助功能测试** - 与不同玩家一起测试的计划
+- [ ] **迭代过程** - 反馈如何驱动设计改进
 
-## Documentation Quality
+## 文档质量
 
-### Clarity and Completeness
+### 清晰度与完整性
 
-- [ ] **Clear Writing** - All sections are well-written and understandable
-- [ ] **Complete Coverage** - No major game systems left undefined
-- [ ] **Actionable Detail** - Enough detail for developers to create implementation stories
-- [ ] **Consistent Terminology** - Game terms used consistently throughout
-- [ ] **Reference Materials** - Links to inspiration, research, and additional resources
+- [ ] **清晰写作** - 所有部分都写得很好并且易于理解
+- [ ] **完整覆盖** - 没有未定义的主要游戏系统
+- [ ] **可操作的细节** - 足够的细节供开发者创建实施故事
+- [ ] **术语一致** - 整个文档中游戏术语使用一致
+- [ ] **参考资料** - 指向灵感、研究和附加资源的链接
 
-### Maintainability
+### 可维护性
 
-- [ ] **Version Control** - Change log established for tracking revisions
-- [ ] **Update Process** - Plan for maintaining document during development
-- [ ] **Team Access** - All team members can access and reference the document
-- [ ] **Search Functionality** - Document organized for easy reference and searching
-- [ ] **Living Document** - Process for incorporating feedback and changes
+- [ ] **版本控制** - 建立了用于跟踪修订的变更日志
+- [ ] **更新过程** - 开发期间维护文档的计划
+- [ ] **团队访问** - 所有团队成员都可以访问和参考文档
+- [ ] **搜索功能** - 文档组织有序，便于参考和搜索
+- [ ] **活文档** - 整合反馈和变更的流程
 
-## Stakeholder Alignment
+## 利益相关者对齐
 
-### Team Understanding
+### 团队理解
 
-- [ ] **Shared Vision** - All team members understand and agree with the game vision
-- [ ] **Role Clarity** - Each team member understands their contribution
-- [ ] **Decision Framework** - Process for making design decisions during development
-- [ ] **Conflict Resolution** - Plan for resolving disagreements about design choices
-- [ ] **Communication Channels** - Regular meetings and feedback sessions planned
+- [ ] **共同愿景** - 所有团队成员都理解并同意游戏愿景
+- [ ] **角色清晰** - 每个团队成员都了解自己的贡献
+- [ ] **决策框架** - 开发期间做出设计决策的流程
+- [ ] **冲突解决** - 解决有关设计选择分歧的计划
+- [ ] **沟通渠道** - 计划了定期会议和反馈会议
 
-### External Validation
+### 外部验证
 
-- [ ] **Market Validation** - Competitive analysis and market fit assessment
-- [ ] **Technical Validation** - Feasibility confirmed with technical team
-- [ ] **Resource Validation** - Required resources available and committed
-- [ ] **Timeline Validation** - Development schedule is realistic and achievable
-- [ ] **Quality Validation** - Quality standards align with available time and resources
+- [ ] **市场验证** - 竞争分析和市场契合度评估
+- [ ] **技术验证** - 与技术团队确认了可行性
+- [ ] **资源验证** - 所需资源可用并已承诺
+- [ ] **时间表验证** - 开发时间表现实可行
+- [ ] **质量验证** - 质量标准与可用时间和资源保持一致
 
-## Final Readiness Assessment
+## 最终准备情况评估
 
-### Implementation Preparedness
+### 实施准备
 
-- [ ] **Story Creation Ready** - Document provides sufficient detail for story creation
-- [ ] **Architecture Alignment** - Game design aligns with technical capabilities
-- [ ] **Asset Production** - Asset requirements enable art and audio production
-- [ ] **Development Workflow** - Clear path from design to implementation
-- [ ] **Quality Assurance** - Testing and validation processes established
+- [ ] **故事创建准备就绪** - 文档为故事创建提供了足够的细节
+- [ ] **架构对齐** - 游戏设计与技术能力保持一致
+- [ ] **资产制作** - 资产要求使艺术和音频制作成为可能
+- [ ] **开发工作流程** - 从设计到实施的清晰路径
+- [ ] **质量保证** - 建立了测试和验证流程
 
-### Document Approval
+### 文档批准
 
-- [ ] **Design Review Complete** - Document reviewed by all relevant stakeholders
-- [ ] **Technical Review Complete** - Technical feasibility confirmed
-- [ ] **Business Review Complete** - Project scope and goals approved
-- [ ] **Final Approval** - Document officially approved for implementation
-- [ ] **Baseline Established** - Current version established as development baseline
+- [ ] **设计审查完成** - 文档由所有相关利益相关者审查
+- [ ] **技术审查完成** - 技术可行性已确认
+- [ ] **业务审查完成** - 项目范围和目标已批准
+- [ ] **最终批准** - 文档正式批准实施
+- [ ] **基线已建立** - 当前版本已建立为开发基线
 
-## Overall Assessment
+## 总体评估
 
-**Document Quality Rating:** ⭐⭐⭐⭐⭐
+**文档质量评级：** ⭐⭐⭐⭐⭐
 
-**Ready for Development:** [ ] Yes [ ] No
+**准备好进行开发：** [ ] 是 [ ] 否
 
-**Key Recommendations:**
-_List any critical items that need attention before moving to implementation phase._
+**主要建议：**
+_列出在进入实施阶段之前需要注意的任何关键项目。_
 
-**Next Steps:**
-_Outline immediate next actions for the team based on this assessment._
+**后续步骤：**
+_根据此评估，为团队概述立即的后续行动。_

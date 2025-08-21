@@ -1,16 +1,16 @@
-<!-- Powered by BMAD™ Core -->
+<!-- 由 BMAD™ 核心驱动 -->
 
-# Game Development Guidelines
+# 游戏开发指南
 
-## Overview
+## 概述
 
-This document establishes coding standards, architectural patterns, and development practices for 2D game development using Phaser 3 and TypeScript. These guidelines ensure consistency, performance, and maintainability across all game development stories.
+本文档为使用 Phaser 3 和 TypeScript 进行 2D 游戏开发建立了编码标准、架构模式和开发实践。这些指南确保了所有游戏开发故事的一致性、性能和可维护性。
 
-## TypeScript Standards
+## TypeScript 标准
 
-### Strict Mode Configuration
+### 严格模式配置
 
-**Required tsconfig.json settings:**
+**必需的 tsconfig.json 设置：**
 
 ```json
 {
@@ -27,12 +27,12 @@ This document establishes coding standards, architectural patterns, and developm
 }
 ```
 
-### Type Definitions
+### 类型定义
 
-**Game Object Interfaces:**
+**游戏对象接口：**
 
 ```typescript
-// Core game entity interface
+// 核心游戏实体接口
 interface GameEntity {
   readonly id: string;
   position: Phaser.Math.Vector2;
@@ -40,14 +40,14 @@ interface GameEntity {
   destroy(): void;
 }
 
-// Player controller interface
+// 玩家控制器接口
 interface PlayerController {
   readonly inputEnabled: boolean;
   handleInput(input: InputState): void;
   update(delta: number): void;
 }
 
-// Game system interface
+// 游戏系统接口
 interface GameSystem {
   readonly name: string;
   initialize(): void;
@@ -56,15 +56,15 @@ interface GameSystem {
 }
 ```
 
-**Scene Data Interfaces:**
+**场景数据接口：**
 
 ```typescript
-// Scene transition data
+// 场景转换数据
 interface SceneData {
   [key: string]: any;
 }
 
-// Game state interface
+// 游戏状态接口
 interface GameState {
   currentLevel: number;
   score: number;
@@ -80,35 +80,35 @@ interface GameSettings {
 }
 ```
 
-### Naming Conventions
+### 命名约定
 
-**Classes and Interfaces:**
+**类和接口：**
 
-- PascalCase for classes: `PlayerSprite`, `GameManager`, `AudioSystem`
-- PascalCase with 'I' prefix for interfaces: `IGameEntity`, `IPlayerController`
-- Descriptive names that indicate purpose: `CollisionManager` not `CM`
+- 类使用 PascalCase: `PlayerSprite`, `GameManager`, `AudioSystem`
+- 接口使用带 'I' 前缀的 PascalCase: `IGameEntity`, `IPlayerController`
+- 使用能表明目的的描述性名称: `CollisionManager` 而不是 `CM`
 
-**Methods and Variables:**
+**方法和变量：**
 
-- camelCase for methods and variables: `updatePosition()`, `playerSpeed`
-- Descriptive names: `calculateDamage()` not `calcDmg()`
-- Boolean variables with is/has/can prefix: `isActive`, `hasCollision`, `canMove`
+- 方法和变量使用 camelCase: `updatePosition()`, `playerSpeed`
+- 使用描述性名称: `calculateDamage()` 而不是 `calcDmg()`
+-布尔变量使用 is/has/can 前缀: `isActive`, `hasCollision`, `canMove`
 
-**Constants:**
+**常量：**
 
-- UPPER_SNAKE_CASE for constants: `MAX_PLAYER_SPEED`, `DEFAULT_VOLUME`
-- Group related constants in enums or const objects
+- 常量使用 UPPER_SNAKE_CASE: `MAX_PLAYER_SPEED`, `DEFAULT_VOLUME`
+- 在枚举或 const 对象中对相关常量进行分组
 
-**Files and Directories:**
+**文件和目录：**
 
-- kebab-case for file names: `player-controller.ts`, `audio-manager.ts`
-- PascalCase for scene files: `MenuScene.ts`, `GameScene.ts`
+- 文件名使用 kebab-case: `player-controller.ts`, `audio-manager.ts`
+- 场景文件使用 PascalCase: `MenuScene.ts`, `GameScene.ts`
 
-## Phaser 3 Architecture Patterns
+## Phaser 3 架构模式
 
-### Scene Organization
+### 场景组织
 
-**Scene Lifecycle Management:**
+**场景生命周期管理：**
 
 ```typescript
 class GameScene extends Phaser.Scene {
@@ -120,57 +120,57 @@ class GameScene extends Phaser.Scene {
   }
 
   preload(): void {
-    // Load only scene-specific assets
+    // 仅加载特定于场景的资产
     this.load.image('player', 'assets/player.png');
   }
 
   create(data: SceneData): void {
-    // Initialize game systems
+    // 初始化游戏系统
     this.gameManager = new GameManager(this);
     this.inputManager = new InputManager(this);
 
-    // Set up scene-specific logic
+    // 设置场景特定逻辑
     this.setupGameObjects();
     this.setupEventListeners();
   }
 
   update(time: number, delta: number): void {
-    // Update all game systems
+    // 更新所有游戏系统
     this.gameManager.update(delta);
     this.inputManager.update(delta);
   }
 
   shutdown(): void {
-    // Clean up resources
+    // 清理资源
     this.gameManager.destroy();
     this.inputManager.destroy();
 
-    // Remove event listeners
+    // 移除事件监听器
     this.events.off('*');
   }
 }
 ```
 
-**Scene Transitions:**
+**场景转换：**
 
 ```typescript
-// Proper scene transitions with data
+// 带数据的正确场景转换
 this.scene.start('NextScene', {
   playerScore: this.playerScore,
   currentLevel: this.currentLevel + 1,
 });
 
-// Scene overlays for UI
+// 用于 UI 的场景覆盖
 this.scene.launch('PauseMenuScene');
 this.scene.pause();
 ```
 
-### Game Object Patterns
+### 游戏对象模式
 
-**Component-Based Architecture:**
+**基于组件的架构：**
 
 ```typescript
-// Base game entity
+// 基础游戏实体
 abstract class GameEntity extends Phaser.GameObjects.Sprite {
   protected components: Map<string, GameComponent> = new Map();
 
@@ -199,7 +199,7 @@ abstract class GameEntity extends Phaser.GameObjects.Sprite {
   }
 }
 
-// Example player implementation
+// 玩家实现示例
 class Player extends GameEntity {
   private movement!: MovementComponent;
   private health!: HealthComponent;
@@ -213,9 +213,9 @@ class Player extends GameEntity {
 }
 ```
 
-### System Management
+### 系统管理
 
-**Singleton Managers:**
+**单例管理器：**
 
 ```typescript
 class GameManager {
@@ -241,7 +241,7 @@ class GameManager {
   }
 
   update(delta: number): void {
-    // Update game logic
+    // 更新游戏逻辑
   }
 
   destroy(): void {
@@ -250,11 +250,11 @@ class GameManager {
 }
 ```
 
-## Performance Optimization
+## 性能优化
 
-### Object Pooling
+### 对象池
 
-**Required for High-Frequency Objects:**
+**高频对象的必需项：**
 
 ```typescript
 class BulletPool {
@@ -264,7 +264,7 @@ class BulletPool {
   constructor(scene: Phaser.Scene, initialSize: number = 50) {
     this.scene = scene;
 
-    // Pre-create bullets
+    // 预创建子弹
     for (let i = 0; i < initialSize; i++) {
       const bullet = new Bullet(scene, 0, 0);
       bullet.setActive(false);
@@ -281,7 +281,7 @@ class BulletPool {
       return bullet;
     }
 
-    // Pool exhausted - create new bullet
+    // 池已耗尽 - 创建新子弹
     console.warn('Bullet pool exhausted, creating new bullet');
     return new Bullet(this.scene, 0, 0);
   }
@@ -294,9 +294,9 @@ class BulletPool {
 }
 ```
 
-### Frame Rate Optimization
+### 帧率优化
 
-**Performance Monitoring:**
+**性能监控：**
 
 ```typescript
 class PerformanceMonitor {
@@ -320,25 +320,25 @@ class PerformanceMonitor {
   }
 
   private optimizePerformance(): void {
-    // Reduce particle counts, disable effects, etc.
+    // 减少粒子数量，禁用效果等。
   }
 }
 ```
 
-**Update Loop Optimization:**
+**更新循环优化：**
 
 ```typescript
-// Avoid expensive operations in update loops
+// 避免在更新循环中进行昂贵的操作
 class GameScene extends Phaser.Scene {
   private updateTimer: number = 0;
-  private readonly UPDATE_INTERVAL = 100; // ms
+  private readonly UPDATE_INTERVAL = 100; // 毫秒
 
   update(time: number, delta: number): void {
-    // High-frequency updates (every frame)
+    // 高频更新（每帧）
     this.updatePlayer(delta);
     this.updatePhysics(delta);
 
-    // Low-frequency updates (10 times per second)
+    // 低频更新（每秒10次）
     this.updateTimer += delta;
     if (this.updateTimer >= this.UPDATE_INTERVAL) {
       this.updateUI();
@@ -349,11 +349,11 @@ class GameScene extends Phaser.Scene {
 }
 ```
 
-## Input Handling
+## 输入处理
 
-### Cross-Platform Input
+### 跨平台输入
 
-**Input Abstraction:**
+**输入抽象：**
 
 ```typescript
 interface InputState {
@@ -391,11 +391,11 @@ class InputManager {
   }
 
   update(): void {
-    // Update input state from multiple sources
+    // 从多个来源更新输入状态
     this.inputState.moveLeft = this.keys.A.isDown || this.keys.LEFT.isDown;
     this.inputState.moveRight = this.keys.D.isDown || this.keys.RIGHT.isDown;
     this.inputState.jump = Phaser.Input.Keyboard.JustDown(this.keys.SPACE);
-    // ... handle touch input
+    // ... 处理触摸输入
   }
 
   getInputState(): InputState {
@@ -404,11 +404,11 @@ class InputManager {
 }
 ```
 
-## Error Handling
+## 错误处理
 
-### Graceful Degradation
+### 优雅降级
 
-**Asset Loading Error Handling:**
+**资产加载错误处理：**
 
 ```typescript
 class AssetManager {
@@ -425,12 +425,12 @@ class AssetManager {
   private handleLoadError(file: Phaser.Loader.File): void {
     console.error(`Failed to load asset: ${file.key}`);
 
-    // Use fallback assets
+    // 使用备用资产
     this.loadFallbackAsset(file.key);
   }
 
   private loadFallbackAsset(key: string): void {
-    // Load placeholder or default assets
+    // 加载占位符或默认资产
     switch (key) {
       case 'player':
         this.scene.load.image('player', 'assets/defaults/default-player.png');
@@ -442,48 +442,48 @@ class AssetManager {
 }
 ```
 
-### Runtime Error Recovery
+### 运行时错误恢复
 
-**System Error Handling:**
+**系统错误处理：**
 
 ```typescript
 class GameSystem {
   protected handleError(error: Error, context: string): void {
     console.error(`Error in ${context}:`, error);
 
-    // Report to analytics/logging service
+    // 报告给分析/日志服务
     this.reportError(error, context);
 
-    // Attempt recovery
+    // 尝试恢复
     this.attemptRecovery(context);
   }
 
   private attemptRecovery(context: string): void {
     switch (context) {
       case 'update':
-        // Reset system state
+        // 重置系统状态
         this.reset();
         break;
       case 'render':
-        // Disable visual effects
+        // 禁用视觉效果
         this.disableEffects();
         break;
       default:
-        // Generic recovery
+        // 通用恢复
         this.safeShutdown();
     }
   }
 }
 ```
 
-## Testing Standards
+## 测试标准
 
-### Unit Testing
+### 单元测试
 
-**Game Logic Testing:**
+**游戏逻辑测试：**
 
 ```typescript
-// Example test for game mechanics
+// 游戏机制测试示例
 describe('HealthComponent', () => {
   let healthComponent: HealthComponent;
 
@@ -511,9 +511,9 @@ describe('HealthComponent', () => {
 });
 ```
 
-### Integration Testing
+### 集成测试
 
-**Scene Testing:**
+**场景测试：**
 
 ```typescript
 describe('GameScene Integration', () => {
@@ -521,7 +521,7 @@ describe('GameScene Integration', () => {
   let mockGame: Phaser.Game;
 
   beforeEach(() => {
-    // Mock Phaser game instance
+    // 模拟 Phaser 游戏实例
     mockGame = createMockGame();
     scene = new GameScene();
   });
@@ -535,115 +535,115 @@ describe('GameScene Integration', () => {
 });
 ```
 
-## File Organization
+## 文件组织
 
-### Project Structure
+### 项目结构
 
 ```
 src/
 ├── scenes/
-│   ├── BootScene.ts          # Initial loading and setup
-│   ├── PreloadScene.ts       # Asset loading with progress
-│   ├── MenuScene.ts          # Main menu and navigation
-│   ├── GameScene.ts          # Core gameplay
-│   └── UIScene.ts            # Overlay UI elements
+│   ├── BootScene.ts          # 初始加载和设置
+│   ├── PreloadScene.ts       # 带进度的资产加载
+│   ├── MenuScene.ts          # 主菜单和导航
+│   ├── GameScene.ts          # 核心游戏玩法
+│   └── UIScene.ts            # 覆盖 UI 元素
 ├── gameObjects/
 │   ├── entities/
-│   │   ├── Player.ts         # Player game object
-│   │   ├── Enemy.ts          # Enemy base class
-│   │   └── Collectible.ts    # Collectible items
+│   │   ├── Player.ts         # 玩家游戏对象
+│   │   ├── Enemy.ts          # 敌人基类
+│   │   └── Collectible.ts    # 可收集物品
 │   ├── components/
 │   │   ├── MovementComponent.ts
 │   │   ├── HealthComponent.ts
 │   │   └── CollisionComponent.ts
 │   └── ui/
-│       ├── Button.ts         # Interactive buttons
-│       ├── HealthBar.ts      # Health display
-│       └── ScoreDisplay.ts   # Score UI
+│       ├── Button.ts         # 交互式按钮
+│       ├── HealthBar.ts      # 生命值显示
+│       └── ScoreDisplay.ts   # 分数 UI
 ├── systems/
-│   ├── GameManager.ts        # Core game state management
-│   ├── InputManager.ts       # Cross-platform input handling
-│   ├── AudioManager.ts       # Sound and music system
-│   ├── SaveManager.ts        # Save/load functionality
-│   └── PerformanceMonitor.ts # Performance tracking
+│   ├── GameManager.ts        # 核心游戏状态管理
+│   ├── InputManager.ts       # 跨平台输入处理
+│   ├── AudioManager.ts       # 声音和音乐系统
+│   ├── SaveManager.ts        # 保存/加载功能
+│   └── PerformanceMonitor.ts # 性能跟踪
 ├── utils/
-│   ├── ObjectPool.ts         # Generic object pooling
-│   ├── MathUtils.ts          # Game math helpers
-│   ├── AssetLoader.ts        # Asset management utilities
-│   └── EventBus.ts           # Global event system
+│   ├── ObjectPool.ts         # 通用对象池
+│   ├── MathUtils.ts          # 游戏数学辅助函数
+│   ├── AssetLoader.ts        # 资产管理实用程序
+│   └── EventBus.ts           # 全局事件系统
 ├── types/
-│   ├── GameTypes.ts          # Core game type definitions
-│   ├── UITypes.ts            # UI-related types
-│   └── SystemTypes.ts        # System interface definitions
+│   ├── GameTypes.ts          # 核心游戏类型定义
+│   ├── UITypes.ts            # UI 相关类型
+│   └── SystemTypes.ts        # 系统接口定义
 ├── config/
-│   ├── GameConfig.ts         # Phaser game configuration
-│   ├── GameBalance.ts        # Game balance parameters
-│   └── AssetConfig.ts        # Asset loading configuration
-└── main.ts                   # Application entry point
+│   ├── GameConfig.ts         # Phaser 游戏配置
+│   ├── GameBalance.ts        # 游戏平衡参数
+│   └── AssetConfig.ts        # 资产加载配置
+└── main.ts                   # 应用程序入口点
 ```
 
-## Development Workflow
+## 开发工作流程
 
-### Story Implementation Process
+### 故事实施过程
 
-1. **Read Story Requirements:**
-   - Understand acceptance criteria
-   - Identify technical requirements
-   - Review performance constraints
+1. **阅读故事要求：**
+   - 理解验收标准
+   - 确定技术要求
+   - 审查性能约束
 
-2. **Plan Implementation:**
-   - Identify files to create/modify
-   - Consider component architecture
-   - Plan testing approach
+2. **计划实施：**
+   - 确定要创建/修改的文件
+   - 考虑组件架构
+   - 计划测试方法
 
-3. **Implement Feature:**
-   - Follow TypeScript strict mode
-   - Use established patterns
-   - Maintain 60 FPS performance
+3. **实施功能：**
+   - 遵循 TypeScript 严格模式
+   - 使用既定模式
+   - 保持 60 FPS 性能
 
-4. **Test Implementation:**
-   - Write unit tests for game logic
-   - Test cross-platform functionality
-   - Validate performance targets
+4. **测试实施：**
+   - 为游戏逻辑编写单元测试
+   - 测试跨平台功能
+   - 验证性能目标
 
-5. **Update Documentation:**
-   - Mark story checkboxes complete
-   - Document any deviations
-   - Update architecture if needed
+5. **更新文档：**
+   - 将故事复选框标记为完成
+   - 记录任何偏差
+   - 如果需要，更新架构
 
-### Code Review Checklist
+### 代码审查清单
 
-**Before Committing:**
+**提交前：**
 
-- [ ] TypeScript compiles without errors
-- [ ] All tests pass
-- [ ] Performance targets met (60 FPS)
-- [ ] No console errors or warnings
-- [ ] Cross-platform compatibility verified
-- [ ] Memory usage within bounds
-- [ ] Code follows naming conventions
-- [ ] Error handling implemented
-- [ ] Documentation updated
+- [ ] TypeScript 编译无误
+- [ ] 所有测试通过
+- [ ] 满足性能目标 (60 FPS)
+- [ ] 无控制台错误或警告
+- [ ] 已验证跨平台兼容性
+- [ ] 内存使用在限制范围内
+- [ ] 代码遵循命名约定
+- [ ] 已实施错误处理
+- [ ] 文档已更新
 
-## Performance Targets
+## 性能目标
 
-### Frame Rate Requirements
+### 帧率要求
 
-- **Desktop**: Maintain 60 FPS at 1080p
-- **Mobile**: Maintain 60 FPS on mid-range devices, minimum 30 FPS on low-end
-- **Optimization**: Implement dynamic quality scaling when performance drops
+- **桌面端**：在 1080p 分辨率下保持 60 FPS
+- **移动端**：在中端设备上保持 60 FPS，在低端设备上最低 30 FPS
+- **优化**：当性能下降时实施动态质量缩放
 
-### Memory Management
+### 内存管理
 
-- **Total Memory**: Under 100MB for full game
-- **Per Scene**: Under 50MB per gameplay scene
-- **Asset Loading**: Progressive loading to stay under limits
-- **Garbage Collection**: Minimize object creation in update loops
+- **总内存**：整个游戏低于 100MB
+- **每场景**：每个游戏场景低于 50MB
+- **资产加载**：渐进式加载以保持在限制内
+- **垃圾回收**：最小化更新循环中的对象创建
 
-### Loading Performance
+### 加载性能
 
-- **Initial Load**: Under 5 seconds for game start
-- **Scene Transitions**: Under 2 seconds between scenes
-- **Asset Streaming**: Background loading for upcoming content
+- **初始加载**：游戏启动低于 5 秒
+- **场景转换**：场景之间低于 2 秒
+- **资产流式传输**：为即将到来的内容进行后台加载
 
-These guidelines ensure consistent, high-quality game development that meets performance targets and maintains code quality across all implementation stories.
+这些指南确保了一致、高质量的游戏开发，满足性能目标并在所有实施故事中保持代码质量。

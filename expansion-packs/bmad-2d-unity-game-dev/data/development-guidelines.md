@@ -1,55 +1,55 @@
-<!-- Powered by BMAD™ Core -->
+<!-- 由 BMAD™ 核心驱动 -->
 
-# Game Development Guidelines (Unity & C#)
+# 游戏开发指南 (Unity & C#)
 
-## Overview
+## 概述
 
-This document establishes coding standards, architectural patterns, and development practices for 2D game development using Unity and C#. These guidelines ensure consistency, performance, and maintainability across all game development stories.
+本文档为使用 Unity 和 C# 进行 2D 游戏开发建立了编码标准、架构模式和开发实践。这些指南确保了所有游戏开发故事的一致性、性能和可维护性。
 
-## C# Standards
+## C# 标准
 
-### Naming Conventions
+### 命名约定
 
-**Classes, Structs, Enums, and Interfaces:**
+**类、结构体、枚举和接口：**
 
-- PascalCase for types: `PlayerController`, `GameData`, `IInteractable`
-- Prefix interfaces with 'I': `IDamageable`, `IControllable`
-- Descriptive names that indicate purpose: `GameStateManager` not `GSM`
+- 类型使用 PascalCase: `PlayerController`, `GameData`, `IInteractable`
+- 接口以 'I' 为前缀: `IDamageable`, `IControllable`
+- 使用能表明目的的描述性名称: `GameStateManager` 而不是 `GSM`
 
-**Methods and Properties:**
+**方法和属性：**
 
-- PascalCase for methods and properties: `CalculateScore()`, `CurrentHealth`
-- Descriptive verb phrases for methods: `ActivateShield()` not `shield()`
+- 方法和属性使用 PascalCase: `CalculateScore()`, `CurrentHealth`
+- 方法使用描述性动词短语: `ActivateShield()` 而不是 `shield()`
 
-**Fields and Variables:**
+**字段和变量：**
 
-- `private` or `protected` fields: camelCase with an underscore prefix: `_playerHealth`, `_movementSpeed`
-- `public` fields (use sparingly, prefer properties): PascalCase: `PlayerName`
-- `static` fields: PascalCase: `Instance`, `GameVersion`
-- `const` fields: PascalCase: `MaxHitPoints`
-- `local` variables: camelCase: `damageAmount`, `isJumping`
-- Boolean variables with is/has/can prefix: `_isAlive`, `_hasKey`, `_canJump`
+- `private` 或 `protected` 字段: 使用下划线前缀的 camelCase: `_playerHealth`, `_movementSpeed`
+- `public` 字段（谨慎使用，优先使用属性）: PascalCase: `PlayerName`
+- `static` 字段: PascalCase: `Instance`, `GameVersion`
+- `const` 字段: PascalCase: `MaxHitPoints`
+- `local` 变量: camelCase: `damageAmount`, `isJumping`
+- 布尔变量使用 is/has/can 前缀: `_isAlive`, `_hasKey`, `_canJump`
 
-**Files and Directories:**
+**文件和目录：**
 
-- PascalCase for C# script files, matching the primary class name: `PlayerController.cs`
-- PascalCase for Scene files: `MainMenu.unity`, `Level01.unity`
+- C# 脚本文件使用 PascalCase，与主类名匹配: `PlayerController.cs`
+- 场景文件使用 PascalCase: `MainMenu.unity`, `Level01.unity`
 
-### Style and Formatting
+### 风格和格式
 
-- **Braces**: Use Allman style (braces on a new line).
-- **Spacing**: Use 4 spaces for indentation (no tabs).
-- **`using` directives**: Place all `using` directives at the top of the file, outside the namespace.
-- **`this` keyword**: Only use `this` when necessary to distinguish between a field and a local variable/parameter.
+- **花括号**：使用 Allman 风格（花括号在新的一行）。
+- **间距**：使用 4 个空格进行缩进（不要使用制表符）。
+- **`using` 指令**：将所有 `using` 指令放在文件顶部，命名空间之外。
+- **`this` 关键字**：仅在需要区分字段和局部变量/参数时使用 `this`。
 
-## Unity Architecture Patterns
+## Unity 架构模式
 
-### Scene Lifecycle Management
+### 场景生命周期管理
 
-**Loading and Transitioning Between Scenes:**
+**加载和切换场景：**
 
 ```csharp
-// SceneLoader.cs - A singleton for managing scene transitions.
+// SceneLoader.cs - 用于管理场景转换的单例。
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
@@ -71,31 +71,31 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadGameScene()
     {
-        // Example of loading the main game scene, perhaps with a loading screen first.
+        // 加载主游戏场景的示例，可能先加载一个加载屏幕。
         StartCoroutine(LoadSceneAsync("Level01"));
     }
 
     private IEnumerator LoadSceneAsync(string sceneName)
     {
-        // Load a loading screen first (optional)
+        // 首先加载一个加载屏幕（可选）
         SceneManager.LoadScene("LoadingScreen");
 
-        // Wait a frame for the loading screen to appear
+        // 等待一帧让加载屏幕出现
         yield return null;
 
-        // Begin loading the target scene in the background
+        // 在后台开始加载目标场景
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
 
-        // Don't activate the scene until it's fully loaded
+        // 在完全加载之前不要激活场景
         asyncLoad.allowSceneActivation = false;
 
-        // Wait until the asynchronous scene fully loads
+        // 等待异步场景完全加载
         while (!asyncLoad.isDone)
         {
-            // Here you could update a progress bar with asyncLoad.progress
+            // 在这里你可以用 asyncLoad.progress 更新进度条
             if (asyncLoad.progress >= 0.9f)
             {
-                // Scene is loaded, allow activation
+                // 场景已加载，允许激活
                 asyncLoad.allowSceneActivation = true;
             }
             yield return null;
@@ -104,67 +104,67 @@ public class SceneLoader : MonoBehaviour
 }
 ```
 
-### MonoBehaviour Lifecycle
+### MonoBehaviour 生命周期
 
-**Understanding Core MonoBehaviour Events:**
+**理解核心 MonoBehaviour 事件：**
 
 ```csharp
-// Example of a standard MonoBehaviour lifecycle
+// 标准 MonoBehaviour 生命周期的示例
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // AWAKE: Called when the script instance is being loaded.
-    // Use for initialization before the game starts. Good for caching component references.
+    // AWAKE: 当脚本实例被加载时调用。
+    // 用于游戏开始前的初始化。适合缓存组件引用。
     private void Awake()
     {
         Debug.Log("PlayerController Awake!");
     }
 
-    // ONENABLE: Called when the object becomes enabled and active.
-    // Good for subscribing to events.
+    // ONENABLE: 当对象变为启用和活动状态时调用。
+    // 适合订阅事件。
     private void OnEnable()
     {
-        // Example: UIManager.OnGamePaused += HandleGamePaused;
+        // 示例: UIManager.OnGamePaused += HandleGamePaused;
     }
 
-    // START: Called on the frame when a script is enabled just before any of the Update methods are called the first time.
-    // Good for logic that depends on other objects being initialized.
+    // START: 在脚本启用后的第一帧，在任何 Update 方法被调用之前调用。
+    // 适合依赖于其他对象已初始化的逻辑。
     private void Start()
     {
         Debug.Log("PlayerController Start!");
     }
 
-    // FIXEDUPDATE: Called every fixed framerate frame.
-    // Use for physics calculations (e.g., applying forces to a Rigidbody).
+    // FIXEDUPDATE: 每个固定的帧率帧调用。
+    // 用于物理计算（例如，对 Rigidbody 施加力）。
     private void FixedUpdate()
     {
-        // Handle Rigidbody movement here.
+        // 在这里处理 Rigidbody 移动。
     }
 
-    // UPDATE: Called every frame.
-    // Use for most game logic, like handling input and non-physics movement.
+    // UPDATE: 每帧调用。
+    // 用于大多数游戏逻辑，如处理输入和非物理移动。
     private void Update()
     {
-        // Handle input and non-physics movement here.
+        // 在这里处理输入和非物理移动。
     }
 
-    // LATEUPDATE: Called every frame, after all Update functions have been called.
-    // Good for camera logic that needs to track a target that moves in Update.
+    // LATEUPDATE: 每帧调用，在所有 Update 函数被调用之后。
+    // 适合需要跟踪在 Update 中移动的目标的相机逻辑。
     private void LateUpdate()
     {
-        // Camera follow logic here.
+        // 在这里处理相机跟随逻辑。
     }
 
-    // ONDISABLE: Called when the behaviour becomes disabled or inactive.
-    // Good for unsubscribing from events to prevent memory leaks.
+    // ONDISABLE: 当行为变为禁用或非活动状态时调用。
+    // 适合取消订阅事件以防止内存泄漏。
     private void OnDisable()
     {
-        // Example: UIManager.OnGamePaused -= HandleGamePaused;
+        // 示例: UIManager.OnGamePaused -= HandleGamePaused;
     }
 
-    // ONDESTROY: Called when the MonoBehaviour will be destroyed.
-    // Good for any final cleanup.
+    // ONDESTROY: 当 MonoBehaviour 将被销毁时调用。
+    // 适合任何最终的清理工作。
     private void OnDestroy()
     {
         Debug.Log("PlayerController Destroyed!");
@@ -172,12 +172,12 @@ public class PlayerController : MonoBehaviour
 }
 ```
 
-### Game Object Patterns
+### 游戏对象模式
 
-**Component-Based Architecture:**
+**基于组件的架构：**
 
 ```csharp
-// Player.cs - The main GameObject class, acts as a container for components.
+// Player.cs - 主 GameObject 类，作为组件的容器。
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMovement), typeof(PlayerHealth))]
@@ -193,7 +193,7 @@ public class Player : MonoBehaviour
     }
 }
 
-// PlayerHealth.cs - A component responsible only for health logic.
+// PlayerHealth.cs - 一个只负责生命值逻辑的组件。
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int _maxHealth = 100;
@@ -215,19 +215,19 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        // Death logic
+        // 死亡逻辑
         Debug.Log("Player has died.");
         gameObject.SetActive(false);
     }
 }
 ```
 
-### Data-Driven Design with ScriptableObjects
+### 使用 ScriptableObjects 进行数据驱动设计
 
-**Define Data Containers:**
+**定义数据容器：**
 
 ```csharp
-// EnemyData.cs - A ScriptableObject to hold data for an enemy type.
+// EnemyData.cs - 一个用于保存敌人类型数据的 ScriptableObject。
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewEnemyData", menuName = "Game/Enemy Data")]
@@ -240,7 +240,7 @@ public class EnemyData : ScriptableObject
     public Sprite sprite;
 }
 
-// Enemy.cs - A MonoBehaviour that uses the EnemyData.
+// Enemy.cs - 一个使用 EnemyData 的 MonoBehaviour。
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemyData _enemyData;
@@ -252,16 +252,16 @@ public class Enemy : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = _enemyData.sprite;
     }
 
-    // ... other enemy logic
+    // ... 其他敌人逻辑
 }
 ```
 
-### System Management
+### 系统管理
 
-**Singleton Managers:**
+**单例管理器：**
 
 ```csharp
-// GameManager.cs - A singleton to manage the overall game state.
+// GameManager.cs - 一个用于管理整体游戏状态的单例。
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -278,7 +278,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject); // Persist across scenes
+        DontDestroyOnLoad(gameObject); // 在场景之间保持
     }
 
     public void AddScore(int amount)
@@ -288,14 +288,14 @@ public class GameManager : MonoBehaviour
 }
 ```
 
-## Performance Optimization
+## 性能优化
 
-### Object Pooling
+### 对象池
 
-**Required for High-Frequency Objects (e.g., bullets, effects):**
+**高频对象（例如子弹、效果）的必需项：**
 
 ```csharp
-// ObjectPool.cs - A generic object pooling system.
+// ObjectPool.cs - 一个通用的对象池系统。
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -324,7 +324,7 @@ public class ObjectPool : MonoBehaviour
             obj.SetActive(true);
             return obj;
         }
-        // Optionally, expand the pool if it's empty.
+        // 可选地，如果池已空，则扩展池。
         return Instantiate(_prefabToPool);
     }
 
@@ -336,32 +336,32 @@ public class ObjectPool : MonoBehaviour
 }
 ```
 
-### Frame Rate Optimization
+### 帧率优化
 
-**Update Loop Optimization:**
+**更新循环优化：**
 
-- Avoid expensive calls like `GetComponent`, `FindObjectOfType`, or `Instantiate` inside `Update()` or `FixedUpdate()`. Cache references in `Awake()` or `Start()`.
-- Use Coroutines or simple timers for logic that doesn't need to run every single frame.
+- 避免在 `Update()` 或 `FixedUpdate()` 中进行昂贵的调用，如 `GetComponent`、`FindObjectOfType` 或 `Instantiate`。在 `Awake()` 或 `Start()` 中缓存引用。
+- 对不需要每帧运行的逻辑使用协程或简单的计时器。
 
-**Physics Optimization:**
+**物理优化：**
 
-- Adjust the "Physics 2D Settings" in Project Settings, especially the "Layer Collision Matrix", to prevent unnecessary collision checks.
-- Use `Rigidbody2D.Sleep()` for objects that are not moving to save CPU cycles.
+- 在项目设置中调整“Physics 2D Settings”，特别是“Layer Collision Matrix”，以防止不必要的碰撞检查。
+- 对不移动的对象使用 `Rigidbody2D.Sleep()` 以节省 CPU 周期。
 
-## Input Handling
+## 输入处理
 
-### Cross-Platform Input (New Input System)
+### 跨平台输入（新输入系统）
 
-**Input Action Asset:** Create an Input Action Asset (`.inputactions`) to define controls.
+**输入动作资产：** 创建一个输入动作资产（`.inputactions`）来定义控件。
 
-**PlayerInput Component:**
+**PlayerInput 组件：**
 
-- Add the `PlayerInput` component to the player GameObject.
-- Set its "Actions" to the created Input Action Asset.
-- Set "Behavior" to "Invoke Unity Events" to easily hook up methods in the Inspector, or "Send Messages" to use methods like `OnMove`, `OnFire`.
+- 将 `PlayerInput` 组件添加到玩家 GameObject。
+- 将其“Actions”设置为创建的输入动作资产。
+- 将“Behavior”设置为“Invoke Unity Events”以在 Inspector 中轻松连接方法，或设置为“Send Messages”以使用如 `OnMove`、`OnFire` 等方法。
 
 ```csharp
-// PlayerInputHandler.cs - Example of handling input via messages.
+// PlayerInputHandler.cs - 通过消息处理输入的示例。
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -369,8 +369,8 @@ public class PlayerInputHandler : MonoBehaviour
 {
     private Vector2 _moveInput;
 
-    // This method is called by the PlayerInput component via "Send Messages".
-    // The action must be named "Move" in the Input Action Asset.
+    // 此方法由 PlayerInput 组件通过“Send Messages”调用。
+    // 该动作必须在输入动作资产中命名为“Move”。
     public void OnMove(InputValue value)
     {
         _moveInput = value.Get<Vector2>();
@@ -378,22 +378,22 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Update()
     {
-        // Use _moveInput to control the player
+        // 使用 _moveInput 控制玩家
         transform.Translate(new Vector3(_moveInput.x, _moveInput.y, 0) * Time.deltaTime * 5f);
     }
 }
 ```
 
-## Error Handling
+## 错误处理
 
-### Graceful Degradation
+### 优雅降级
 
-**Asset Loading Error Handling:**
+**资产加载错误处理：**
 
-- When using Addressables or `Resources.Load`, always check if the loaded asset is null before using it.
+- 当使用 Addressables 或 `Resources.Load` 时，在使用加载的资产之前，请务必检查它是否为 null。
 
 ```csharp
-// Load a sprite and use a fallback if it fails
+// 加载一个精灵，如果失败则使用备用精灵
 Sprite playerSprite = Resources.Load<Sprite>("Sprites/Player");
 if (playerSprite == null)
 {
@@ -402,15 +402,15 @@ if (playerSprite == null)
 }
 ```
 
-### Runtime Error Recovery
+### 运行时错误恢复
 
-**Assertions and Logging:**
+**断言和日志记录：**
 
-- Use `Debug.Assert(condition, "Message")` to check for critical conditions that must be true.
-- Use `Debug.LogError("Message")` for fatal errors and `Debug.LogWarning("Message")` for non-critical issues.
+- 使用 `Debug.Assert(condition, "Message")` 来检查必须为 true 的关键条件。
+- 使用 `Debug.LogError("Message")` 来记录致命错误，使用 `Debug.LogWarning("Message")` 来记录非关键问题。
 
 ```csharp
-// Example of using an assertion to ensure a component exists.
+// 使用断言确保组件存在的示例。
 private Rigidbody2D _rb;
 
 void Awake()
@@ -420,14 +420,14 @@ void Awake()
 }
 ```
 
-## Testing Standards
+## 测试标准
 
-### Unit Testing (Edit Mode)
+### 单元测试（编辑模式）
 
-**Game Logic Testing:**
+**游戏逻辑测试：**
 
 ```csharp
-// HealthSystemTests.cs - Example test for a simple health system.
+// HealthSystemTests.cs - 一个简单生命值系统的测试示例。
 using NUnit.Framework;
 using UnityEngine;
 
@@ -439,24 +439,24 @@ public class HealthSystemTests
         // Arrange
         var gameObject = new GameObject();
         var healthSystem = gameObject.AddComponent<PlayerHealth>();
-        // Note: This is a simplified example. You might need to mock dependencies.
+        // 注意：这是一个简化的示例。您可能需要模拟依赖项。
 
         // Act
         healthSystem.TakeDamage(20);
 
         // Assert
-        // This requires making health accessible for testing, e.g., via a public property or method.
+        // 这需要使生命值可用于测试，例如通过公共属性或方法。
         // Assert.AreEqual(80, healthSystem.CurrentHealth);
     }
 }
 ```
 
-### Integration Testing (Play Mode)
+### 集成测试（播放模式）
 
-**Scene Testing:**
+**场景测试：**
 
-- Play Mode tests run in a live scene, allowing you to test interactions between multiple components and systems.
-- Use `yield return null;` to wait for the next frame.
+- 播放模式测试在活动场景中运行，允许您测试多个组件和系统之间的交互。
+- 使用 `yield return null;` 等待下一帧。
 
 ```csharp
 // PlayerJumpTest.cs
@@ -475,11 +475,11 @@ public class PlayerJumpTest
         var initialY = player.transform.position.y;
 
         // Act
-        // Simulate pressing the jump button (requires setting up the input system for tests)
-        // For simplicity, we'll call a public method here.
+        // 模拟按下跳跃按钮（需要为测试设置输入系统）
+        // 为简单起见，我们在这里调用一个公共方法。
         // player.Jump();
 
-        // Wait for a few physics frames
+        // 等待几个物理帧
         yield return new WaitForSeconds(0.5f);
 
         // Assert
@@ -488,9 +488,9 @@ public class PlayerJumpTest
 }
 ```
 
-## File Organization
+## 文件组织
 
-### Project Structure
+### 项目结构
 
 ```
 Assets/
@@ -528,61 +528,61 @@ Assets/
         └── PlayerJumpTest.cs
 ```
 
-## Development Workflow
+## 开发工作流程
 
-### Story Implementation Process
+### 故事实施过程
 
-1. **Read Story Requirements:**
-   - Understand acceptance criteria
-   - Identify technical requirements
-   - Review performance constraints
+1. **阅读故事要求：**
+   - 理解验收标准
+   - 确定技术要求
+   - 审查性能限制
 
-2. **Plan Implementation:**
-   - Identify files to create/modify
-   - Consider Unity's component-based architecture
-   - Plan testing approach
+2. **计划实施：**
+   - 确定要创建/修改的文件
+   - 考虑 Unity 的基于组件的架构
+   - 计划测试方法
 
-3. **Implement Feature:**
-   - Write clean C# code following all guidelines
-   - Use established patterns
-   - Maintain stable FPS performance
+3. **实施功能：**
+   - 遵循所有指南编写干净的 C# 代码
+   - 使用既定模式
+   - 保持稳定的 FPS 性能
 
-4. **Test Implementation:**
-   - Write edit mode tests for game logic
-   - Write play mode tests for integration testing
-   - Test cross-platform functionality
-   - Validate performance targets
+4. **测试实施：**
+   - 为游戏逻辑编写编辑模式测试
+   - 为集成测试编写播放模式测试
+   - 测试跨平台功能
+   - 验证性能目标
 
-5. **Update Documentation:**
-   - Mark story checkboxes complete
-   - Document any deviations
-   - Update architecture if needed
+5. **更新文档：**
+   - 将故事复选框标记为完成
+   - 记录任何偏差
+   - 如果需要，更新架构
 
-### Code Review Checklist
+### 代码审查清单
 
-- [ ] C# code compiles without errors or warnings.
-- [ ] All automated tests pass.
-- [ ] Code follows naming conventions and architectural patterns.
-- [ ] No expensive operations in `Update()` loops.
-- [ ] Public fields/methods are documented with comments.
-- [ ] New assets are organized into the correct folders.
+- [ ] C# 代码编译无误，无警告。
+- [ ] 所有自动化测试通过。
+- [ ] 代码遵循命名约定和架构模式。
+- [ ] `Update()` 循环中没有昂贵的操作。
+- [ ] 公共字段/方法有注释文档。
+- [ ] 新资产已组织到正确的文件夹中。
 
-## Performance Targets
+## 性能目标
 
-### Frame Rate Requirements
+### 帧率要求
 
-- **PC/Console**: Maintain a stable 60+ FPS.
-- **Mobile**: Maintain 60 FPS on mid-range devices, minimum 30 FPS on low-end.
-- **Optimization**: Use the Unity Profiler to identify and fix performance drops.
+- **PC/主机**：保持稳定的 60+ FPS。
+- **移动端**：在中端设备上保持 60 FPS，在低端设备上最低 30 FPS。
+- **优化**：使用 Unity Profiler 识别和修复性能下降。
 
-### Memory Management
+### 内存管理
 
-- **Total Memory**: Keep builds under platform-specific limits (e.g., 200MB for a simple mobile game).
-- **Garbage Collection**: Minimize GC spikes by avoiding string concatenation, `new` keyword usage in loops, and by pooling objects.
+- **总内存**：保持构建在平台特定限制内（例如，对于简单的移动游戏，低于 200MB）。
+- **垃圾回收**：通过避免在循环中使用字符串连接、`new` 关键字以及通过池化对象来最小化 GC 峰值。
 
-### Loading Performance
+### 加载性能
 
-- **Initial Load**: Under 5 seconds for game start.
-- **Scene Transitions**: Under 2 seconds between scenes. Use asynchronous scene loading.
+- **初始加载**：游戏启动低于 5 秒。
+- **场景转换**：场景之间低于 2 秒。使用异步场景加载。
 
-These guidelines ensure consistent, high-quality game development that meets performance targets and maintains code quality across all implementation stories.
+这些指南确保了一致、高质量的游戏开发，满足性能目标并在所有实施故事中保持代码质量。

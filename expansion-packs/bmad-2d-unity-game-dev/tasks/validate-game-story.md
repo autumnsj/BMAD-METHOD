@@ -1,202 +1,202 @@
-<!-- Powered by BMAD™ Core -->
+<!-- 由 BMAD™ 核心驱动 -->
 
-# Validate Game Story Task
+# 验证游戏故事任务
 
-## Purpose
+## 目的
 
-To comprehensively validate a Unity 2D game development story draft before implementation begins, ensuring it contains all necessary Unity-specific technical context, game development requirements, and implementation details. This specialized validation prevents hallucinations, ensures Unity development readiness, and validates game-specific acceptance criteria and testing approaches.
+在实施开始前，全面验证 Unity 2D 游戏开发故事草稿，确保其包含所有必要的 Unity 特定技术背景、游戏开发要求和实施细节。这种专门的验证可以防止幻觉，确保 Unity 开发准备就绪，并验证特定于游戏的验收标准和测试方法。
 
-## SEQUENTIAL Task Execution (Do not proceed until current Task is complete)
+## 顺序任务执行（在当前任务完成前不要继续）
 
-### 0. Load Core Configuration and Inputs
+### 0. 加载核心配置和输入
 
-- Load `{root}/core-config.yaml` from the project root
-- If the file does not exist, HALT and inform the user: "core-config.yaml not found. This file is required for story validation."
-- Extract key configurations: `devStoryLocation`, `gdd.*`, `gamearchitecture.*`, `workflow.*`
-- Identify and load the following inputs:
-  - **Story file**: The drafted game story to validate (provided by user or discovered in `devStoryLocation`)
-  - **Parent epic**: The epic containing this story's requirements from GDD
-  - **Architecture documents**: Based on configuration (sharded or monolithic)
-  - **Game story template**: `expansion-packs/bmad-2d-unity-game-dev/templates/game-story-tmpl.yaml` for completeness validation
+- 从项目根目录加载 `{root}/core-config.yaml`
+- 如果文件不存在，暂停并通知用户：“未找到 core-config.yaml。验证故事需要此文件。”
+- 提取关键配置：`devStoryLocation`、`gdd.*`、`gamearchitecture.*`、`workflow.*`
+- 识别并加载以下输入：
+  - **故事文件**：要验证的游戏故事草稿（由用户提供或在 `devStoryLocation` 中发现）
+  - **父史诗**：包含此故事要求的 GDD 中的史诗
+  - **架构文档**：基于配置（分片或单片）
+  - **游戏故事模板**：`expansion-packs/bmad-2d-unity-game-dev/templates/game-story-tmpl.yaml` 用于完整性验证
 
-### 1. Game Story Template Completeness Validation
+### 1. 游戏故事模板完整性验证
 
-- Load `expansion-packs/bmad-2d-unity-game-dev/templates/game-story-tmpl.yaml` and extract all required sections
-- **Missing sections check**: Compare story sections against game story template sections to verify all Unity-specific sections are present:
-  - Unity Technical Context
-  - Component Architecture
-  - Scene & Prefab Requirements
-  - Asset Dependencies
-  - Performance Requirements
-  - Platform Considerations
-  - Integration Points
-  - Testing Strategy (Unity Test Framework)
-- **Placeholder validation**: Ensure no template placeholders remain unfilled (e.g., `{{EpicNum}}`, `{{StoryNum}}`, `{{GameMechanic}}`, `_TBD_`)
-- **Game-specific sections**: Verify presence of Unity development specific sections
-- **Structure compliance**: Verify story follows game story template structure and formatting
+- 加载 `expansion-packs/bmad-2d-unity-game-dev/templates/game-story-tmpl.yaml` 并提取所有必需的部分
+- **缺失部分检查**：将故事部分与游戏故事模板部分进行比较，以验证所有 Unity 特定的部分都存在：
+  - Unity 技术背景
+  - 组件架构
+  - 场景和预制件要求
+  - 资产依赖
+  - 性能要求
+  - 平台考虑
+  - 集成点
+  - 测试策略（Unity 测试框架）
+- **占位符验证**：确保没有模板占位符未被填充（例如，`{{EpicNum}}`、`{{StoryNum}}`、`{{GameMechanic}}`、`_TBD_`）
+- **游戏特定部分**：验证是否存在 Unity 开发特定部分
+- **结构合规性**：验证故事是否遵循游戏故事模板的结构和格式
 
-### 2. Unity Project Structure and Asset Validation
+### 2. Unity 项目结构和资产验证
 
-- **Unity file paths clarity**: Are Unity-specific paths clearly specified (Assets/, Scripts/, Prefabs/, Scenes/, etc.)?
-- **Package dependencies**: Are required Unity packages identified and version-locked?
-- **Scene structure relevance**: Is relevant scene hierarchy and GameObject structure included?
-- **Prefab organization**: Are prefab creation/modification requirements clearly specified?
-- **Asset pipeline**: Are sprite imports, animation controllers, and audio assets properly planned?
-- **Directory structure**: Do new Unity assets follow project structure according to architecture docs?
-- **ScriptableObject requirements**: Are data containers and configuration objects identified?
-- **Namespace compliance**: Are C# namespaces following project conventions?
+- **Unity 文件路径清晰度**：是否清楚地指定了 Unity 特定的路径（Assets/、Scripts/、Prefabs/、Scenes/ 等）？
+- **包依赖**：是否已识别并版本锁定了所需的 Unity 包？
+- **场景结构相关性**：是否包括了相关的场景层次结构和 GameObject 结构？
+- **预制件组织**：是否清楚地指定了预制件的创建/修改要求？
+- **资产管道**：是否正确规划了精灵导入、动画控制器和音频资产？
+- **目录结构**：新的 Unity 资产是否根据架构文档遵循项目结构？
+- **ScriptableObject 要求**：是否已识别数据容器和配置对象？
+- **命名空间合规性**：C# 命名空间是否遵循项目约定？
 
-### 3. Unity Component Architecture Validation
+### 3. Unity 组件架构验证
 
-- **MonoBehaviour specifications**: Are Unity component classes sufficiently detailed for implementation?
-- **Component dependencies**: Are Unity component interdependencies clearly mapped?
-- **Unity lifecycle usage**: Are Start(), Update(), Awake() methods appropriately planned?
-- **Event system integration**: Are UnityEvents, C# events, or custom messaging systems specified?
-- **Serialization requirements**: Are [SerializeField] and public field requirements clear?
-- **Component interfaces**: Are required interfaces and abstract base classes defined?
-- **Performance considerations**: Are component update patterns optimized (Update vs FixedUpdate vs coroutines)?
+- **MonoBehaviour 规范**：Unity 组件类的细节是否足以实施？
+- **组件依赖**：Unity 组件的相互依赖关系是否清晰映射？
+- **Unity 生命周期使用**：是否适当规划了 Start()、Update()、Awake() 方法的使用？
+- **事件系统集成**：是否指定了 UnityEvents、C# 事件或自定义消息系统？
+- **序列化要求**：[SerializeField] 和公共字段的要求是否清晰？
+- **组件接口**：是否定义了所需的接口和抽象基类？
+- **性能考虑**：组件更新模式是否已优化（Update vs FixedUpdate vs 协程）？
 
-### 4. Game Mechanics and Systems Validation
+### 4. 游戏机制和系统验证
 
-- **Core loop integration**: Does the story properly integrate with established game core loop?
-- **Player input handling**: Are input mappings and input system requirements specified?
-- **Game state management**: Are state transitions and persistence requirements clear?
-- **UI/UX integration**: Are Canvas setup, UI components, and player feedback systems defined?
-- **Audio integration**: Are AudioSource, AudioMixer, and sound effect requirements specified?
-- **Animation systems**: Are Animator Controllers, Animation Clips, and transition requirements clear?
-- **Physics integration**: Are Rigidbody2D, Collider2D, and physics material requirements specified?
+- **核心循环集成**：故事是否正确地与已建立的游戏核心循环集成？
+- **玩家输入处理**：是否指定了输入映射和输入系统要求？
+- **游戏状态管理**：状态转换和持久性要求是否清晰？
+- **UI/UX 集成**：是否定义了画布设置、UI 组件和玩家反馈系统？
+- **音频集成**：是否指定了 AudioSource、AudioMixer 和音效要求？
+- **动画系统**：动画控制器、动画剪辑和过渡要求是否清晰？
+- **物理集成**：是否指定了 Rigidbody2D、Collider2D 和物理材质要求？
 
-### 5. Unity-Specific Acceptance Criteria Assessment
+### 5. Unity 特定的验收标准评估
 
-- **Functional testing**: Can all acceptance criteria be tested within Unity's Play Mode?
-- **Visual validation**: Are visual/aesthetic acceptance criteria measurable and testable?
-- **Performance criteria**: Are frame rate, memory usage, and build size criteria specified?
-- **Platform compatibility**: Are mobile vs desktop specific acceptance criteria addressed?
-- **Input validation**: Are different input methods (touch, keyboard, gamepad) covered?
-- **Audio criteria**: Are audio mixing levels, sound trigger timing, and audio quality specified?
-- **Animation validation**: Are animation smoothness, timing, and visual polish criteria defined?
+- **功能测试**：所有验收标准是否都可以在 Unity 的播放模式下进行测试？
+- **视觉验证**：视觉/美学验收标准是否可衡量和可测试？
+- **性能标准**：是否指定了帧率、内存使用和构建大小标准？
+- **平台兼容性**：是否解决了移动 vs 桌面特定的验收标准？
+- **输入验证**：是否涵盖了不同的输入法（触摸、键盘、手柄）？
+- **音频标准**：是否指定了音频混合级别、声音触发时机和音频质量？
+- **动画验证**：是否定义了动画平滑度、时序和视觉润色标准？
 
-### 6. Unity Testing and Validation Instructions Review
+### 6. Unity 测试和验证说明审查
 
-- **Unity Test Framework**: Are EditMode and PlayMode test approaches clearly specified?
-- **Performance profiling**: Are Unity Profiler usage and performance benchmarking steps defined?
-- **Build testing**: Are build process validation steps for target platforms specified?
-- **Scene testing**: Are scene loading, unloading, and transition testing approaches clear?
-- **Asset validation**: Are texture compression, audio compression, and asset optimization tests defined?
-- **Platform testing**: Are device-specific testing requirements (mobile performance, input methods) specified?
-- **Memory leak testing**: Are Unity memory profiling and leak detection steps included?
+- **Unity 测试框架**：是否清楚地指定了编辑模式和播放模式的测试方法？
+- **性能分析**：是否定义了 Unity Profiler 的使用和性能基准测试步骤？
+- **构建测试**：是否指定了目标平台的构建过程验证步骤？
+- **场景测试**：场景加载、卸载和过渡测试方法是否清晰？
+- **资产验证**：是否定义了纹理压缩、音频压缩和资产优化测试？
+- **平台测试**：是否指定了特定于设备的测试要求（移动性能、输入法）？
+- **内存泄漏测试**：是否包括了 Unity 内存分析和泄漏检测步骤？
 
-### 7. Unity Performance and Optimization Validation
+### 7. Unity 性能和优化验证
 
-- **Frame rate targets**: Are target FPS requirements clearly specified for different platforms?
-- **Memory budgets**: Are texture memory, audio memory, and runtime memory limits defined?
-- **Draw call optimization**: Are batching strategies and draw call reduction approaches specified?
-- **Mobile performance**: Are mobile-specific performance considerations (battery, thermal) addressed?
-- **Asset optimization**: Are texture compression, audio compression, and mesh optimization requirements clear?
-- **Garbage collection**: Are GC-friendly coding patterns and object pooling requirements specified?
-- **Loading time targets**: Are scene loading and asset streaming performance requirements defined?
+- **帧率目标**：是否清楚地指定了不同平台的目标 FPS 要求？
+- **内存预算**：是否定义了纹理内存、音频内存和运行时内存限制？
+- **绘制调用优化**：是否指定了批处理策略和减少绘制调用的方法？
+- **移动性能**：是否解决了移动特定的性能考虑（电池、散热）？
+- **资产优化**：纹理压缩、音频压缩和网格优化要求是否清晰？
+- **垃圾回收**：是否指定了 GC 友好的编码模式和对象池要求？
+- **加载时间目标**：是否定义了场景加载和资产流性能要求？
 
-### 8. Unity Security and Platform Considerations (if applicable)
+### 8. Unity 安全和平台考虑（如果适用）
 
-- **Platform store requirements**: Are app store guidelines and submission requirements addressed?
-- **Data privacy**: Are player data storage and analytics integration requirements specified?
-- **Platform integration**: Are platform-specific features (achievements, leaderboards) requirements clear?
-- **Content filtering**: Are age rating and content appropriateness considerations addressed?
-- **Anti-cheat considerations**: Are client-side validation and server communication security measures specified?
-- **Build security**: Are code obfuscation and asset protection requirements defined?
+- **平台商店要求**：是否解决了应用商店指南和提交要求？
+- **数据隐私**：是否指定了玩家数据存储和分析集成要求？
+- **平台集成**：平台特定功能（成就、排行榜）的要求是否清晰？
+- **内容过滤**：是否解决了年龄分级和内容适宜性考虑？
+- **反作弊考虑**：是否指定了客户端验证和服务器通信安全措施？
+- **构建安全**：是否定义了代码混淆和资产保护要求？
 
-### 9. Unity Development Task Sequence Validation
+### 9. Unity 开发任务序列验证
 
-- **Unity workflow order**: Do tasks follow proper Unity development sequence (prefabs before scenes, scripts before UI)?
-- **Asset creation dependencies**: Are asset creation tasks properly ordered (sprites before animations, audio before mixers)?
-- **Component dependencies**: Are script dependencies clear and implementation order logical?
-- **Testing integration**: Are Unity test creation and execution properly sequenced with development tasks?
-- **Build integration**: Are build process tasks appropriately placed in development sequence?
-- **Platform deployment**: Are platform-specific build and deployment tasks properly sequenced?
+- **Unity 工作流程顺序**：任务是否遵循正确的 Unity 开发顺序（预制件先于场景，脚本先于 UI）？
+- **资产创建依赖**：资产创建任务是否正确排序（精灵先于动画，音频先于混合器）？
+- **组件依赖**：脚本依赖是否清晰且实施顺序合乎逻辑？
+- **测试集成**：Unity 测试创建和执行是否与开发任务正确排序？
+- **构建集成**：构建过程任务是否适当地放置在开发序列中？
+- **平台部署**：平台特定的构建和部署任务是否正确排序？
 
-### 10. Unity Anti-Hallucination Verification
+### 10. Unity 反幻觉验证
 
-- **Unity API accuracy**: Every Unity API reference must be verified against current Unity documentation
-- **Package version verification**: All Unity package references must specify valid versions
-- **Component architecture alignment**: Unity component relationships must match architecture specifications
-- **Performance claims verification**: All performance targets must be realistic and based on platform capabilities
-- **Asset pipeline accuracy**: All asset import settings and pipeline configurations must be valid
-- **Platform capability verification**: All platform-specific features must be verified as available on target platforms
+- **Unity API 准确性**：每个 Unity API 引用都必须对照当前的 Unity 文档进行验证
+- **包版本验证**：所有 Unity 包引用都必须指定有效版本
+- **组件架构对齐**：Unity 组件关系必须与架构规范相匹配
+- **性能声明验证**：所有性能目标都必须是现实的，并基于平台能力
+- **资产管道准确性**：所有资产导入设置和管道配置都必须有效
+- **平台能力验证**：所有平台特定的功能都必须被验证在目标平台上可用
 
-### 11. Unity Development Agent Implementation Readiness
+### 11. Unity 开发代理实施准备情况
 
-- **Unity context completeness**: Can the story be implemented without consulting external Unity documentation?
-- **Technical specification clarity**: Are all Unity-specific implementation details unambiguous?
-- **Asset requirements clarity**: Are all required assets, their specifications, and import settings clearly defined?
-- **Component relationship clarity**: Are all Unity component interactions and dependencies explicitly defined?
-- **Testing approach completeness**: Are Unity-specific testing approaches fully specified and actionable?
-- **Performance validation readiness**: Are all performance testing and optimization approaches clearly defined?
+- **Unity 上下文完整性**：故事是否可以在不查阅外部 Unity 文档的情况下实施？
+- **技术规范清晰度**：所有 Unity 特定的实施细节是否明确无误？
+- **资产要求清晰度**：所有必需的资产、其规格和导入设置是否清晰定义？
+- **组件关系清晰度**：所有 Unity 组件的交互和依赖关系是否明确定义？
+- **测试方法完整性**：Unity 特定的测试方法是否完全指定并可操作？
+- **性能验证准备情况**：所有性能测试和优化方法是否清晰定义？
 
-### 12. Generate Unity Game Story Validation Report
+### 12. 生成 Unity 游戏故事验证报告
 
-Provide a structured validation report including:
+提供结构化的验证报告，包括：
 
-#### Game Story Template Compliance Issues
+#### 游戏故事模板合规性问题
 
-- Missing Unity-specific sections from game story template
-- Unfilled placeholders or template variables specific to game development
-- Missing Unity component specifications or asset requirements
-- Structural formatting issues in game-specific sections
+- 缺少游戏故事模板中的 Unity 特定部分
+- 未填充的占位符或特定于游戏开发的模板变量
+- 缺少 Unity 组件规范或资产要求
+- 游戏特定部分的结构格式问题
 
-#### Critical Unity Issues (Must Fix - Story Blocked)
+#### 关键 Unity 问题（必须修复 - 故事受阻）
 
-- Missing essential Unity technical information for implementation
-- Inaccurate or unverifiable Unity API references or package dependencies
-- Incomplete game mechanics or systems integration
-- Missing required Unity testing framework specifications
-- Performance requirements that are unrealistic or unmeasurable
+- 缺少实施所需的基本 Unity 技术信息
+- 不准确或无法验证的 Unity API 引用或包依赖
+- 不完整的游戏机制或系统集成
+- 缺少所需的 Unity 测试框架规范
+- 不切实际或无法衡量的性能要求
 
-#### Unity-Specific Should-Fix Issues (Important Quality Improvements)
+#### Unity 特定的应修复问题（重要的质量改进）
 
-- Unclear Unity component architecture or dependency relationships
-- Missing platform-specific performance considerations
-- Incomplete asset pipeline specifications or optimization requirements
-- Task sequencing problems specific to Unity development workflow
-- Missing Unity Test Framework integration or testing approaches
+- 不清晰的 Unity 组件架构或依赖关系
+- 缺少平台特定的性能考虑
+- 不完整的资产管道规范或优化要求
+- 特定于 Unity 开发工作流程的任务排序问题
+- 缺少 Unity 测试框架集成或测试方法
 
-#### Game Development Nice-to-Have Improvements (Optional Enhancements)
+#### 游戏开发最好能有的改进（可选增强）
 
-- Additional Unity performance optimization context
-- Enhanced asset creation guidance and best practices
-- Clarifications for Unity-specific development patterns
-- Additional platform compatibility considerations
-- Enhanced debugging and profiling guidance
+- 额外的 Unity 性能优化背景
+- 增强的资产创建指南和最佳实践
+- 对 Unity 特定开发模式的澄清
+- 额外的平台兼容性考虑
+- 增强的调试和分析指南
 
-#### Unity Anti-Hallucination Findings
+#### Unity 反幻觉发现
 
-- Unverifiable Unity API claims or outdated Unity references
-- Missing Unity package version specifications
-- Inconsistencies with Unity project architecture documents
-- Invented Unity components, packages, or development patterns
-- Unrealistic performance claims or platform capability assumptions
+- 无法验证的 Unity API 声明或过时的 Unity 参考
+- 缺少 Unity 包版本规范
+- 与 Unity 项目架构文档不一致
+- 发明的 Unity 组件、包或开发模式
+- 不切实际的性能声明或平台能力假设
 
-#### Unity Platform and Performance Validation
+#### Unity 平台和性能验证
 
-- **Mobile Performance Assessment**: Frame rate targets, memory usage, and thermal considerations
-- **Platform Compatibility Check**: Input methods, screen resolutions, and platform-specific features
-- **Asset Pipeline Validation**: Texture compression, audio formats, and build size considerations
-- **Unity Version Compliance**: Compatibility with specified Unity version and package versions
+- **移动性能评估**：帧率目标、内存使用和散热考虑
+- **平台兼容性检查**：输入法、屏幕分辨率和平台特定功能
+- **资产管道验证**：纹理压缩、音频格式和构建大小考虑
+- **Unity 版本合规性**：与指定的 Unity 版本和包版本兼容
 
-#### Final Unity Game Development Assessment
+#### 最终 Unity 游戏开发评估
 
-- **GO**: Story is ready for Unity implementation with all technical context
-- **NO-GO**: Story requires Unity-specific fixes before implementation
-- **Unity Implementation Readiness Score**: 1-10 scale based on Unity technical completeness
-- **Game Development Confidence Level**: High/Medium/Low for successful Unity implementation
-- **Platform Deployment Readiness**: Assessment of multi-platform deployment preparedness
-- **Performance Optimization Readiness**: Assessment of performance testing and optimization preparedness
+- **GO**：故事已准备好进行 Unity 实施，并包含所有技术背景
+- **NO-GO**：故事在实施前需要进行 Unity 特定的修复
+- **Unity 实施准备分数**：基于 Unity 技术完整性的 1-10 分制
+- **游戏开发信心水平**：高/中/低，表示成功实施 Unity 的信心
+- **平台部署准备情况**：多平台部署准备情况评估
+- **性能优化准备情况**：性能测试和优化准备情况评估
 
-#### Recommended Next Steps
+#### 推荐的后续步骤
 
-Based on validation results, provide specific recommendations for:
+根据验证结果，为以下方面提供具体建议：
 
-- Unity technical documentation improvements needed
-- Asset creation or acquisition requirements
-- Performance testing and profiling setup requirements
-- Platform-specific development environment setup needs
-- Unity Test Framework implementation recommendations
+- 需要的 Unity 技术文档改进
+- 资产创建或获取要求
+- 性能测试和分析设置要求
+- 平台特定的开发环境设置需求
+- Unity 测试框架实施建议

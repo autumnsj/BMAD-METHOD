@@ -1,10 +1,10 @@
-<!-- Powered by BMAD™ Core -->
+<!-- 由 BMAD™ 核心驱动 -->
 
-# Game Development Story Definition of Done (DoD) Checklist
+# 游戏开发故事完成定义 (DoD) 清单
 
-## Instructions for Developer Agent
+## 开发代理说明
 
-Before marking a story as 'Review', please go through each item in this checklist. Report the status of each item (e.g., [x] Done, [ ] Not Done, [N/A] Not Applicable) and provide brief comments if necessary.
+在将故事标记为“审查”之前，请检查此清单中的每个项目。报告每个项目的状态（例如，[x] 完成，[ ] 未完成，[N/A] 不适用），并在必要时提供简要评论。
 
 [[LLM: INITIALIZATION INSTRUCTIONS - GAME STORY DOD VALIDATION
 
@@ -22,93 +22,93 @@ EXECUTION APPROACH:
 
 The goal is quality delivery, not just checking boxes.]]
 
-## Checklist Items
+## 清单项目
 
-1. **Requirements Met:**
+1. **需求满足：**
 
    [[LLM: Be specific - list each requirement and whether it's complete. Include game-specific requirements from GDD]]
-   - [ ] All functional requirements specified in the story are implemented.
-   - [ ] All acceptance criteria defined in the story are met.
-   - [ ] Game Design Document (GDD) requirements referenced in the story are implemented.
-   - [ ] Player experience goals specified in the story are achieved.
+   - [ ] 故事中指定的所有功能需求均已实施。
+   - [ ] 故事中定义的所有验收标准均已满足。
+   - [ ] 故事中引用的游戏设计文档 (GDD) 要求均已实施。
+   - [ ] 故事中指定的玩家体验目标均已实现。
 
-2. **Coding Standards & Project Structure:**
+2. **编码标准和项目结构：**
 
    [[LLM: Code quality matters for maintainability. Check Unity-specific patterns and C# standards]]
-   - [ ] All new/modified code strictly adheres to `Operational Guidelines`.
-   - [ ] All new/modified code aligns with `Project Structure` (Scripts/, Prefabs/, Scenes/, etc.).
-   - [ ] Adherence to `Tech Stack` for Unity version and packages used.
-   - [ ] Adherence to `Api Reference` and `Data Models` (if story involves API or data model changes).
-   - [ ] Unity best practices followed (prefab usage, component design, event handling).
-   - [ ] C# coding standards followed (naming conventions, error handling, memory management).
-   - [ ] Basic security best practices applied for new/modified code.
-   - [ ] No new linter errors or warnings introduced.
-   - [ ] Code is well-commented where necessary (clarifying complex logic, not obvious statements).
+   - [ ] 所有新的/修改的代码都严格遵守`操作指南`。
+   - [ ] 所有新的/修改的代码都与`项目结构`（Scripts/、Prefabs/、Scenes/ 等）保持一致。
+   - [ ] 遵守所用 Unity 版本和包的`技术栈`。
+   - [ ] 遵守`Api 参考`和`数据模型`（如果故事涉及 API 或数据模型更改）。
+   - [ ] 遵循 Unity 最佳实践（预制件使用、组件设计、事件处理）。
+   - [ ] 遵循 C# 编码标准（命名约定、错误处理、内存管理）。
+   - [ ] 对新的/修改的代码应用了基本的安全最佳实践。
+   - [ ] 没有引入新的 linter 错误或警告。
+   - [ ] 在必要时对代码进行了充分注释（澄清复杂逻辑，而非明显语句）。
 
-3. **Testing:**
+3. **测试：**
 
    [[LLM: Testing proves your code works. Include Unity-specific testing with NUnit and manual testing]]
-   - [ ] All required unit tests (NUnit) as per the story and testing strategy are implemented.
-   - [ ] All required integration tests (if applicable) are implemented.
-   - [ ] Manual testing performed in Unity Editor for all game functionality.
-   - [ ] All tests (unit, integration, manual) pass successfully.
-   - [ ] Test coverage meets project standards (if defined).
-   - [ ] Performance tests conducted (frame rate, memory usage).
-   - [ ] Edge cases and error conditions tested.
+   - [ ] 根据故事和测试策略，所有必需的单元测试 (NUnit) 均已实施。
+   - [ ] 所有必需的集成测试（如果适用）均已实施。
+   - [ ] 在 Unity 编辑器中对所有游戏功能进行了手动测试。
+   - [ ] 所有测试（单元、集成、手动）均成功通过。
+   - [ ] 测试覆盖率符合项目标准（如果已定义）。
+   - [ ] 进行了性能测试（帧率、内存使用）。
+   - [ ] 测试了边缘情况和错误条件。
 
-4. **Functionality & Verification:**
+4. **功能与验证：**
 
    [[LLM: Did you actually run and test your code in Unity? Be specific about game mechanics tested]]
-   - [ ] Functionality has been manually verified in Unity Editor and play mode.
-   - [ ] Game mechanics work as specified in the GDD.
-   - [ ] Player controls and input handling work correctly.
-   - [ ] UI elements function properly (if applicable).
-   - [ ] Audio integration works correctly (if applicable).
-   - [ ] Visual feedback and animations work as intended.
-   - [ ] Edge cases and potential error conditions handled gracefully.
-   - [ ] Cross-platform functionality verified (desktop/mobile as applicable).
+   - [ ] 功能已在 Unity 编辑器和播放模式下手动验证。
+   - [ ] 游戏机制按 GDD 中的规定工作。
+   - [ ] 玩家控制和输入处理工作正常。
+   - [ ] UI 元素功能正常（如果适用）。
+   - [ ] 音频集成工作正常（如果适用）。
+   - [ ] 视觉反馈和动画按预期工作。
+   - [ ] 优雅地处理了边缘情况和潜在的错误条件。
+   - [ ] 验证了跨平台功能（桌面/移动端，如适用）。
 
-5. **Story Administration:**
+5. **故事管理：**
 
    [[LLM: Documentation helps the next developer. Include Unity-specific implementation notes]]
-   - [ ] All tasks within the story file are marked as complete.
-   - [ ] Any clarifications or decisions made during development are documented.
-   - [ ] Unity-specific implementation details documented (scene changes, prefab modifications).
-   - [ ] The story wrap up section has been completed with notes of changes.
-   - [ ] Changelog properly updated with Unity version and package changes.
+   - [ ] 故事文件中的所有任务都标记为完成。
+   - [ ] 开发过程中做出的任何澄清或决定都已记录。
+   - [ ] 记录了 Unity 特定的实施细节（场景更改、预制件修改）。
+   - [ ] 故事总结部分已用更改说明完成。
+   - [ ] 变更日志已用 Unity 版本和包更改正确更新。
 
-6. **Dependencies, Build & Configuration:**
+6. **依赖、构建和配置：**
 
    [[LLM: Build issues block everyone. Ensure Unity project builds for all target platforms]]
-   - [ ] Unity project builds successfully without errors.
-   - [ ] Project builds for all target platforms (desktop/mobile as specified).
-   - [ ] Any new Unity packages or Asset Store items were pre-approved OR approved by user.
-   - [ ] If new dependencies were added, they are recorded with justification.
-   - [ ] No known security vulnerabilities in newly added dependencies.
-   - [ ] Project settings and configurations properly updated.
-   - [ ] Asset import settings optimized for target platforms.
+   - [ ] Unity 项目成功构建，没有错误。
+   - [ ] 项目为所有目标平台（桌面/移动端，如指定）构建。
+   - [ ] 任何新的 Unity 包或 Asset Store 项目都经过预先批准或用户批准。
+   - [ ] 如果添加了新的依赖项，则已记录并说明理由。
+   - [ ] 新添加的依赖项中没有已知的安全漏洞。
+   - [ ] 项目设置和配置已正确更新。
+   - [ ] 资产导入设置为目标平台进行了优化。
 
-7. **Game-Specific Quality:**
+7. **游戏特定质量：**
 
    [[LLM: Game quality matters. Check performance, game feel, and player experience]]
-   - [ ] Frame rate meets target (30/60 FPS) on all platforms.
-   - [ ] Memory usage within acceptable limits.
-   - [ ] Game feel and responsiveness meet design requirements.
-   - [ ] Balance parameters from GDD correctly implemented.
-   - [ ] State management and persistence work correctly.
-   - [ ] Loading times and scene transitions acceptable.
-   - [ ] Mobile-specific requirements met (touch controls, aspect ratios).
+   - [ ] 在所有平台上帧率均达到目标（30/60 FPS）。
+   - [ ] 内存使用在可接受的限制内。
+   - [ ] 游戏感觉和响应性符合设计要求。
+   - [ ] GDD 中的平衡参数已正确实施。
+   - [ ] 状态管理和持久性工作正常。
+   - [ ] 加载时间和场景转换可接受。
+   - [ ] 满足移动端特定要求（触摸控制、宽高比）。
 
-8. **Documentation (If Applicable):**
+8. **文档（如果适用）：**
 
    [[LLM: Good documentation prevents future confusion. Include Unity-specific docs]]
-   - [ ] Code documentation (XML comments) for public APIs complete.
-   - [ ] Unity component documentation in Inspector updated.
-   - [ ] User-facing documentation updated, if changes impact players.
-   - [ ] Technical documentation (architecture, system diagrams) updated.
-   - [ ] Asset documentation (prefab usage, scene setup) complete.
+   - [ ] 公共 API 的代码文档（XML 注释）已完成。
+   - [ ] Inspector 中的 Unity 组件文档已更新。
+   - [ ] 如果更改影响玩家，则更新了面向用户的文档。
+   - [ ] 更新了技术文档（架构、系统图）。
+   - [ ] 资产文档（预制件用法、场景设置）已完成。
 
-## Final Confirmation
+## 最终确认
 
 [[LLM: FINAL GAME DOD SUMMARY
 
@@ -123,4 +123,4 @@ After completing the checklist:
 
 Be honest - it's better to flag issues now than have them discovered during playtesting.]]
 
-- [ ] I, the Game Developer Agent, confirm that all applicable items above have been addressed.
+- [ ] 我，游戏开发代理，确认以上所有适用项目均已处理。

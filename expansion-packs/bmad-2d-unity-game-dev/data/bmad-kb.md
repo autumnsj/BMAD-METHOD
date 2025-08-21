@@ -1,192 +1,192 @@
-<!-- Powered by BMAD™ Core -->
+<!-- 由 BMAD™ 核心驱动 -->
 
-# BMad Knowledge Base - 2D Unity Game Development
+# BMad 知识库 - 2D Unity 游戏开发
 
-## Overview
+## 概述
 
-This is the game development expansion of BMad-Method (Breakthrough Method of Agile AI-driven Development), specializing in creating 2D games using Unity and C#. The v4 system introduces a modular architecture with improved dependency management, bundle optimization, and support for both web and IDE environments, specifically optimized for game development workflows.
+这是 BMad-Method（敏捷 AI 驱动开发的突破性方法）的游戏开发扩展，专门用于使用 Unity 和 C# 创建 2D 游戏。v4 系统引入了模块化架构，改进了依赖管理、包优化，并支持 Web 和 IDE 环境，特别为游戏开发工作流程进行了优化。
 
-### Key Features for Game Development
+### 游戏开发的主要特点
 
-- **Game-Specialized Agent System**: AI agents for each game development role (Designer, Developer, Scrum Master)
-- **Unity-Optimized Build System**: Automated dependency resolution for game assets and scripts
-- **Dual Environment Support**: Optimized for both web UIs and game development IDEs
-- **Game Development Resources**: Specialized templates, tasks, and checklists for 2D Unity games
-- **Performance-First Approach**: Built-in optimization patterns for cross-platform game deployment
+- **游戏专用代理系统**：为每个游戏开发角色（设计师、开发者、Scrum Master）配备的 AI 代理
+- **Unity 优化的构建系统**：游戏资产和脚本的自动依赖解析
+- **双环境支持**：针对 Web UI 和游戏开发 IDE 进行了优化
+- **游戏开发资源**：针对 2D Unity 游戏的专用模板、任务和清单
+- **性能优先方法**：内置用于跨平台游戏部署的优化模式
 
-### Game Development Focus
+### 游戏开发重点
 
-- **Target Engine**: Unity 2022 LTS or newer with C# 10+
-- **Platform Strategy**: Cross-platform (PC, Console, Mobile) with a focus on 2D
-- **Development Approach**: Agile story-driven development with game-specific workflows
-- **Performance Target**: Stable frame rate on target devices
-- **Architecture**: Component-based architecture using Unity's best practices
+- **目标引擎**：Unity 2022 LTS 或更新版本，使用 C# 10+
+- **平台策略**：跨平台（PC、主机、移动设备），专注于 2D
+- **开发方法**：采用游戏特定工作流程的敏捷故事驱动开发
+- **性能目标**：在目标设备上实现稳定的帧率
+- **架构**：使用 Unity 最佳实践的基于组件的架构
 
-### When to Use BMad for Game Development
+### 何时使用 BMad 进行游戏开发
 
-- **New Game Projects (Greenfield)**: Complete end-to-end game development from concept to deployment
-- **Existing Game Projects (Brownfield)**: Feature additions, level expansions, and gameplay enhancements
-- **Game Team Collaboration**: Multiple specialized roles working together on game features
-- **Game Quality Assurance**: Structured testing, performance validation, and gameplay balance
-- **Game Documentation**: Professional Game Design Documents, technical architecture, user stories
+- **新游戏项目（绿地）**：从概念到部署的完整端到端游戏开发
+- **现有游戏项目（棕地）**：功能添加、关卡扩展和游戏性增强
+- **游戏团队协作**：多个专业角色共同开发游戏功能
+- **游戏质量保证**：结构化测试、性能验证和游戏性平衡
+- **游戏文档**：专业的游戏设计文档、技术架构、用户故事
 
-## How BMad Works for Game Development
+## BMad 如何用于游戏开发
 
-### The Core Method
+### 核心方法
 
-BMad transforms you into a "Player Experience CEO" - directing a team of specialized game development AI agents through structured workflows. Here's how:
+BMad 将您转变为“玩家体验 CEO”——通过结构化的工作流程指导一支专业的游戏开发 AI 代理团队。工作方式如下：
 
-1. **You Direct, AI Executes**: You provide game vision and creative decisions; agents handle implementation details
-2. **Specialized Game Agents**: Each agent masters one game development role (Designer, Developer, Scrum Master)
-3. **Game-Focused Workflows**: Proven patterns guide you from game concept to deployed 2D Unity game
-4. **Clean Handoffs**: Fresh context windows ensure agents stay focused and effective for game development
+1. **您指导，AI 执行**：您提供游戏愿景和创意决策；代理处理实施细节
+2. **专业游戏代理**：每个代理都精通一个游戏开发角色（设计师、开发者、Scrum Master）
+3. **以游戏为中心的工作流程**：经过验证的模式指导您从游戏概念到已部署的 2D Unity 游戏
+4. **清晰的交接**：全新的上下文窗口确保代理在游戏开发中保持专注和高效
 
-### The Two-Phase Game Development Approach
+### 两阶段游戏开发方法
 
-#### Phase 1: Game Design & Planning (Web UI - Cost Effective)
+#### 阶段 1：游戏设计与规划（Web UI - 经济高效）
 
-- Use large context windows for comprehensive game design
-- Generate complete Game Design Documents and technical architecture
-- Leverage multiple agents for creative brainstorming and mechanics refinement
-- Create once, use throughout game development
+- 使用大型上下文窗口进行全面的游戏设计
+- 生成完整的游戏设计文档和技术架构
+- 利用多个代理进行创意头脑风暴和机制优化
+- 一次创建，贯穿整个游戏开发过程
 
-#### Phase 2: Game Development (IDE - Implementation)
+#### 阶段 2：游戏开发（IDE - 实施）
 
-- Shard game design documents into manageable pieces
-- Execute focused SM → Dev cycles for game features
-- One game story at a time, sequential progress
-- Real-time Unity operations, C# coding, and game testing
+- 将游戏设计文档分片为可管理的部分
+- 为游戏功能执行专注的 SM → Dev 周期
+- 一次一个游戏故事，顺序进行
+- 实时 Unity 操作、C# 编码和游戏测试
 
-### The Game Development Loop
+### 游戏开发循环
 
 ```text
-1. Game SM Agent (New Chat) → Creates next game story from sharded docs
-2. You → Review and approve game story
-3. Game Dev Agent (New Chat) → Implements approved game feature in Unity
-4. QA Agent (New Chat) → Reviews code and tests gameplay
-5. You → Verify game feature completion
-6. Repeat until game epic complete
+1. 游戏 SM 代理（新聊天）→ 从分片文档中创建下一个游戏故事
+2. 您 → 审查并批准游戏故事
+3. 游戏开发代理（新聊天）→ 在 Unity 中实施已批准的游戏功能
+4. QA 代理（新聊天）→ 审查代码并测试游戏性
+5. 您 → 验证游戏功能完成情况
+6. 重复直到游戏史诗完成
 ```
 
-### Why This Works for Games
+### 为什么这适用于游戏
 
-- **Context Optimization**: Clean chats = better AI performance for complex game logic
-- **Role Clarity**: Agents don't context-switch = higher quality game features
-- **Incremental Progress**: Small game stories = manageable complexity
-- **Player-Focused Oversight**: You validate each game feature = quality control
-- **Design-Driven**: Game specs guide everything = consistent player experience
+- **上下文优化**：干净的聊天 = 更好的 AI 性能，适用于复杂的游戏逻辑
+- **角色清晰**：代理不进行上下文切换 = 更高质量的游戏功能
+- **增量进展**：小游戏故事 = 可管理的复杂性
+- **以玩家为中心的监督**：您验证每个游戏功能 = 质量控制
+- **设计驱动**：游戏规格指导一切 = 一致的玩家体验
 
-### Core Game Development Philosophy
+### 核心游戏开发理念
 
-#### Player-First Development
+#### 玩家至上的开发
 
-You are developing games as a "Player Experience CEO" - thinking like a game director with unlimited creative resources and a singular vision for player enjoyment.
+您正在以“玩家体验 CEO”的身份开发游戏——像一位拥有无限创意资源和对玩家享受有单一愿景的游戏总监一样思考。
 
-#### Game Development Principles
+#### 游戏开发原则
 
-1. **MAXIMIZE_PLAYER_ENGAGEMENT**: Push the AI to create compelling gameplay. Challenge mechanics and iterate.
-2. **GAMEPLAY_QUALITY_CONTROL**: You are the ultimate arbiter of fun. Review all game features.
-3. **CREATIVE_OVERSIGHT**: Maintain the high-level game vision and ensure design alignment.
-4. **ITERATIVE_REFINEMENT**: Expect to revisit game mechanics. Game development is not linear.
-5. **CLEAR_GAME_INSTRUCTIONS**: Precise game requirements lead to better implementations.
-6. **DOCUMENTATION_IS_KEY**: Good game design docs lead to good game features.
-7. **START_SMALL_SCALE_FAST**: Test core mechanics, then expand and polish.
-8. **EMBRACE_CREATIVE_CHAOS**: Adapt and overcome game development challenges.
+1. **最大化玩家参与度**：推动 AI 创造引人入胜的游戏性。挑战机制并进行迭代。
+2. **游戏性质量控制**：您是乐趣的最终仲裁者。审查所有游戏功能。
+3. **创意监督**：保持高层次的游戏愿景并确保设计一致性。
+4. **迭代优化**：期望重新审视游戏机制。游戏开发不是线性的。
+5. **清晰的游戏说明**：精确的游戏要求带来更好的实施。
+6. **文档是关键**：好的游戏设计文档带来好的游戏功能。
+7. **从小处着手，快速扩展**：首先测试核心机制，然后扩展和润色。
+8. **拥抱创意混乱**：适应并克服游戏开发挑战。
 
-## Getting Started with Game Development
+## 开始游戏开发
 
-### Quick Start Options for Game Development
+### 游戏开发快速入门选项
 
-#### Option 1: Web UI for Game Design
+#### 选项 1：用于游戏设计的 Web UI
 
-**Best for**: Game designers who want to start with comprehensive planning
+**最适合**：希望从全面规划开始的游戏设计师
 
-1. Navigate to `dist/teams/` (after building)
-2. Copy `unity-2d-game-team.txt` content
-3. Create new Gemini Gem or CustomGPT
-4. Upload file with instructions: "Your critical operating instructions are attached, do not break character as directed"
-5. Type `/help` to see available game development commands
+1. 导航到 `dist/teams/`（构建后）
+2. 复制 `unity-2d-game-team.txt` 内容
+3. 创建新的 Gemini Gem 或 CustomGPT
+4. 上传文件并附上说明：“您的关键操作说明已附上，请按指示不要脱离角色”
+5. 输入 `/help` 查看可用的游戏开发命令
 
-#### Option 2: IDE Integration for Game Development
+#### 选项 2：用于游戏开发的 IDE 集成
 
-**Best for**: Unity developers using Cursor, Claude Code, Windsurf, Trae, Cline, Roo Code, Github Copilot
+**最适合**：使用 Cursor、Claude Code、Windsurf、Trae、Cline、Roo Code、Github Copilot 的 Unity 开发者
 
 ```bash
-# Interactive installation (recommended)
+# 交互式安装（推荐）
 npx bmad-method install
-# Select the bmad-2d-unity-game-dev expansion pack when prompted
+# 出现提示时选择 bmad-2d-unity-game-dev 扩展包
 ```
 
-**Installation Steps for Game Development**:
+**游戏开发安装步骤**：
 
-- Choose "Install expansion pack" when prompted
-- Select "bmad-2d-unity-game-dev" from the list
-- Select your IDE from supported options:
-  - **Cursor**: Native AI integration with Unity support
-  - **Claude Code**: Anthropic's official IDE
-  - **Windsurf**: Built-in AI capabilities
-  - **Trae**: Built-in AI capabilities
-  - **Cline**: VS Code extension with AI features
-  - **Roo Code**: Web-based IDE with agent support
-  - **GitHub Copilot**: VS Code extension with AI peer programming assistant
+- 出现提示时选择“安装扩展包”
+- 从列表中选择“bmad-2d-unity-game-dev”
+- 从支持的选项中选择您的 IDE：
+  - **Cursor**：具有 Unity 支持的原生 AI 集成
+  - **Claude Code**：Anthropic 的官方 IDE
+  - **Windsurf**：内置 AI 功能
+  - **Trae**：内置 AI 功能
+  - **Cline**：具有 AI 功能的 VS Code 扩展
+  - **Roo Code**：具有代理支持的基于 Web 的 IDE
+  - **GitHub Copilot**：具有 AI 同行编程助手的 VS Code 扩展
 
-**Verify Game Development Installation**:
+**验证游戏开发安装**：
 
-- `.bmad-core/` folder created with all core agents
-- `.bmad-2d-unity-game-dev/` folder with game development agents
-- IDE-specific integration files created
-- Game development agents available with `/bmad2du` prefix (per config.yaml)
+- 创建了 `.bmad-core/` 文件夹，包含所有核心代理
+- `.bmad-2d-unity-game-dev/` 文件夹，包含游戏开发代理
+- 创建了特定于 IDE 的集成文件
+- 游戏开发代理可通过 `/bmad2du` 前缀使用（根据 config.yaml）
 
-### Environment Selection Guide for Game Development
+### 游戏开发环境选择指南
 
-**Use Web UI for**:
+**使用 Web UI 用于**：
 
-- Game design document creation and brainstorming
-- Cost-effective comprehensive game planning (especially with Gemini)
-- Multi-agent game design consultation
-- Creative ideation and mechanics refinement
+- 游戏设计文档创建和头脑风暴
+- 经济高效的全面游戏规划（尤其是在使用 Gemini 时）
+- 多代理游戏设计咨询
+- 创意构思和机制优化
 
-**Use IDE for**:
+**使用 IDE 用于**：
 
-- Unity project development and C# coding
-- Game asset operations and project integration
-- Game story management and implementation workflow
-- Unity testing, profiling, and debugging
+- Unity 项目开发和 C# 编码
+- 游戏资产操作和项目集成
+- 游戏故事管理和开发工作流程
+- Unity 测试、分析和调试
 
-**Cost-Saving Tip for Game Development**: Create large game design documents in web UI, then copy to `docs/game-design-doc.md` and `docs/game-architecture.md` in your Unity project before switching to IDE for development.
+**游戏开发成本节约技巧**：在 Web UI 中创建大型游戏设计文档，然后在切换到 IDE 进行开发之前，将它们复制到 Unity 项目的 `docs/game-design-doc.md` 和 `docs/game-architecture.md` 中。
 
-### IDE-Only Game Development Workflow Considerations
+### 仅 IDE 的游戏开发工作流程考虑
 
-**Can you do everything in IDE?** Yes, but understand the game development tradeoffs:
+**您可以在 IDE 中完成所有事情吗？** 是的，但要了解游戏开发的权衡：
 
-**Pros of IDE-Only Game Development**:
+**仅 IDE 游戏开发的优点**：
 
-- Single environment workflow from design to Unity deployment
-- Direct Unity project operations from start
-- No copy/paste between environments
-- Immediate Unity project integration
+- 从设计到 Unity 部署的单一环境工作流程
+- 从一开始就直接进行 Unity 项目操作
+- 无需在环境之间复制/粘贴
+- 即时 Unity 项目集成
 
-**Cons of IDE-Only Game Development**:
+**仅 IDE 游戏开发的缺点**：
 
-- Higher token costs for large game design document creation
-- Smaller context windows for comprehensive game planning
-- May hit limits during creative brainstorming phases
-- Less cost-effective for extensive game design iteration
+- 创建大型游戏设计文档的 token 成本更高
+- 用于全面游戏规划的上下文窗口较小
+- 在创意头脑风暴阶段可能会达到限制
+- 对于广泛的游戏设计迭代来说，成本效益较低
 
-**CRITICAL RULE for Game Development**:
+**游戏开发的关键规则**：
 
-- **ALWAYS use Game SM agent for story creation** - Never use bmad-master or bmad-orchestrator
-- **ALWAYS use Game Dev agent for Unity implementation** - Never use bmad-master or bmad-orchestrator
-- **Why this matters**: Game SM and Game Dev agents are specifically optimized for Unity workflows
-- **No exceptions**: Even if using bmad-master for design, switch to Game SM → Game Dev for implementation
+- **始终使用游戏 SM 代理创建故事** - 切勿使用 bmad-master 或 bmad-orchestrator
+- **始终使用游戏开发代理进行 Unity 实施** - 切勿使用 bmad-master 或 bmad-orchestrator
+- **为什么这很重要**：游戏 SM 和游戏开发代理专门针对 Unity 工作流程进行了优化
+- **无例外**：即使使用 bmad-master 进行设计，也要切换到游戏 SM → 游戏开发进行实施
 
-## Core Configuration for Game Development (core-config.yaml)
+## 游戏开发的核心配置 (core-config.yaml)
 
-**New in V4**: The `expansion-packs/bmad-2d-unity-game-dev/core-config.yaml` file enables BMad to work seamlessly with any Unity project structure, providing maximum flexibility for game development.
+**V4 中的新功能**：`expansion-packs/bmad-2d-unity-game-dev/core-config.yaml` 文件使 BMad 能够与任何 Unity 项目结构无缝协作，为游戏开发提供最大的灵活性。
 
-### Game Development Configuration
+### 游戏开发配置
 
-The expansion pack follows the standard BMad configuration patterns. Copy your core-config.yaml file to expansion-packs/bmad-2d-unity-game-dev/ and add Game-specific configurations to your project's `core-config.yaml`:
+该扩展包遵循标准的 BMad 配置模式。将您的 core-config.yaml 文件复制到 expansion-packs/bmad-2d-unity-game-dev/ 并将游戏特定配置添加到您项目的 `core-config.yaml` 中：
 
 ```yaml
 markdownExploder: true
@@ -215,557 +215,557 @@ gamearchitecture:
   gamearchitectureShardedLocation: docs/game-architecture
 gamebriefdocLocation: docs/game-brief.md
 levelDesignLocation: docs/level-design.md
-#Specify the location for your unity editor
+#指定您的 unity 编辑器的位置
 unityEditorLocation: /home/USER/Unity/Hub/Editor/VERSION/Editor/Unity
 customTechnicalDocuments: null
 devDebugLog: .ai/debug-log.md
 devStoryLocation: docs/stories
 slashPrefix: bmad2du
-#replace old devLoadAlwaysFiles with this once you have sharded your gamearchitecture document
+#在分片您的 gamearchitecture 文档后，用这个替换旧的 devLoadAlwaysFiles
 devLoadAlwaysFiles:
   - docs/game-architecture/9-coding-standards.md
   - docs/game-architecture/3-tech-stack.md
   - docs/game-architecture/8-unity-project-structure.md
 ```
 
-## Complete Game Development Workflow
+## 完整的游戏开发工作流程
 
-### Planning Phase (Web UI Recommended - Especially Gemini for Game Design!)
+### 规划阶段（推荐使用 Web UI - 尤其是 Gemini 用于游戏设计！）
 
-**Ideal for cost efficiency with Gemini's massive context for game brainstorming:**
+**对于具有 Gemini 大量上下文的游戏头脑风暴，具有成本效益的理想选择：**
 
-**For All Game Projects**:
+**对于所有游戏项目**：
 
-1. **Game Concept Brainstorming**: `/bmad2du/game-designer` - Use `*game-design-brainstorming` task
-2. **Game Brief**: Create foundation game document using `game-brief-tmpl`
-3. **Game Design Document Creation**: `/bmad2du/game-designer` - Use `game-design-doc-tmpl` for comprehensive game requirements
-4. **Game Architecture Design**: `/bmad2du/game-architect` - Use `game-architecture-tmpl` for Unity technical foundation
-5. **Level Design Framework**: `/bmad2du/game-designer` - Use `level-design-doc-tmpl` for level structure planning
-6. **Document Preparation**: Copy final documents to Unity project as `docs/game-design-doc.md`, `docs/game-brief.md`, `docs/level-design.md` and `docs/game-architecture.md`
+1. **游戏概念头脑风暴**：`/bmad2du/game-designer` - 使用 `*game-design-brainstorming` 任务
+2. **游戏简介**：使用 `game-brief-tmpl` 创建基础游戏文档
+3. **游戏设计文档创建**：`/bmad2du/game-designer` - 使用 `game-design-doc-tmpl` 获取全面的游戏要求
+4. **游戏架构设计**：`/bmad2du/game-architect` - 使用 `game-architecture-tmpl` 获取 Unity 技术基础
+5. **关卡设计框架**：`/bmad2du/game-designer` - 使用 `level-design-doc-tmpl` 进行关卡结构规划
+6. **文档准备**：将最终文档复制到 Unity 项目中，作为 `docs/game-design-doc.md`、`docs/game-brief.md`、`docs/level-design.md` 和 `docs/game-architecture.md`
 
-#### Example Game Planning Prompts
+#### 游戏规划提示示例
 
-**For Game Design Document Creation**:
-
-```text
-"I want to build a [genre] 2D game that [core gameplay].
-Help me brainstorm mechanics and create a comprehensive Game Design Document."
-```
-
-**For Game Architecture Design**:
+**用于游戏设计文档创建**：
 
 ```text
-"Based on this Game Design Document, design a scalable Unity architecture
-that can handle [specific game requirements] with stable performance."
+"我想构建一个 [类型] 的 2D 游戏，它 [核心游戏性]。
+帮我进行机制头脑风暴并创建一个全面的游戏设计文档。"
 ```
 
-### Critical Transition: Web UI to Unity IDE
+**用于游戏架构设计**：
 
-**Once game planning is complete, you MUST switch to IDE for Unity development:**
+```text
+"基于这个游戏设计文档，设计一个可扩展的 Unity 架构
+，可以处理 [特定游戏要求] 并具有稳定的性能。"
+```
 
-- **Why**: Unity development workflow requires C# operations, asset management, and real-time Unity testing
-- **Cost Benefit**: Web UI is more cost-effective for large game design creation; IDE is optimized for Unity development
-- **Required Files**: Ensure `docs/game-design-doc.md` and `docs/game-architecture.md` exist in your Unity project
+### 关键过渡：从 Web UI 到 Unity IDE
 
-### Unity IDE Development Workflow
+**游戏规划完成后，您必须切换到 IDE 进行 Unity 开发：**
 
-**Prerequisites**: Game planning documents must exist in `docs/` folder of Unity project
+- **原因**：Unity 开发工作流程需要 C# 操作、资产管理和实时 Unity 测试
+- **成本效益**：Web UI 对于大型游戏设计创建更具成本效益；IDE 针对 Unity 开发进行了优化
+- **所需文件**：确保您的 Unity 项目中存在 `docs/game-design-doc.md` 和 `docs/game-architecture.md`
 
-1. **Document Sharding** (CRITICAL STEP for Game Development):
-   - Documents created by Game Designer/Architect (in Web or IDE) MUST be sharded for development
-   - Use core BMad agents or tools to shard:
-     a) **Manual**: Use core BMad `shard-doc` task if available
-     b) **Agent**: Ask core `@bmad-master` agent to shard documents
-   - Shards `docs/game-design-doc.md` → `docs/game-design/` folder
-   - Shards `docs/game-architecture.md` → `docs/game-architecture/` folder
-   - **WARNING**: Do NOT shard in Web UI - copying many small files to Unity is painful!
+### Unity IDE 开发工作流程
 
-2. **Verify Sharded Game Content**:
-   - At least one `feature-n.md` file in `docs/game-design/` with game stories in development order
-   - Unity system documents and coding standards for game dev agent reference
-   - Sharded docs for Game SM agent story creation
+**先决条件**：游戏规划文档必须存在于 Unity 项目的 `docs/` 文件夹中
 
-Resulting Unity Project Folder Structure:
+1. **文档分片**（游戏开发的关键步骤）：
+   - 由游戏设计师/架构师创建的文档（在 Web 或 IDE 中）必须为开发进行分片
+   - 使用核心 BMad 代理或工具进行分片：
+     a) **手动**：如果可用，使用核心 BMad `shard-doc` 任务
+     b) **代理**：要求核心 `@bmad-master` 代理对文档进行分片
+   - 将 `docs/game-design-doc.md` 分片到 `docs/game-design/` 文件夹
+   - 将 `docs/game-architecture.md` 分片到 `docs/game-architecture/` 文件夹
+   - **警告**：不要在 Web UI 中进行分片 - 将许多小文件复制到 Unity 很痛苦！
 
-- `docs/game-design/` - Broken down game design sections
-- `docs/game-architecture/` - Broken down Unity architecture sections
-- `docs/game-stories/` - Generated game development stories
+2. **验证分片的游戏内容**：
+   - `docs/game-design/` 中至少有一个 `feature-n.md` 文件，其中包含按开发顺序排列的游戏故事
+   - 用于游戏开发代理参考的 Unity 系统文档和编码标准
+   - 用于游戏 SM 代理故事创建的分片文档
 
-3. **Game Development Cycle** (Sequential, one game story at a time):
+生成的 Unity 项目文件夹结构：
 
-   **CRITICAL CONTEXT MANAGEMENT for Unity Development**:
-   - **Context windows matter!** Always use fresh, clean context windows
-   - **Model selection matters!** Use most powerful thinking model for Game SM story creation
-   - **ALWAYS start new chat between Game SM, Game Dev, and QA work**
+- `docs/game-design/` - 分解的游戏设计部分
+- `docs/game-architecture/` - 分解的 Unity 架构部分
+- `docs/game-stories/` - 生成的游戏开发故事
 
-   **Step 1 - Game Story Creation**:
-   - **NEW CLEAN CHAT** → Select powerful model → `/bmad2du/game-sm` → `*draft`
-   - Game SM executes create-game-story task using `game-story-tmpl`
-   - Review generated story in `docs/game-stories/`
-   - Update status from "Draft" to "Approved"
+3. **游戏开发周期**（顺序进行，一次一个游戏故事）：
 
-   **Step 2 - Unity Game Story Implementation**:
-   - **NEW CLEAN CHAT** → `/bmad2du/game-developer`
-   - Agent asks which game story to implement
-   - Include story file content to save game dev agent lookup time
-   - Game Dev follows tasks/subtasks, marking completion
-   - Game Dev maintains File List of all Unity/C# changes
-   - Game Dev marks story as "Review" when complete with all Unity tests passing
+   **Unity 开发的关键上下文管理**：
+   - **上下文窗口很重要！** 始终使用全新的、干净的上下文窗口
+   - **模型选择很重要！** 为游戏 SM 故事创建使用最强大的思维模型
+   - **始终在游戏 SM、游戏开发和 QA 工作之间开始新的聊天**
 
-   **Step 3 - Game QA Review**:
-   - **NEW CLEAN CHAT** → Use core `@qa` agent → execute review-story task
-   - QA performs senior Unity developer code review
-   - QA can refactor and improve Unity code directly
-   - QA appends results to story's QA Results section
-   - If approved: Status → "Done"
-   - If changes needed: Status stays "Review" with unchecked items for game dev
+   **步骤 1 - 游戏故事创建**：
+   - **新的干净聊天** → 选择强大的模型 → `/bmad2du/game-sm` → `*draft`
+   - 游戏 SM 使用 `game-story-tmpl` 执行 create-game-story 任务
+   - 在 `docs/game-stories/` 中审查生成的故事
+   - 将状态从“草稿”更新为“已批准”
 
-   **Step 4 - Repeat**: Continue Game SM → Game Dev → QA cycle until all game feature stories complete
+   **步骤 2 - Unity 游戏故事实施**：
+   - **新的干净聊天** → `/bmad2du/game-developer`
+   - 代理询问要实施哪个游戏故事
+   - 包括故事文件内容以节省游戏开发代理的查找时间
+   - 游戏开发人员遵循任务/子任务，标记完成情况
+   - 游戏开发人员维护所有 Unity/C# 更改的文件列表
+   - 游戏开发人员在完成所有 Unity 测试后将故事标记为“审查”
 
-**Important**: Only 1 game story in progress at a time, worked sequentially until all game feature stories complete.
+   **步骤 3 - 游戏 QA 审查**：
+   - **新的干净聊天** → 使用核心 `@qa` 代理 → 执行 review-story 任务
+   - QA 执行高级 Unity 开发者代码审查
+   - QA 可以直接重构和改进 Unity 代码
+   - QA 将结果附加到故事的 QA 结果部分
+   - 如果批准：状态 → “完成”
+   - 如果需要更改：状态保持“审查”，未选中的项目留给游戏开发人员
 
-### Game Story Status Tracking Workflow
+   **步骤 4 - 重复**：继续游戏 SM → 游戏开发 → QA 周期，直到所有游戏功能故事完成
 
-Game stories progress through defined statuses:
+**重要提示**：一次只进行一个游戏故事，按顺序进行，直到所有游戏功能故事完成。
 
-- **Draft** → **Approved** → **InProgress** → **Done**
+### 游戏故事状态跟踪工作流程
 
-Each status change requires user verification and approval before proceeding.
+游戏故事通过定义的状态进行：
 
-### Game Development Workflow Types
+- **草稿** → **已批准** → **进行中** → **完成**
 
-#### Greenfield Game Development
+每个状态更改都需要用户验证和批准才能继续。
 
-- Game concept brainstorming and mechanics design
-- Game design requirements and feature definition
-- Unity system architecture and technical design
-- Game development execution
-- Game testing, performance optimization, and deployment
+### 游戏开发工作流程类型
 
-#### Brownfield Game Enhancement (Existing Unity Projects)
+#### 绿地游戏开发
 
-**Key Concept**: Brownfield game development requires comprehensive documentation of your existing Unity project for AI agents to understand game mechanics, Unity patterns, and technical constraints.
+- 游戏概念头脑风暴和机制设计
+- 游戏设计要求和功能定义
+- Unity 系统架构和技术设计
+- 游戏开发执行
+- 游戏测试、性能优化和部署
 
-**Brownfield Game Enhancement Workflow**:
+#### 棕地游戏增强（现有 Unity 项目）
 
-Since this expansion pack doesn't include specific brownfield templates, you'll adapt the existing templates:
+**关键概念**：棕地游戏开发需要对您现有的 Unity 项目进行全面的文档记录，以便 AI 代理了解游戏机制、Unity 模式和技术限制。
 
-1. **Upload Unity project to Web UI** (GitHub URL, files, or zip)
-2. **Create adapted Game Design Document**: `/bmad2du/game-designer` - Modify `game-design-doc-tmpl` to include:
-   - Analysis of existing game systems
-   - Integration points for new features
-   - Compatibility requirements
-   - Risk assessment for changes
+**棕地游戏增强工作流程**：
 
-3. **Game Architecture Planning**:
-   - Use `/bmad2du/game-architect` with `game-architecture-tmpl`
-   - Focus on how new features integrate with existing Unity systems
-   - Plan for gradual rollout and testing
+由于此扩展包不包括特定的棕地模板，您将需要调整现有模板：
 
-4. **Story Creation for Enhancements**:
-   - Use `/bmad2du/game-sm` with `*create-game-story`
-   - Stories should explicitly reference existing code to modify
-   - Include integration testing requirements
+1. **将 Unity 项目上传到 Web UI**（GitHub URL、文件或 zip）
+2. **创建调整后的游戏设计文档**：`/bmad2du/game-designer` - 修改 `game-design-doc-tmpl` 以包括：
+   - 对现有游戏系统的分析
+   - 新功能的集成点
+   - 兼容性要求
+   - 更改的风险评估
 
-**When to Use Each Game Development Approach**:
+3. **游戏架构规划**：
+   - 使用 `/bmad2du/game-architect` 和 `game-architecture-tmpl`
+   - 专注于新功能如何与现有 Unity 系统集成
+   - 计划逐步推出和测试
 
-**Full Game Enhancement Workflow** (Recommended for):
+4. **为增强功能创建故事**：
+   - 使用 `/bmad2du/game-sm` 和 `*create-game-story`
+   - 故事应明确引用要修改的现有代码
+   - 包括集成测试要求
 
-- Major game feature additions
-- Game system modernization
-- Complex Unity integrations
-- Multiple related gameplay changes
+**何时使用每种游戏开发方法**：
 
-**Quick Story Creation** (Use when):
+**完整游戏增强工作流程**（推荐用于）：
 
-- Single, focused game enhancement
-- Isolated gameplay fixes
-- Small feature additions
-- Well-documented existing Unity game
+- 主要游戏功能添加
+- 游戏系统现代化
+- 复杂的 Unity 集成
+- 多个相关的游戏性更改
 
-**Critical Success Factors for Game Development**:
+**快速故事创建**（用于）：
 
-1. **Game Documentation First**: Always document existing code thoroughly before making changes
-2. **Unity Context Matters**: Provide agents access to relevant Unity scripts and game systems
-3. **Gameplay Integration Focus**: Emphasize compatibility and non-breaking changes to game mechanics
-4. **Incremental Approach**: Plan for gradual rollout and extensive game testing
+- 单一、专注的游戏增强
+- 孤立的游戏性修复
+- 小功能添加
+- 文档齐全的现有 Unity 游戏
 
-## Document Creation Best Practices for Game Development
+**游戏开发的关键成功因素**：
 
-### Required File Naming for Game Framework Integration
+1. **游戏文档优先**：在进行更改之前，始终要彻底记录现有代码
+2. **Unity 上下文很重要**：为代理提供对相关 Unity 脚本和游戏系统的访问权限
+3. **专注于游戏性集成**：强调兼容性和对游戏机制的非破坏性更改
+4. **增量方法**：计划逐步推出和广泛的游戏测试
 
-- `docs/game-design-doc.md` - Game Design Document
-- `docs/game-architecture.md` - Unity System Architecture Document
+## 游戏开发文档创建最佳实践
 
-**Why These Names Matter for Game Development**:
+### 游戏框架集成的必需文件命名
 
-- Game agents automatically reference these files during Unity development
-- Game sharding tasks expect these specific filenames
-- Game workflow automation depends on standard naming
+- `docs/game-design-doc.md` - 游戏设计文档
+- `docs/game-architecture.md` - Unity 系统架构文档
 
-### Cost-Effective Game Document Creation Workflow
+**为什么这些名称对游戏开发很重要**：
 
-**Recommended for Large Game Documents (Game Design Document, Game Architecture):**
+- 游戏代理在 Unity 开发期间自动引用这些文件
+- 游戏分片任务需要这些特定的文件名
+- 游戏工作流程自动化取决于标准命名
 
-1. **Use Web UI**: Create game documents in web interface for cost efficiency
-2. **Copy Final Output**: Save complete markdown to your Unity project
-3. **Standard Names**: Save as `docs/game-design-doc.md` and `docs/game-architecture.md`
-4. **Switch to Unity IDE**: Use IDE agents for Unity development and smaller game documents
+### 经济高效的游戏文档创建工作流程
 
-### Game Document Sharding
+**推荐用于大型游戏文档（游戏设计文档、游戏架构）：**
 
-Game templates with Level 2 headings (`##`) can be automatically sharded:
+1. **使用 Web UI**：在 Web 界面中创建游戏文档以提高成本效益
+2. **复制最终输出**：将完整的 markdown 保存到您的 Unity 项目
+3. **标准名称**：另存为 `docs/game-design-doc.md` 和 `docs/game-architecture.md`
+4. **切换到 Unity IDE**：使用 IDE 代理进行 Unity 开发和较小的游戏文档
 
-**Original Game Design Document**:
+### 游戏文档分片
+
+具有 2 级标题（`##`）的游戏模板可以自动分片：
+
+**原始游戏设计文档**：
 
 ```markdown
-## Core Gameplay Mechanics
+## 核心游戏机制
 
-## Player Progression System
+## 玩家进程系统
 
-## Level Design Framework
+## 关卡设计框架
 
-## Technical Requirements
+## 技术要求
 ```
 
-**After Sharding**:
+**分片后**：
 
 - `docs/game-design/core-gameplay-mechanics.md`
 - `docs/game-design/player-progression-system.md`
 - `docs/game-design/level-design-framework.md`
 - `docs/game-design/technical-requirements.md`
 
-Use the `shard-doc` task or `@kayvan/markdown-tree-parser` tool for automatic game document sharding.
+使用 `shard-doc` 任务或 `@kayvan/markdown-tree-parser` 工具进行自动游戏文档分片。
 
-## Game Agent System
+## 游戏代理系统
 
-### Core Game Development Team
+### 核心游戏开发团队
 
-| Agent            | Role              | Primary Functions                           | When to Use                                 |
+| 代理 | 角色 | 主要功能 | 何时使用 |
 | ---------------- | ----------------- | ------------------------------------------- | ------------------------------------------- |
-| `game-designer`  | Game Designer     | Game mechanics, creative design, GDD        | Game concept, mechanics, creative direction |
-| `game-developer` | Unity Developer   | C# implementation, Unity optimization       | All Unity development tasks                 |
-| `game-sm`        | Game Scrum Master | Game story creation, sprint planning        | Game project management, workflow           |
-| `game-architect` | Game Architect    | Unity system design, technical architecture | Complex Unity systems, performance planning |
+| `game-designer` | 游戏设计师 | 游戏机制、创意设计、GDD | 游戏概念、机制、创意方向 |
+| `game-developer` | Unity 开发者 | C# 实施、Unity 优化 | 所有 Unity 开发任务 |
+| `game-sm` | 游戏 Scrum Master | 游戏故事创建、冲刺规划 | 游戏项目管理、工作流程 |
+| `game-architect` | 游戏架构师 | Unity 系统设计、技术架构 | 复杂的 Unity 系统、性能规划 |
 
-**Note**: For QA and other roles, use the core BMad agents (e.g., `@qa` from bmad-core).
+**注意**：对于 QA 和其他角色，请使用核心 BMad 代理（例如，来自 bmad-core 的 `@qa`）。
 
-### Game Agent Interaction Commands
+### 游戏代理交互命令
 
-#### IDE-Specific Syntax for Game Development
+#### 游戏开发的 IDE 特定语法
 
-**Game Agent Loading by IDE**:
+**按 IDE 加载游戏代理**：
 
-- **Claude Code**: `/bmad2du/game-designer`, `/bmad2du/game-developer`, `/bmad2du/game-sm`, `/bmad2du/game-architect`
-- **Cursor**: `@bmad2du/game-designer`, `@bmad2du/game-developer`, `@bmad2du/game-sm`, `@bmad2du/game-architect`
-- **Windsurf**: `/bmad2du/game-designer`, `/bmad2du/game-developer`, `/bmad2du/game-sm`, `/bmad2du/game-architect`
-- **Trae**: `@bmad2du/game-designer`, `@bmad2du/game-developer`, `@bmad2du/game-sm`, `@bmad2du/game-architect`
-- **Roo Code**: Select mode from mode selector with bmad2du prefix
-- **GitHub Copilot**: Open the Chat view (`⌃⌘I` on Mac, `Ctrl+Alt+I` on Windows/Linux) and select the appropriate game agent.
+- **Claude Code**：`/bmad2du/game-designer`、`/bmad2du/game-developer`、`/bmad2du/game-sm`、`/bmad2du/game-architect`
+- **Cursor**：`@bmad2du/game-designer`、`@bmad2du/game-developer`、`@bmad2du/game-sm`、`@bmad2du/game-architect`
+- **Windsurf**：`/bmad2du/game-designer`、`/bmad2du/game-developer`、`/bmad2du/game-sm`、`/bmad2du/game-architect`
+- **Trae**：`@bmad2du/game-designer`、`@bmad2du/game-developer`、`@bmad2du/game-sm`、`@bmad2du/game-architect`
+- **Roo Code**：从带有 bmad2du 前缀的模式选择器中选择模式
+- **GitHub Copilot**：打开聊天视图（Mac 上为 `⌃⌘I`，Windows/Linux 上为 `Ctrl+Alt+I`）并选择适当的游戏代理。
 
-**Common Game Development Task Commands**:
+**常见的游戏开发任务命令**：
 
-- `*help` - Show available game development commands
-- `*status` - Show current game development context/progress
-- `*exit` - Exit the game agent mode
-- `*game-design-brainstorming` - Brainstorm game concepts and mechanics (Game Designer)
-- `*draft` - Create next game development story (Game SM agent)
-- `*validate-game-story` - Validate a game story implementation (with core QA agent)
-- `*correct-course-game` - Course correction for game development issues
-- `*advanced-elicitation` - Deep dive into game requirements
+- `*help` - 显示可用的游戏开发命令
+- `*status` - 显示当前游戏开发上下文/进度
+- `*exit` - 退出游戏代理模式
+- `*game-design-brainstorming` - 头脑风暴游戏概念和机制（游戏设计师）
+- `*draft` - 创建下一个游戏开发故事（游戏 SM 代理）
+- `*validate-game-story` - 验证游戏故事实施（使用核心 QA 代理）
+- `*correct-course-game` - 游戏开发问题的课程修正
+- `*advanced-elicitation` - 深入了解游戏要求
 
-**In Web UI (after building with unity-2d-game-team)**:
+**在 Web UI 中（使用 unity-2d-game-team 构建后）**：
 
 ```text
-/bmad2du/game-designer - Access game designer agent
-/bmad2du/game-architect - Access game architect agent
-/bmad2du/game-developer - Access game developer agent
-/bmad2du/game-sm - Access game scrum master agent
-/help - Show available game development commands
-/switch agent-name - Change active agent (if orchestrator available)
+/bmad2du/game-designer - 访问游戏设计师代理
+/bmad2du/game-architect - 访问游戏架构师代理
+/bmad2du/game-developer - 访问游戏开发者代理
+/bmad2du/game-sm - 访问游戏 scrum master 代理
+/help - 显示可用的游戏开发命令
+/switch agent-name - 更改活动代理（如果协调器可用）
 ```
 
-## Game-Specific Development Guidelines
+## 游戏特定开发指南
 
-### Unity + C# Standards
+### Unity + C# 标准
 
-**Project Structure:**
+**项目结构：**
 
 ```text
 UnityProject/
 ├── Assets/
 │   └── _Project
-│       ├── Scenes/          # Game scenes (Boot, Menu, Game, etc.)
-│       ├── Scripts/         # C# scripts
-│       │   ├── Editor/      # Editor-specific scripts
-│       │   └── Runtime/     # Runtime scripts
-│       ├── Prefabs/         # Reusable game objects
-│       ├── Art/             # Art assets (sprites, models, etc.)
-│       ├── Audio/           # Audio assets
-│       ├── Data/            # ScriptableObjects and other data
-│       └── Tests/           # Unity Test Framework tests
+│       ├── Scenes/          # 游戏场景 (Boot, Menu, Game, 等)
+│       ├── Scripts/         # C# 脚本
+│       │   ├── Editor/      # 编辑器特定脚本
+│       │   └── Runtime/     # 运行时脚本
+│       ├── Prefabs/         # 可重用游戏对象
+│       ├── Art/             # 艺术资产 (精灵, 模型, 等)
+│       ├── Audio/           # 音频资产
+│       ├── Data/            # ScriptableObjects 和其他数据
+│       └── Tests/           # Unity 测试框架测试
 │           ├── EditMode/
 │           └── PlayMode/
-├── Packages/            # Package Manager manifest
-└── ProjectSettings/     # Unity project settings
+├── Packages/            # 包管理器清单
+└── ProjectSettings/     # Unity 项目设置
 ```
 
-**Performance Requirements:**
+**性能要求：**
 
-- Maintain stable frame rate on target devices
-- Memory usage under specified limits per level
-- Loading times under 3 seconds for levels
-- Smooth animation and responsive controls
+- 在目标设备上保持稳定的帧率
+- 每个级别的内存使用量低于指定限制
+- 关卡加载时间低于3秒
+- 流畅的动画和响应迅速的控制
 
-**Code Quality:**
+**代码质量：**
 
-- C# best practices compliance
-- Component-based architecture (SOLID principles)
-- Efficient use of the MonoBehaviour lifecycle
-- Error handling and graceful degradation
+- 符合 C# 最佳实践
+- 基于组件的架构（SOLID 原则）
+- 高效使用 MonoBehaviour 生命周期
+- 错误处理和优雅降级
 
-### Game Development Story Structure
+### 游戏开发故事结构
 
-**Story Requirements:**
+**故事要求：**
 
-- Clear reference to Game Design Document section
-- Specific acceptance criteria for game functionality
-- Technical implementation details for Unity and C#
-- Performance requirements and optimization considerations
-- Testing requirements including gameplay validation
+- 清晰引用游戏设计文档部分
+- 针对游戏功能的具体验收标准
+- Unity 和 C# 的技术实施细节
+- 性能要求和优化考虑
+- 包括游戏性验证在内的测试要求
 
-**Story Categories:**
+**故事类别：**
 
-- **Core Mechanics**: Fundamental gameplay systems
-- **Level Content**: Individual levels and content implementation
-- **UI/UX**: User interface and player experience features
-- **Performance**: Optimization and technical improvements
-- **Polish**: Visual effects, audio, and game feel enhancements
+- **核心机制**：基础游戏系统
+- **关卡内容**：单个关卡和内容实施
+- **UI/UX**：用户界面和玩家体验功能
+- **性能**：优化和技术改进
+- **润色**：视觉效果、音频和游戏感觉增强
 
-### Quality Assurance for Games
+### 游戏质量保证
 
-**Testing Approach:**
+**测试方法：**
 
-- Unit tests for C# logic (EditMode tests)
-- Integration tests for game systems (PlayMode tests)
-- Performance benchmarking and profiling with Unity Profiler
-- Gameplay testing and balance validation
-- Cross-platform compatibility testing
+- C# 逻辑的单元测试（EditMode 测试）
+- 游戏系统的集成测试（PlayMode 测试）
+- 使用 Unity Profiler 进行性能基准测试和分析
+- 游戏性测试和平衡验证
+- 跨平台兼容性测试
 
-**Performance Monitoring:**
+**性能监控：**
 
-- Frame rate consistency tracking
-- Memory usage monitoring
-- Asset loading performance
-- Input responsiveness validation
-- Battery usage optimization (mobile)
+- 帧率一致性跟踪
+- 内存使用监控
+- 资产加载性能
+- 输入响应性验证
+- 电池使用优化（移动端）
 
-## Usage Patterns and Best Practices for Game Development
+## 游戏开发的使用模式和最佳实践
 
-### Environment-Specific Usage for Games
+### 游戏的特定环境使用
 
-**Web UI Best For Game Development**:
+**Web UI 最适合游戏开发**：
 
-- Initial game design and creative brainstorming phases
-- Cost-effective large game document creation
-- Game agent consultation and mechanics refinement
-- Multi-agent game workflows with orchestrator
+- 初始游戏设计和创意头脑风暴阶段
+- 经济高效的大型游戏文档创建
+- 游戏代理咨询和机制优化
+- 与协调器的多代理游戏工作流程
 
-**Unity IDE Best For Game Development**:
+**Unity IDE 最适合游戏开发**：
 
-- Active Unity development and C# implementation
-- Unity asset operations and project integration
-- Game story management and development cycles
-- Unity testing, profiling, and debugging
+- 活跃的 Unity 开发和 C# 实施
+- Unity 资产操作和项目集成
+- 游戏故事管理和开发周期
+- Unity 测试、分析和调试
 
-### Quality Assurance for Game Development
+### 游戏开发质量保证
 
-- Use appropriate game agents for specialized tasks
-- Follow Agile ceremonies and game review processes
-- Use game-specific checklists:
-  - `game-architect-checklist` for architecture reviews
-  - `game-change-checklist` for change validation
-  - `game-design-checklist` for design reviews
-  - `game-story-dod-checklist` for story quality
-- Regular validation with game templates
+- 使用适当的游戏代理来完成专门的任务
+- 遵循敏捷仪式和游戏审查流程
+- 使用游戏特定的清单：
+  - `game-architect-checklist` 用于架构审查
+  - `game-change-checklist` 用于变更验证
+  - `game-design-checklist` 用于设计审查
+  - `game-story-dod-checklist` 用于故事质量
+- 定期使用游戏模板进行验证
 
-### Performance Optimization for Game Development
+### 游戏开发性能优化
 
-- Use specific game agents vs. `bmad-master` for focused Unity tasks
-- Choose appropriate game team size for project needs
-- Leverage game-specific technical preferences for consistency
-- Regular context management and cache clearing for Unity workflows
+- 使用特定的游戏代理 vs. `bmad-master` 来完成专注的 Unity 任务
+- 为项目需求选择合适的游戏团队规模
+- 利用游戏特定的技术偏好以保持一致性
+- 为 Unity 工作流程进行定期的上下文管理和缓存清理
 
-## Game Development Team Roles
+## 游戏开发团队角色
 
-### Game Designer
+### 游戏设计师
 
-- **Primary Focus**: Game mechanics, player experience, design documentation
-- **Key Outputs**: Game Brief, Game Design Document, Level Design Framework
-- **Specialties**: Brainstorming, game balance, player psychology, creative direction
+- **主要关注点**：游戏机制、玩家体验、设计文档
+- **主要产出**：游戏简介、游戏设计文档、关卡设计框架
+- **专长**：头脑风暴、游戏平衡、玩家心理、创意指导
 
-### Game Developer
+### 游戏开发者
 
-- **Primary Focus**: Unity implementation, C# excellence, performance optimization
-- **Key Outputs**: Working game features, optimized Unity code, technical architecture
-- **Specialties**: C#/Unity, performance optimization, cross-platform development
+- **主要关注点**：Unity 实施、C# 卓越、性能优化
+- **主要产出**：可工作的游戏功能、优化的 Unity 代码、技术架构
+- **专长**：C#/Unity、性能优化、跨平台开发
 
-### Game Scrum Master
+### 游戏 Scrum Master
 
-- **Primary Focus**: Game story creation, development planning, agile process
-- **Key Outputs**: Detailed implementation stories, sprint planning, quality assurance
-- **Specialties**: Story breakdown, developer handoffs, process optimization
+- **主要关注点**：游戏故事创建、开发规划、敏捷流程
+- **主要产出**：详细的实施故事、冲刺计划、质量保证
+- **专长**：故事分解、开发者交接、流程优化
 
-## Platform-Specific Considerations
+## 平台特定考虑
 
-### Cross-Platform Development
+### 跨平台开发
 
-- Abstract input using the new Input System
-- Use platform-dependent compilation for specific logic
-- Test on all target platforms regularly
-- Optimize for different screen resolutions and aspect ratios
+- 使用新的输入系统抽象输入
+- 对特定逻辑使用平台相关的编译
+- 定期在所有目标平台上测试
+- 针对不同的屏幕分辨率和宽高比进行优化
 
-### Mobile Optimization
+### 移动端优化
 
-- Touch gesture support and responsive controls
-- Battery usage optimization
-- Performance scaling for different device capabilities
-- App store compliance and packaging
+- 触摸手势支持和响应式控制
+- 电池使用优化
+- 针对不同设备能力的性能扩展
+- 应用商店合规性和打包
 
-### Performance Targets
+### 性能目标
 
-- **PC/Console**: 60+ FPS at target resolution
-- **Mobile**: 60 FPS on mid-range devices, 30 FPS minimum on low-end
-- **Loading**: Initial load under 5 seconds, scene transitions under 2 seconds
-- **Memory**: Within platform-specific memory budgets
+- **PC/主机**：目标分辨率下 60+ FPS
+- **移动端**：中端设备上 60 FPS，低端设备上最低 30 FPS
+- **加载**：初始加载低于 5 秒，场景转换低于 2 秒
+- **内存**：在平台特定的内存预算内
 
-## Success Metrics for Game Development
+## 游戏开发成功指标
 
-### Technical Metrics
+### 技术指标
 
-- Frame rate consistency (>90% of time at target FPS)
-- Memory usage within budgets
-- Loading time targets met
-- Zero critical bugs in core gameplay systems
+- 帧率一致性（>90% 的时间在目标 FPS）
+- 内存使用在预算范围内
+- 满足加载时间目标
+- 核心游戏系统中无严重错误
 
-### Player Experience Metrics
+### 玩家体验指标
 
-- Tutorial completion rate >80%
-- Level completion rates appropriate for difficulty curve
-- Average session length meets design targets
-- Player retention and engagement metrics
+- 教程完成率 >80%
+- 关卡完成率与难度曲线相适应
+- 平均会话时长达到设计目标
+- 玩家留存率和参与度指标
 
-### Development Process Metrics
+### 开发过程指标
 
-- Story completion within estimated timeframes
-- Code quality metrics (test coverage, code analysis)
-- Documentation completeness and accuracy
-- Team velocity and delivery consistency
+- 在预估时间内完成故事
+- 代码质量指标（测试覆盖率、代码分析）
+- 文档的完整性和准确性
+- 团队速度和交付一致性
 
-## Common Unity Development Patterns
+## 常见的 Unity 开发模式
 
-### Scene Management
+### 场景管理
 
-- Use a loading scene for asynchronous loading of game scenes
-- Use additive scene loading for large levels or streaming
-- Manage scenes with a dedicated SceneManager class
+- 使用加载场景异步加载游戏场景
+- 对大型关卡或流式传输使用附加场景加载
+- 使用专门的 SceneManager 类管理场景
 
-### Game State Management
+### 游戏状态管理
 
-- Use ScriptableObjects to store shared game state
-- Implement a finite state machine (FSM) for complex behaviors
-- Use a GameManager singleton for global state management
+- 使用 ScriptableObjects 存储共享游戏状态
+- 为复杂行为实施有限状态机 (FSM)
+- 使用 GameManager 单例进行全局状态管理
 
-### Input Handling
+### 输入处理
 
-- Use the new Input System for robust, cross-platform input
-- Create Action Maps for different input contexts (e.g., menu, gameplay)
-- Use PlayerInput component for easy player input handling
+- 使用新的输入系统进行稳健的跨平台输入
+- 为不同的输入上下文创建动作映射（例如，菜单、游戏性）
+- 使用 PlayerInput 组件轻松处理玩家输入
 
-### Performance Optimization
+### 性能优化
 
-- Object pooling for frequently instantiated objects (e.g., bullets, enemies)
-- Use the Unity Profiler to identify performance bottlenecks
-- Optimize physics settings and collision detection
-- Use LOD (Level of Detail) for complex models
+- 对频繁实例化的对象（例如，子弹、敌人）使用对象池
+- 使用 Unity Profiler 识别性能瓶颈
+- 优化物理设置和碰撞检测
+- 对复杂模型使用 LOD（细节层次）
 
-## Success Tips for Game Development
+## 游戏开发成功技巧
 
-- **Use Gemini for game design planning** - The team-game-dev bundle provides collaborative game expertise
-- **Use bmad-master for game document organization** - Sharding creates manageable game feature chunks
-- **Follow the Game SM → Game Dev cycle religiously** - This ensures systematic game progress
-- **Keep conversations focused** - One game agent, one Unity task per conversation
-- **Review everything** - Always review and approve before marking game features complete
+- **使用 Gemini 进行游戏设计规划** - team-game-dev 包提供协作式游戏专业知识
+- **使用 bmad-master 进行游戏文档组织** - 分片创建可管理的游戏功能块
+- **严格遵循游戏 SM → 游戏开发周期** - 这确保了系统化的游戏进展
+- **保持对话专注** - 每个对话一个游戏代理，一个 Unity 任务
+- **审查一切** - 在标记游戏功能完成之前，始终审查并批准
 
-## Contributing to BMad-Method Game Development
+## 为 BMad-Method 游戏开发做贡献
 
-### Game Development Contribution Guidelines
+### 游戏开发贡献指南
 
-For full details, see `CONTRIBUTING.md`. Key points for game development:
+有关完整详细信息，请参阅 `CONTRIBUTING.md`。游戏开发的关键点：
 
-**Fork Workflow for Game Development**:
+**游戏开发的分支工作流程**：
 
-1. Fork the repository
-2. Create game development feature branches
-3. Submit PRs to `next` branch (default) or `main` for critical game development fixes only
-4. Keep PRs small: 200-400 lines ideal, 800 lines maximum
-5. One game feature/fix per PR
+1. Fork 仓库
+2. 创建游戏开发功能分支
+3. 将 PR 提交到 `next` 分支（默认）或仅对关键游戏开发修复提交到 `main`
+4. 保持 PR 小：200-400 行是理想的，最多 800 行
+5. 每个 PR 一个游戏功能/修复
 
-**Game Development PR Requirements**:
+**游戏开发 PR 要求**：
 
-- Clear descriptions (max 200 words) with What/Why/How/Testing for game features
-- Use conventional commits (feat:, fix:, docs:) with game context
-- Atomic commits - one logical game change per commit
-- Must align with game development guiding principles
+- 清晰的描述（最多 200 字），包含游戏功能的 What/Why/How/Testing
+- 使用常规提交（feat:、fix:、docs:）并附带游戏上下文
+- 原子提交 - 每个提交一个逻辑游戏更改
+- 必须与游戏开发指导原则保持一致
 
-**Game Development Core Principles**:
+**游戏开发核心原则**：
 
-- **Game Dev Agents Must Be Lean**: Minimize dependencies, save context for Unity code
-- **Natural Language First**: Everything in markdown, no code in game development core
-- **Core vs Game Expansion Packs**: Core for universal needs, game packs for Unity specialization
-- **Game Design Philosophy**: "Game dev agents code Unity, game planning agents plan gameplay"
+- **游戏开发代理必须精简**：最小化依赖关系，为 Unity 代码节省上下文
+- **自然语言优先**：所有内容都在 markdown 中，游戏开发核心中没有代码
+- **核心 vs 游戏扩展包**：核心用于通用需求，游戏包用于 Unity 专业化
+- **游戏设计理念**：“游戏开发代理编写 Unity 代码，游戏规划代理规划游戏性”
 
-## Game Development Expansion Pack System
+## 游戏开发扩展包系统
 
-### This Game Development Expansion Pack
+### 此游戏开发扩展包
 
-This 2D Unity Game Development expansion pack extends BMad-Method beyond traditional software development into professional game development. It provides specialized game agent teams, Unity templates, and game workflows while keeping the core framework lean and focused on general development.
+这个 2D Unity 游戏开发扩展包将 BMad-Method 从传统的软件开发扩展到专业的游戏开发。它提供了专门的游戏代理团队、Unity 模板和游戏工作流程，同时保持核心框架的精简和专注于通用开发。
 
-### Why Use This Game Development Expansion Pack?
+### 为什么使用此游戏开发扩展包？
 
-1. **Keep Core Lean**: Game dev agents maintain maximum context for Unity coding
-2. **Game Domain Expertise**: Deep, specialized Unity and game development knowledge
-3. **Community Game Innovation**: Game developers can contribute and share Unity patterns
-4. **Modular Game Design**: Install only game development capabilities you need
+1. **保持核心精简**：游戏开发代理为 Unity 编码保持最大的上下文
+2. **游戏领域专业知识**：深入、专业的 Unity 和游戏开发知识
+3. **社区游戏创新**：游戏开发者可以贡献和分享 Unity 模式
+4. **模块化游戏设计**：仅安装您需要的游戏开发功能
 
-### Using This Game Development Expansion Pack
+### 使用此游戏开发扩展包
 
-1. **Install via CLI**:
+1. **通过 CLI 安装**：
 
    ```bash
    npx bmad-method install
-   # Select "Install game development expansion pack" option
+   # 选择“安装游戏开发扩展包”选项
    ```
 
-2. **Use in Your Game Workflow**: Installed game agents integrate seamlessly with existing BMad agents
+2. **在您的游戏工作流程中使用**：安装的游戏代理与现有的 BMad 代理无缝集成
 
-### Creating Custom Game Development Extensions
+### 创建自定义游戏开发扩展
 
-Use the **expansion-creator** pack to build your own game development extensions:
+使用 **expansion-creator** 包来构建您自己的游戏开发扩展：
 
-1. **Define Game Domain**: What game development expertise are you capturing?
-2. **Design Game Agents**: Create specialized game roles with clear Unity boundaries
-3. **Build Game Resources**: Tasks, templates, checklists for your game domain
-4. **Test & Share**: Validate with real Unity use cases, share with game development community
+1. **定义游戏领域**：您正在捕获什么游戏开发专业知识？
+2. **设计游戏代理**：创建具有清晰 Unity 边界的专业游戏角色
+3. **构建游戏资源**：为您的游戏领域创建任务、模板、清单
+4. **测试与分享**：用真实的 Unity 用例进行验证，与游戏开发社区分享
 
-**Key Principle**: Game development expansion packs democratize game development expertise by making specialized Unity and game design knowledge accessible through AI agents.
+**关键原则**：游戏开发扩展包通过 AI 代理使专业的 Unity 和游戏设计知识易于访问，从而使游戏开发专业知识大众化。
 
-## Getting Help with Game Development
+## 获取游戏开发帮助
 
-- **Commands**: Use `*/*help` in any environment to see available game development commands
-- **Game Agent Switching**: Use `*/*switch game-agent-name` with orchestrator for role changes
-- **Game Documentation**: Check `docs/` folder for Unity project-specific context
-- **Game Community**: Discord and GitHub resources available for game development support
-- **Game Contributing**: See `CONTRIBUTING.md` for full game development guidelines
+- **命令**：在任何环境中使用 `*/*help` 查看可用的游戏开发命令
+- **游戏代理切换**：使用 `*/*switch game-agent-name` 和协调器进行角色更改
+- **游戏文档**：检查 `docs/` 文件夹以获取 Unity 项目特定的上下文
+- **游戏社区**：可通过 Discord 和 GitHub 获取游戏开发支持资源
+- **游戏贡献**：有关完整的游戏开发指南，请参阅 `CONTRIBUTING.md`
 
-This knowledge base provides the foundation for effective game development using the BMad-Method framework with specialized focus on 2D game creation using Unity and C#.
+该知识库为使用 BMad-Method 框架进行有效的游戏开发提供了基础，并特别关注使用 Unity 和 C# 创建 2D 游戏。

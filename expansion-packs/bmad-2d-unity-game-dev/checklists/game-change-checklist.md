@@ -1,10 +1,10 @@
-<!-- Powered by BMAD™ Core -->
+<!-- 由 BMAD™ 核心驱动 -->
 
-# Game Development Change Navigation Checklist
+# 游戏开发变更导航清单
 
-**Purpose:** To systematically guide the Game SM agent and user through analysis and planning when a significant change (performance issue, platform constraint, technical blocker, gameplay feedback) is identified during Unity game development.
+**目的：** 在 Unity 游戏开发过程中，当识别出重大变更（性能问题、平台限制、技术障碍、游戏性反馈）时，系统地指导游戏 SM 代理和用户进行分析和规划。
 
-**Instructions:** Review each item with the user. Mark `[x]` for completed/confirmed, `[N/A]` if not applicable, or add notes for discussion points.
+**说明：** 与用户一起审查每个项目。标记 `[x]` 表示已完成/已确认，`[N/A]` 表示不适用，或添加注释以供讨论。
 
 [[LLM: INITIALIZATION INSTRUCTIONS - GAME CHANGE NAVIGATION
 
@@ -31,7 +31,7 @@ REMEMBER: Game development is iterative. Changes often lead to better gameplay a
 
 ---
 
-## 1. Understand the Trigger & Context
+## 1. 理解触发器和背景
 
 [[LLM: Start by understanding the game-specific issue. Ask technical questions:
 
@@ -43,18 +43,18 @@ REMEMBER: Game development is iterative. Changes often lead to better gameplay a
 
 Focus on measurable impacts and technical specifics.]]
 
-- [ ] **Identify Triggering Element:** Clearly identify the game feature/system revealing the issue.
-- [ ] **Define the Issue:** Articulate the core problem precisely.
-  - [ ] Performance bottleneck (CPU/GPU/Memory)?
-  - [ ] Platform-specific limitation?
-  - [ ] Unity engine constraint?
-  - [ ] Gameplay/balance issue from playtesting?
-  - [ ] Asset pipeline or build size problem?
-  - [ ] Third-party SDK/plugin conflict?
-- [ ] **Assess Performance Impact:** Document specific metrics (current FPS, target FPS, memory usage, build size).
-- [ ] **Gather Technical Evidence:** Note profiler data, crash logs, platform test results, player feedback.
+- [ ] **识别触发元素：** 清楚地识别出揭示问题的游戏功能/系统。
+- [ ] **定义问题：** 精确地阐明核心问题。
+  - [ ] 性能瓶颈（CPU/GPU/内存）？
+  - [ ] 平台特定限制？
+  - [ ] Unity 引擎约束？
+  - [ ] 来自游戏测试的游戏性/平衡问题？
+  - [ ] 资产管道或构建大小问题？
+  - [ ] 第三方 SDK/插件冲突？
+- [ ] **评估性能影响：** 记录具体指标（当前 FPS、目标 FPS、内存使用、构建大小）。
+- [ ] **收集技术证据：** 注意分析器数据、崩溃日志、平台测试结果、玩家反馈。
 
-## 2. Game Feature Impact Assessment
+## 2. 游戏功能影响评估
 
 [[LLM: Game features are interconnected. Evaluate systematically:
 
@@ -65,19 +65,19 @@ Focus on measurable impacts and technical specifics.]]
 
 Consider both technical and gameplay impacts.]]
 
-- [ ] **Analyze Current Sprint Features:**
-  - [ ] Can the current feature be optimized (LOD, pooling, batching)?
-  - [ ] Does it need gameplay simplification?
-  - [ ] Should it be platform-specific (high-end only)?
-- [ ] **Analyze Dependent Systems:**
-  - [ ] Review all game systems interacting with the affected feature.
-  - [ ] Do physics systems need adjustment?
-  - [ ] Are UI/HUD systems impacted?
-  - [ ] Do save/load systems require changes?
-  - [ ] Are multiplayer systems affected?
-- [ ] **Summarize Feature Impact:** Document effects on gameplay systems and technical architecture.
+- [ ] **分析当前冲刺功能：**
+  - [ ] 当前功能是否可以优化（LOD、池化、批处理）？
+  - [ ] 是否需要简化游戏性？
+  - [ ] 是否应设为平台特定（仅限高端）？
+- [ ] **分析依赖系统：**
+  - [ ] 审查与受影响功能交互的所有游戏系统。
+  - [ ] 物理系统是否需要调整？
+  - [ ] UI/HUD 系统是否受到影响？
+  - [ ] 保存/加载系统是否需要更改？
+  - [ ] 多人游戏系统是否受到影响？
+- [ ] **总结功能影响：** 记录对游戏系统和技术架构的影响。
 
-## 3. Game Artifact Conflict & Impact Analysis
+## 3. 游戏产物冲突与影响分析
 
 [[LLM: Game documentation drives development. Check each artifact:
 
@@ -88,29 +88,29 @@ Consider both technical and gameplay impacts.]]
 
 Missing conflicts cause performance issues later.]]
 
-- [ ] **Review GDD:**
-  - [ ] Does the issue conflict with core gameplay mechanics?
-  - [ ] Do game features need scaling for performance?
-  - [ ] Are progression systems affected?
-  - [ ] Do balance parameters need adjustment?
-- [ ] **Review Technical Architecture:**
-  - [ ] Does the issue conflict with Unity architecture (scene structure, prefab hierarchy)?
-  - [ ] Are component systems impacted?
-  - [ ] Do shader/rendering approaches need revision?
-  - [ ] Are data structures optimal for the scale?
-- [ ] **Review Performance Specifications:**
-  - [ ] Are target framerates still achievable?
-  - [ ] Do memory budgets need reallocation?
-  - [ ] Are load time targets realistic?
-  - [ ] Do we need platform-specific targets?
-- [ ] **Review Asset Specifications:**
-  - [ ] Do texture resolutions need adjustment?
-  - [ ] Are model poly counts appropriate?
-  - [ ] Do audio compression settings need changes?
-  - [ ] Is the animation budget sustainable?
-- [ ] **Summarize Artifact Impact:** List all game documents requiring updates.
+- [ ] **审查 GDD：**
+  - [ ] 问题是否与核心游戏机制冲突？
+  - [ ] 游戏功能是否需要为性能进行扩展？
+  - [ ] 进程系统是否受到影响？
+  - [ ] 平衡参数是否需要调整？
+- [ ] **审查技术架构：**
+  - [ ] 问题是否与 Unity 架构（场景结构、预制件层次结构）冲突？
+  - [ ] 组件系统是否受到影响？
+  - [ ] 着色器/渲染方法是否需要修订？
+  - [ ] 数据结构对于规模是否最优？
+- [ ] **审查性能规格：**
+  - [ ] 目标帧率是否仍然可以实现？
+  - [ ] 内存预算是否需要重新分配？
+  - [ ] 加载时间目标是否现实？
+  - [ ] 我们是否需要平台特定的目标？
+- [ ] **审查资产规格：**
+  - [ ] 纹理分辨率是否需要调整？
+  - [ ] 模型多边形数量是否合适？
+  - [ ] 音频压缩设置是否需要更改？
+  - [ ] 动画预算是否可持续？
+- [ ] **总结产物影响：** 列出所有需要更新的游戏文档。
 
-## 4. Path Forward Evaluation
+## 4. 前进路径评估
 
 [[LLM: Present game-specific solutions with technical trade-offs:
 
@@ -122,35 +122,35 @@ Missing conflicts cause performance issues later.]]
 
 Be specific about Unity implementation details.]]
 
-- [ ] **Option 1: Optimization Within Current Design:**
-  - [ ] Can performance be improved through Unity optimizations?
-    - [ ] Object pooling implementation?
-    - [ ] LOD system addition?
-    - [ ] Texture atlasing?
-    - [ ] Draw call batching?
-    - [ ] Shader optimization?
-  - [ ] Define specific optimization techniques.
-  - [ ] Estimate performance improvement potential.
-- [ ] **Option 2: Feature Scaling/Simplification:**
-  - [ ] Can the feature be simplified while maintaining fun?
-  - [ ] Identify specific elements to scale down.
-  - [ ] Define platform-specific variations.
-  - [ ] Assess player experience impact.
-- [ ] **Option 3: Architecture Refactor:**
-  - [ ] Would restructuring improve performance significantly?
-  - [ ] Identify Unity-specific refactoring needs:
-    - [ ] Scene organization changes?
-    - [ ] Prefab structure optimization?
-    - [ ] Component system redesign?
-    - [ ] State machine optimization?
-  - [ ] Estimate development effort.
-- [ ] **Option 4: Scope Adjustment:**
-  - [ ] Can we defer features to post-launch?
-  - [ ] Should certain features be platform-exclusive?
-  - [ ] Do we need to adjust milestone deliverables?
-- [ ] **Select Recommended Path:** Choose based on performance gain vs. effort.
+- [ ] **选项 1：在当前设计内优化：**
+  - [ ] 是否可以通过 Unity 优化来提高性能？
+    - [ ] 对象池实施？
+    - [ ] 添加 LOD 系统？
+    - [ ] 纹理图集？
+    - [ ] 绘制调用批处理？
+    - [ ] 着色器优化？
+  - [ ] 定义具体的优化技术。
+  - [ ] 估算性能提升潜力。
+- [ ] **选项 2：功能扩展/简化：**
+  - [ ] 是否可以在保持乐趣的同时简化功能？
+  - [ ] 确定要缩减的具体元素。
+  - [ ] 定义平台特定的变体。
+  - [ ] 评估对玩家体验的影响。
+- [ ] **选项 3：架构重构：**
+  - [ ] 重构结构是否会显著提高性能？
+  - [ ] 确定 Unity 特定的重构需求：
+    - [ ] 场景组织变更？
+    - [ ] 预制件结构优化？
+    - [ ] 组件系统重新设计？
+    - [ ] 状态机优化？
+  - [ ] 估算开发工作量。
+- [ ] **选项 4：范围调整：**
+  - [ ] 我们是否可以将功能推迟到发布后？
+  - [ ] 某些功能是否应该是平台独有的？
+  - [ ] 我们是否需要调整里程碑交付物？
+- [ ] **选择推荐路径：** 根据性能增益与工作量进行选择。
 
-## 5. Game Development Change Proposal Components
+## 5. 游戏开发变更提案组件
 
 [[LLM: The proposal must include technical specifics:
 
@@ -162,18 +162,18 @@ Be specific about Unity implementation details.]]
 
 Make it actionable for game developers.]]
 
-(Ensure all points from previous sections are captured)
+（确保捕获了前面部分的所有要点）
 
-- [ ] **Technical Issue Summary:** Performance/technical problem with metrics.
-- [ ] **Feature Impact Summary:** Affected game systems and dependencies.
-- [ ] **Performance Projections:** Expected improvements from chosen solution.
-- [ ] **Implementation Plan:** Unity-specific technical approach.
-- [ ] **Platform Considerations:** Any platform-specific implementations.
-- [ ] **Testing Strategy:** Performance benchmarks and validation approach.
-- [ ] **Risk Assessment:** Technical risks and mitigation plans.
-- [ ] **Updated Game Stories:** Revised stories with technical constraints.
+- [ ] **技术问题摘要：** 带有指标的性能/技术问题。
+- [ ] **功能影响摘要：** 受影响的游戏系统和依赖项。
+- [ ] **性能预测：** 所选解决方案的预期改进。
+- [ ] **实施计划：** Unity 特定的技术方法。
+- [ ] **平台考虑：** 任何平台特定的实施。
+- [ ] **测试策略：** 性能基准和验证方法。
+- [ ] **风险评估：** 技术风险和缓解计划。
+- [ ] **更新的游戏故事：** 带有技术限制的修订故事。
 
-## 6. Final Review & Handoff
+## 6. 最终审查与交接
 
 [[LLM: Game changes require technical validation. Before concluding:
 
@@ -196,10 +196,10 @@ Provide a technical summary:
 
 Keep it technically precise and actionable.]]
 
-- [ ] **Review Checklist:** Confirm all technical aspects discussed.
-- [ ] **Review Change Proposal:** Ensure Unity implementation details are clear.
-- [ ] **Performance Validation:** Define how we'll measure success.
-- [ ] **User Approval:** Obtain approval for technical approach.
-- [ ] **Developer Handoff:** Ensure game-dev agent has all technical details needed.
+- [ ] **审查清单：** 确认所有讨论的技术方面。
+- [ ] **审查变更提案：** 确保 Unity 实施细节清晰。
+- [ ] **性能验证：** 定义我们将如何衡量成功。
+- [ ] **用户批准：** 获得技术方法的批准。
+- [ ] **开发者交接：** 确保游戏开发代理拥有所需的所有技术细节。
 
 ---

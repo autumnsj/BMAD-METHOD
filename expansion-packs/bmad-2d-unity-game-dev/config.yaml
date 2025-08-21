@@ -1,7 +1,7 @@
-# <!-- Powered by BMAD™ Core -->
+# <!-- 由 BMAD™ 核心驱动 -->
 name: bmad-2d-unity-game-dev
 version: 1.6.0
-short-title: Unity C# 2D Game Dev Pack
-description: 2D Game Development expansion pack for BMad Method - Unity & C# focused
+short-title: Unity C# 2D 游戏开发包
+description: BMad 方法的 2D 游戏开发扩展包 - 专注于 Unity 和 C#
 author: pbean (PinkyD)
 slashPrefix: bmad2du

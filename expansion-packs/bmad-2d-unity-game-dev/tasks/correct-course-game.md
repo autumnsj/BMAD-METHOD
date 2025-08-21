@@ -1,143 +1,143 @@
-<!-- Powered by BMAD™ Core -->
+<!-- 由 BMAD™ 核心驱动 -->
 
-# Correct Course Task - Game Development
+# 纠正航向任务 - 游戏开发
 
-## Purpose
+## 目的
 
-- Guide a structured response to game development change triggers using the `{root}/checklists/game-change-checklist`.
-- Analyze the impacts of changes on game features, technical systems, and milestone deliverables.
-- Explore game-specific solutions (e.g., performance optimizations, feature scaling, platform adjustments).
-- Draft specific, actionable proposed updates to affected game artifacts (e.g., GDD sections, technical specs, Unity configurations).
-- Produce a consolidated "Game Development Change Proposal" document for review and approval.
-- Ensure clear handoff path for changes requiring fundamental redesign or technical architecture updates.
+- 使用 `{root}/checklists/game-change-checklist` 指导对游戏开发变更触发器的结构化响应。
+- 分析变更对游戏功能、技术系统和里程碑交付物的影响。
+- 探索特定于游戏的解决方案（例如，性能优化、功能扩展、平台调整）。
+- 为受影响的游戏产物（例如，GDD 部分、技术规格、Unity 配置）起草具体、可操作的建议更新。
+- 生成一份综合的“游戏开发变更提案”文档以供审查和批准。
+- 确保需要基础性重新设计或技术架构更新的变更具有清晰的交接路径。
 
-## Instructions
+## 说明
 
-### 1. Initial Setup & Mode Selection
+### 1. 初始设置与模式选择
 
-- **Acknowledge Task & Inputs:**
-  - Confirm with the user that the "Game Development Correct Course Task" is being initiated.
-  - Verify the change trigger (e.g., performance issue, platform constraint, gameplay feedback, technical blocker).
-  - Confirm access to relevant game artifacts:
-    - Game Design Document (GDD)
-    - Technical Design Documents
-    - Unity Architecture specifications
-    - Performance budgets and platform requirements
-    - Current sprint's game stories and epics
-    - Asset specifications and pipelines
-  - Confirm access to `{root}/checklists/game-change-checklist`.
+- **确认任务和输入：**
+  - 与用户确认正在启动“游戏开发纠正航向任务”。
+  - 验证变更触发器（例如，性能问题、平台限制、游戏性反馈、技术障碍）。
+  - 确认对相关游戏产物的访问权限：
+    - 游戏设计文档 (GDD)
+    - 技术设计文档
+    - Unity 架构规范
+    - 性能预算和平台要求
+    - 当前冲刺的游戏故事和史诗
+    - 资产规格和管道
+  - 确认对 `{root}/checklists/game-change-checklist` 的访问权限。
 
-- **Establish Interaction Mode:**
-  - Ask the user their preferred interaction mode:
-    - **"Incrementally (Default & Recommended):** Work through the game-change-checklist section by section, discussing findings and drafting changes collaboratively. Best for complex technical or gameplay changes."
-    - **"YOLO Mode (Batch Processing):** Conduct batched analysis and present consolidated findings. Suitable for straightforward performance optimizations or minor adjustments."
-  - Confirm the selected mode and inform: "We will now use the game-change-checklist to analyze the change and draft proposed updates specific to our Unity game development context."
+- **建立交互模式：**
+  - 询问用户他们偏好的交互模式：
+    - **“增量式（默认和推荐）：** 逐节地完成游戏变更清单，协作讨论发现并起草变更。最适合复杂的技术或游戏性变更。”
+    - **“YOLO 模式（批处理）：** 进行批量分析并呈现综合发现。适用于直接的性能优化或微小调整。”
+  - 确认所选模式并告知：“我们现在将使用游戏变更清单来分析变更并起草针对我们 Unity 游戏开发背景的建议更新。”
 
-### 2. Execute Game Development Checklist Analysis
+### 2. 执行游戏开发清单分析
 
-- Systematically work through the game-change-checklist sections:
-  1. **Change Context & Game Impact**
-  2. **Feature/System Impact Analysis**
-  3. **Technical Artifact Conflict Resolution**
-  4. **Performance & Platform Evaluation**
-  5. **Path Forward Recommendation**
+- 系统地完成游戏变更清单的各个部分：
+  1. **变更背景与游戏影响**
+  2. **功能/系统影响分析**
+  3. **技术产物冲突解决**
+  4. **性能与平台评估**
+  5. **前进路径推荐**
 
-- For each checklist section:
-  - Present game-specific prompts and considerations
-  - Analyze impacts on:
-    - Unity scenes and prefabs
-    - Component dependencies
-    - Performance metrics (FPS, memory, build size)
-    - Platform-specific code paths
-    - Asset loading and management
-    - Third-party plugins/SDKs
-  - Discuss findings with clear technical context
-  - Record status: `[x] Addressed`, `[N/A]`, `[!] Further Action Needed`
-  - Document Unity-specific decisions and constraints
+- 对于每个清单部分：
+  - 呈现特定于游戏的提示和考虑因素
+  - 分析对以下方面的影响：
+    - Unity 场景和预制件
+    - 组件依赖关系
+    - 性能指标（FPS、内存、构建大小）
+    - 平台特定的代码路径
+    - 资产加载和管理
+    - 第三方插件/SDK
+  - 以清晰的技术背景讨论发现
+  - 记录状态：`[x] 已处理`，`[N/A]`，`[!] 需要进一步操作`
+  - 记录 Unity 特定的决策和约束
 
-### 3. Draft Game-Specific Proposed Changes
+### 3. 起草特定于游戏的建议变更
 
-Based on the analysis and agreed path forward:
+根据分析和商定的前进路径：
 
-- **Identify affected game artifacts requiring updates:**
-  - GDD sections (mechanics, systems, progression)
-  - Technical specifications (architecture, performance targets)
-  - Unity-specific configurations (build settings, quality settings)
-  - Game story modifications (scope, acceptance criteria)
-  - Asset pipeline adjustments
-  - Platform-specific adaptations
+- **确定需要更新的受影响游戏产物：**
+  - GDD 部分（机制、系统、进程）
+  - 技术规格（架构、性能目标）
+  - Unity 特定的配置（构建设置、质量设置）
+  - 游戏故事修改（范围、验收标准）
+  - 资产管道调整
+  - 平台特定的适配
 
-- **Draft explicit changes for each artifact:**
-  - **Game Stories:** Revise story text, Unity-specific acceptance criteria, technical constraints
-  - **Technical Specs:** Update architecture diagrams, component hierarchies, performance budgets
-  - **Unity Configurations:** Propose settings changes, optimization strategies, platform variants
-  - **GDD Updates:** Modify feature descriptions, balance parameters, progression systems
-  - **Asset Specifications:** Adjust texture sizes, model complexity, audio compression
-  - **Performance Targets:** Update FPS goals, memory limits, load time requirements
+- **为每个产物起草明确的变更：**
+  - **游戏故事：** 修订故事文本、Unity 特定的验收标准、技术限制
+  - **技术规格：** 更新架构图、组件层次结构、性能预算
+  - **Unity 配置：** 提出设置更改、优化策略、平台变体
+  - **GDD 更新：** 修改功能描述、平衡参数、进程系统
+  - **资产规格：** 调整纹理大小、模型复杂度、音频压缩
+  - **性能目标：** 更新 FPS 目标、内存限制、加载时间要求
 
-- **Include Unity-specific details:**
-  - Prefab structure changes
-  - Scene organization updates
-  - Component refactoring needs
-  - Shader/material optimizations
-  - Build pipeline modifications
+- **包括 Unity 特定的细节：**
+  - 预制件结构更改
+  - 场景组织更新
+  - 组件重构需求
+  - 着色器/材质优化
+  - 构建管道修改
 
-### 4. Generate "Game Development Change Proposal"
+### 4. 生成“游戏开发变更提案”
 
-- Create a comprehensive proposal document containing:
+- 创建一份全面的提案文档，包含：
 
-  **A. Change Summary:**
-  - Original issue (performance, gameplay, technical constraint)
-  - Game systems affected
-  - Platform/performance implications
-  - Chosen solution approach
+  **A. 变更摘要：**
+  - 原始问题（性能、游戏性、技术限制）
+  - 受影响的游戏系统
+  - 平台/性能影响
+  - 选择的解决方案方法
 
-  **B. Technical Impact Analysis:**
-  - Unity architecture changes needed
-  - Performance implications (with metrics)
-  - Platform compatibility effects
-  - Asset pipeline modifications
-  - Third-party dependency impacts
+  **B. 技术影响分析：**
+  - 需要的 Unity 架构更改
+  - 性能影响（附带指标）
+  - 平台兼容性影响
+  - 资产管道修改
+  - 第三方依赖项影响
 
-  **C. Specific Proposed Edits:**
-  - For each game story: "Change Story GS-X.Y from: [old] To: [new]"
-  - For technical specs: "Update Unity Architecture Section X: [changes]"
-  - For GDD: "Modify [Feature] in Section Y: [updates]"
-  - For configurations: "Change [Setting] from [old_value] to [new_value]"
+  **C. 具体的建议编辑：**
+  - 对于每个游戏故事：“将故事 GS-X.Y 从：[旧] 更改为：[新]”
+  - 对于技术规格：“更新 Unity 架构部分 X：[更改]”
+  - 对于 GDD：“修改 Y 部分中的 [功能]：[更新]”
+  - 对于配置：“将 [设置] 从 [旧值] 更改为 [新值]”
 
-  **D. Implementation Considerations:**
-  - Required Unity version updates
-  - Asset reimport needs
-  - Shader recompilation requirements
-  - Platform-specific testing needs
+  **D. 实施考虑：**
+  - 需要的 Unity 版本更新
+  - 资产重新导入需求
+  - 着色器重新编译要求
+  - 平台特定的测试需求
 
-### 5. Finalize & Determine Next Steps
+### 5. 最终确定并决定后续步骤
 
-- Obtain explicit approval for the "Game Development Change Proposal"
-- Provide the finalized document to the user
+- 获得对“游戏开发变更提案”的明确批准
+- 向用户提供最终确定的文档
 
-- **Based on change scope:**
-  - **Minor adjustments (can be handled in current sprint):**
-    - Confirm task completion
-    - Suggest handoff to game-dev agent for implementation
-    - Note any required playtesting validation
-  - **Major changes (require replanning):**
-    - Clearly state need for deeper technical review
-    - Recommend engaging Game Architect or Technical Lead
-    - Provide proposal as input for architecture revision
-    - Flag any milestone/deadline impacts
+- **根据变更范围：**
+  - **微小调整（可在当前冲刺中处理）：**
+    - 确认任务完成
+    - 建议交接给游戏开发代理进行实施
+    - 注意任何需要的游戏测试验证
+  - **重大变更（需要重新规划）：**
+    - 明确说明需要更深入的技术审查
+    - 建议聘请游戏架构师或技术主管
+    - 提供提案作为架构修订的输入
+    - 标记任何里程碑/截止日期的影响
 
-## Output Deliverables
+## 输出交付物
 
-- **Primary:** "Game Development Change Proposal" document containing:
-  - Game-specific change analysis
-  - Technical impact assessment with Unity context
-  - Platform and performance considerations
-  - Clearly drafted updates for all affected game artifacts
-  - Implementation guidance and constraints
+- **主要：** “游戏开发变更提案”文档，包含：
+  - 特定于游戏的变更分析
+  - 带有 Unity 背景的技术影响评估
+  - 平台和性能考虑
+  - 为所有受影响的游戏产物清晰起草的更新
+  - 实施指南和约束
 
-- **Secondary:** Annotated game-change-checklist showing:
-  - Technical decisions made
-  - Performance trade-offs considered
-  - Platform-specific accommodations
-  - Unity-specific implementation notes
+- **次要：** 注释的游戏变更清单，显示：
+  - 做出的技术决策
+  - 考虑的性能权衡
+  - 平台特定的调整
+  - Unity 特定的实施说明

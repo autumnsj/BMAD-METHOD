@@ -58,26 +58,26 @@ class WebBuilder {
       ? `.${packName}/tasks/create-story.md`
       : '.bmad-core/tasks/create-story.md';
 
-    return `# Web Agent Bundle Instructions
+    return `# Web 代理捆绑包说明
 
-You are now operating as a specialized AI agent from the BMad-Method framework. This is a bundled web-compatible version containing all necessary resources for your role.
+您现在作为 BMad-Method 框架中的专业 AI 代理运行。这是一个捆绑的 Web 兼容版本，包含您角色所需的所有资源。
 
-## Important Instructions
+## 重要说明
 
-1. **Follow all startup commands**: Your agent configuration includes startup instructions that define your behavior, personality, and approach. These MUST be followed exactly.
+1. **遵循所有启动命令**：您的代理配置包含定义您的行为、个性和方法的启动说明。这些必须严格遵守。
 
-2. **Resource Navigation**: This bundle contains all resources you need. Resources are marked with tags like:
+2. **资源导航**：此捆绑包包含您所需的所有资源。资源标有以下标签：
 
 - \`==================== START: ${examplePath} ====================\`
 - \`==================== END: ${examplePath} ====================\`
 
-When you need to reference a resource mentioned in your instructions:
+当您需要引用说明中提到的资源时：
 
-- Look for the corresponding START/END tags
-- The format is always the full path with dot prefix (e.g., \`${personasExample}\`, \`${tasksExample}\`)
-- If a section is specified (e.g., \`{root}/tasks/create-story.md#section-name\`), navigate to that section within the file
+- 查找相应的 START/END 标签
+- 格式始终是带有点前缀的完整路径（例如，\`${personasExample}\`、\`${tasksExample}\`）
+- 如果指定了某个部分（例如，\`{root}/tasks/create-story.md#section-name\`），请导航到文件中的该部分
 
-**Understanding YAML References**: In the agent configuration, resources are referenced in the dependencies section. For example:
+**理解 YAML 引用**：在代理配置中，资源在依赖项部分中引用。例如：
 
 \`\`\`yaml
 dependencies:
@@ -87,14 +87,14 @@ dependencies:
     - create-story
 \`\`\`
 
-These references map directly to bundle sections:
+这些引用直接映射到捆绑包部分：
 
-- \`utils: template-format\` → Look for \`==================== START: ${utilitiesExample} ====================\`
-- \`tasks: create-story\` → Look for \`==================== START: ${tasksReference} ====================\`
+- \`utils: template-format\` → 查找 \`==================== START: ${utilitiesExample} ====================\`
+- \`tasks: create-story\` → 查找 \`==================== START: ${tasksReference} ====================\`
 
-3. **Execution Context**: You are operating in a web environment. All your capabilities and knowledge are contained within this bundle. Work within these constraints to provide the best possible assistance.
+3. **执行上下文**：您正在 Web 环境中运行。您的所有能力和知识都包含在此捆绑包中。在此限制内工作，以提供最佳帮助。
 
-4. **Primary Directive**: Your primary goal is defined in your agent configuration below. Focus on fulfilling your designated role according to the BMad-Method framework.
+4. **主要指令**：您的主要目标在下面的代理配置中定义。专注于根据 BMad-Method 框架履行您指定的角色。
 
 ---
 
@@ -105,9 +105,9 @@ These references map directly to bundle sections:
     for (const dir of this.outputDirs) {
       try {
         await fs.rm(dir, { recursive: true, force: true });
-        console.log(`Cleaned: ${path.relative(this.rootDir, dir)}`);
+        console.log(`已清理: ${path.relative(this.rootDir, dir)}`);
       } catch (error) {
-        console.debug(`Failed to clean directory ${dir}:`, error.message);
+        console.debug(`清理目录 ${dir} 失败:`, error.message);
         // Directory might not exist, that's fine
       }
     }
@@ -117,7 +117,7 @@ These references map directly to bundle sections:
     const agents = await this.resolver.listAgents();
 
     for (const agentId of agents) {
-      console.log(`  Building agent: ${agentId}`);
+      console.log(`  正在构建代理: ${agentId}`);
       const bundle = await this.buildAgentBundle(agentId);
 
       // Write to all output directories
@@ -129,14 +129,14 @@ These references map directly to bundle sections:
       }
     }
 
-    console.log(`Built ${agents.length} agent bundles in ${this.outputDirs.length} locations`);
+    console.log(`已在 ${this.outputDirs.length} 个位置构建了 ${agents.length} 个代理捆绑包`);
   }
 
   async buildTeams() {
     const teams = await this.resolver.listTeams();
 
     for (const teamId of teams) {
-      console.log(`  Building team: ${teamId}`);
+      console.log(`  正在构建团队: ${teamId}`);
       const bundle = await this.buildTeamBundle(teamId);
 
       // Write to all output directories
@@ -148,7 +148,7 @@ These references map directly to bundle sections:
       }
     }
 
-    console.log(`Built ${teams.length} team bundles in ${this.outputDirs.length} locations`);
+    console.log(`已在 ${this.outputDirs.length} 个位置构建了 ${teams.length} 个团队捆绑包`);
   }
 
   async buildAgentBundle(agentId) {
@@ -236,12 +236,12 @@ These references map directly to bundle sections:
       const agentName = parsed.agent?.id || 'agent';
 
       // Build the new content with just the agent header and YAML
-      const newHeader = `# ${agentName}\n\nCRITICAL: Read the full YAML, start activation to alter your state of being, follow startup section instructions, stay in this being until told to exit this mode:\n\n`;
+      const newHeader = `# ${agentName}\n\n重要提示：阅读完整的 YAML，开始激活以改变您的存在状态，遵循启动部分说明，在此状态下保持直到被告知退出此模式：\n\n`;
       const afterYaml = content.slice(Math.max(0, yamlEndIndex));
 
       return newHeader + '```yaml\n' + cleanedYaml.trim() + '\n```' + afterYaml;
     } catch (error) {
-      console.warn('Failed to process agent YAML:', error.message);
+      console.warn('处理代理 YAML 失败:', error.message);
       // If parsing fails, return original content
       return content;
     }
@@ -272,7 +272,7 @@ These references map directly to bundle sections:
   }
 
   async validate() {
-    console.log('Validating agent configurations...');
+    console.log('正在验证代理配置...');
     const agents = await this.resolver.listAgents();
     for (const agentId of agents) {
       try {
@@ -284,7 +284,7 @@ These references map directly to bundle sections:
       }
     }
 
-    console.log('\nValidating team configurations...');
+    console.log('\n正在验证团队配置...');
     const teams = await this.resolver.listTeams();
     for (const teamId of teams) {
       try {
@@ -301,11 +301,11 @@ These references map directly to bundle sections:
     const expansionPacks = await this.listExpansionPacks();
 
     for (const packName of expansionPacks) {
-      console.log(`  Building expansion pack: ${packName}`);
+      console.log(`  正在构建扩展包: ${packName}`);
       await this.buildExpansionPack(packName, options);
     }
 
-    console.log(`Built ${expansionPacks.length} expansion pack bundles`);
+    console.log(`已构建 ${expansionPacks.length} 个扩展包捆绑包`);
   }
 
   async buildExpansionPack(packName, options = {}) {
@@ -330,7 +330,7 @@ These references map directly to bundle sections:
       const agentMarkdownFiles = agentFiles.filter((f) => f.endsWith('.md'));
 
       if (agentMarkdownFiles.length > 0) {
-        console.log(`    Building individual agents for ${packName}:`);
+        console.log(`    正在为 ${packName} 构建单个代理:`);
 
         for (const agentFile of agentMarkdownFiles) {
           const agentName = agentFile.replace('.md', '');
@@ -349,7 +349,7 @@ These references map directly to bundle sections:
         }
       }
     } catch {
-      console.debug(`    No agents directory found for ${packName}`);
+      console.debug(`    未找到 ${packName} 的代理目录`);
     }
 
     // Build team bundle
@@ -359,7 +359,7 @@ These references map directly to bundle sections:
       const teamFile = teamFiles.find((f) => f.endsWith('.yaml'));
 
       if (teamFile) {
-        console.log(`    Building team bundle for ${packName}`);
+        console.log(`    正在为 ${packName} 构建团队捆绑包`);
         const teamConfigPath = path.join(agentTeamsDir, teamFile);
 
         // Build expansion pack as a team bundle
@@ -371,13 +371,13 @@ These references map directly to bundle sections:
           await fs.mkdir(teamsOutputDir, { recursive: true });
           const outputFile = path.join(teamsOutputDir, teamFile.replace('.yaml', '.txt'));
           await fs.writeFile(outputFile, bundle, 'utf8');
-          console.log(`    ✓ Created bundle: ${path.relative(this.rootDir, outputFile)}`);
+          console.log(`    ✓ 已创建捆绑包: ${path.relative(this.rootDir, outputFile)}`);
         }
       } else {
-        console.warn(`    ⚠ No team configuration found in ${packName}/agent-teams/`);
+        console.warn(`    ⚠ 在 ${packName}/agent-teams/ 中未找到团队配置`);
       }
     } catch {
-      console.warn(`    ⚠ No agent-teams directory found for ${packName}`);
+      console.warn(`    ⚠ 未找到 ${packName} 的 agent-teams 目录`);
     }
   }
 
@@ -444,7 +444,7 @@ These references map directly to bundle sections:
 
                 if (!found) {
                   console.warn(
-                    `    ⚠ Dependency ${resourceType}#${resourceName} not found in expansion pack or core`,
+                    `    ⚠ 依赖项 ${resourceType}#${resourceName} 在扩展包或核心中未找到`,
                   );
                 }
               }
@@ -452,7 +452,7 @@ These references map directly to bundle sections:
           }
         }
       } catch (error) {
-        console.debug(`Failed to parse agent YAML for ${agentName}:`, error.message);
+        console.debug(`解析代理 YAML 失败 ${agentName}:`, error.message);
       }
     }
 
@@ -481,7 +481,7 @@ These references map directly to bundle sections:
         expansionAgents.add(agentName);
       }
     } catch {
-      console.warn(`    ⚠ No agents directory found in ${packName}`);
+      console.warn(`    ⚠ 在 ${packName} 中未找到代理目录`);
     }
 
     // Build a map of all available expansion pack resources for override checking
@@ -506,7 +506,7 @@ These references map directly to bundle sections:
 
     // Ensure bmad-orchestrator is always included for teams
     if (!agentsToProcess.includes('bmad-orchestrator')) {
-      console.warn(`    ⚠ Team ${teamFileName} missing bmad-orchestrator, adding automatically`);
+      console.warn(`    ⚠ 团队 ${teamFileName} 缺少 bmad-orchestrator，已自动添加`);
       agentsToProcess.unshift('bmad-orchestrator');
     }
 
@@ -539,7 +539,7 @@ These references map directly to bundle sections:
               }
             }
           } catch (error) {
-            console.debug(`Failed to parse agent YAML for ${agentId}:`, error.message);
+            console.debug(`解析代理 YAML 失败 ${agentId}:`, error.message);
           }
         }
       } else {
@@ -568,11 +568,11 @@ These references map directly to bundle sections:
                 }
               }
             } catch (error) {
-              console.debug(`Failed to parse agent YAML for ${agentId}:`, error.message);
+              console.debug(`解析代理 YAML 失败 ${agentId}:`, error.message);
             }
           }
         } catch {
-          console.warn(`    ⚠ Agent ${agentId} not found in core or expansion pack`);
+          console.warn(`    ⚠ 代理 ${agentId} 在核心或扩展包中未找到`);
         }
       }
     }
@@ -590,7 +590,7 @@ These references map directly to bundle sections:
           const content = await fs.readFile(expansionPath, 'utf8');
           const expansionWebPath = this.convertToWebPath(expansionPath, packName);
           sections.push(this.formatSection(expansionWebPath, content, packName));
-          console.log(`      ✓ Using expansion override for ${key}`);
+          console.log(`      ✓ 正在使用 ${key} 的扩展覆盖`);
           found = true;
         } catch {
           // Try next extension
@@ -624,7 +624,7 @@ These references map directly to bundle sections:
       }
 
       if (!found) {
-        console.warn(`    ⚠ Dependency ${key} not found in expansion pack or core`);
+        console.warn(`    ⚠ 依赖项 ${key} 在扩展包或核心中未找到`);
       }
     }
 
@@ -662,7 +662,7 @@ These references map directly to bundle sections:
       const entries = await fs.readdir(expansionPacksDir, { withFileTypes: true });
       return entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name);
     } catch {
-      console.warn('No expansion-packs directory found');
+      console.warn('未找到 expansion-packs 目录');
       return [];
     }
   }
